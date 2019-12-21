@@ -1,0 +1,124 @@
+body {
+background-color:#DEE3ED;
+font-family:sans-serif;
+}
+i.title {
+font-size:20px;
+}
+div.container {
+height:auto;
+overflow:hidden;
+position:relative;
+width:770px;
+}
+div.log {
+font-size:10pt;
+}
+div.header {
+background-color:transparent;
+background-image:url(../images/bg.jpg);
+float:left;
+height:90px;
+overflow:hidden;
+padding-left:50px;
+position:relative;
+text-align:left;
+width:760px;
+}
+div.clear {
+clear:both;
+}
+div.content {
+background-color:white;
+float:left;
+height:auto;
+min-height:270px;
+padding-left:60px;
+position:relative;
+text-align:left;
+width:710px;
+}
+div.footer {
+background-color:white;
+background-image:url(../images/bg.jpg);
+color:black;
+float:left;
+font-style:italic;
+height:auto;
+min-height:5px;
+position:relative;
+width:780px;
+}
+div.leftgrad {
+background:transparent url(../images/leftgrad.jpg) repeat-y scroll 0 0;
+float:left;
+position:relative;
+width:0;
+}
+div.midgrad {
+background:transparent url(../images/grad.jpg) repeat scroll 0 0;
+float:left;
+height:20px;
+overflow:hidden;
+position:relative;
+width:770px;
+}
+div.endgrad {
+background:transparent url(../images/grad2.jpg) repeat scroll 0 0;
+float:left;
+height:20px;
+overflow:hidden;
+position:relative;
+width:770px;
+}
+div.rightgrad {
+background:transparent url(../images/rightgrad.jpg) repeat-y scroll 0 0;
+float:left;
+margin-bottom:-2000px;
+padding-bottom:2000px;
+position:relative;
+width:0;
+}
+div.navigation {
+float:left;
+font-size:15px;
+margin-left:0;
+margin-top:0;
+}
+div.navigation a {
+}
+div.item {
+float:left;
+margin-left:20px;
+width:120px;
+}
+td {
+vertical-align:top;
+}
+td {
+padding-bottom:5px;
+}
+td.cell1 {
+font-style:italic;
+}
+td.repcell {
+text-align:center;
+}
+.codeblock {
+border-left:1px solid;
+font-family:Courier;
+font-size:11pt;
+margin-left:10px;
+padding-left:5px;
+}
+div.main {
+float:left;
+margin-left:30px;
+width:560px;
+}
+div.panel {
+float:left;
+margin-left:-50px;
+margin-top:50px;
+width:100px;
+}

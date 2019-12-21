@@ -1,0 +1,134 @@
+body {
+background-color:#57724E;
+font-family:sans-serif;
+}
+i.title {
+font-size:20px;
+}
+div.container {
+height:auto;
+overflow:hidden;
+position:relative;
+width:970px;
+}
+div.log {
+font-size:10pt;
+}
+div.header {
+background-color:#C5E0BC;
+//background-image:url(../images/bg.jpg);
+float:left;
+height:90px;
+overflow:hidden;
+padding-left:50px;
+position:relative;
+text-align:left;
+width:960px;
+}
+div.clear {
+clear:both;
+}
+div.content {
+background-color:white;
+float:left;
+height:auto;
+min-height:270px;
+padding-left:60px;
+position:relative;
+text-align:left;
+width:910px;
+}
+div.footer {
+background-color:#C5E0BC;
+//background-image:url(../images/bg.jpg);
+color:black;
+float:left;
+//font-style:italic;
+height:30px;
+min-height:30px;
+position:relative;
+width:980px;
+}
+div.leftgrad {
+background:transparent url(../images/leftgrad.jpg) repeat-y scroll 0 0;
+float:left;
+position:relative;
+width:0;
+}
+div.midgrad {
+background:transparent url(../images/grad.jpg) repeat scroll 0 0;
+float:left;
+height:20px;
+overflow:hidden;
+position:relative;
+width:970px;
+height:0;
+}
+div.endgrad {
+background:transparent url(../images/grad2.jpg) repeat scroll 0 0;
+float:left;
+height:20px;
+overflow:hidden;
+position:relative;
+width:970px;
+height:0;
+}
+div.rightgrad {
+background:transparent url(../images/rightgrad.jpg) repeat-y scroll 0 0;
+float:left;
+margin-bottom:-2000px;
+padding-bottom:2000px;
+position:relative;
+width:0;
+height:0;
+}
+div.navigation {
+float:left;
+font-size:15px;
+margin-left:0;
+margin-top:0;
+}
+div.navigation a {
+}
+div.item {
+float:left;
+margin-left:20px;
+width:120px;
+}
+td {
+vertical-align:top;
+}
+td {
+padding-bottom:5px;
+}
+td.cell1 {
+font-style:italic;
+}
+td.repcell {
+text-align:center;
+}
+.codeblock {
+border-left:1px solid;
+font-family:Courier;
+font-size:11pt;
+margin-left:10px;
+padding-left:5px;
+}
+div.main {
+float:left;
+margin-left:30px;
+width:=760px;
+}
+div.panel {
+float:left;
+margin-left:-50px;
+margin-top:50px;
+width:100px;
+}
+pre {
+    border: 1px solid #000000;
+    margin: 0px auto;
+    padding-left: 2em;
+    padding-right: 2em;
+    background-color: #eeeeee;
+}
