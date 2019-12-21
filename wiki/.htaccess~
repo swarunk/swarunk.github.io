@@ -1,2 +1,0 @@
-AuthType shibboleth
-require shib-user swarunk@andrew.cmu.edu
