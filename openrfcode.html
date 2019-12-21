@@ -1,0 +1,193 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>OpenRF: Bringing Cross-Layer MIMO to Today's Wireless LANs</title>
+<meta name="keywords" content="swarun, swarun kumar, swarun kumar suresh kumar, mit, computer science">
+<meta name="description" content="Webpage of Swarun Kumar, Assistant Professor, CMU ECE">
+<link rel="shortcut icon" href="images/favicon.ico" />
+<link type="text/css" rel="stylesheet" href="styles/styles.css" media="screen" />
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18185637-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+<body>
+<center>
+<div class='container'>
+<div class='header'>
+<table>
+  <tbody><tr>
+    <td>
+  <h1 style="margin-top:20px;margin-left:60px">OpenRF: Code Release</h1><br>
+    </td>
+    <td>
+      <img style="margin-left:0px;padding-left:260px;height:70px;margin-top:10px;" src="images/wirelesscenter.png">
+    </td>
+  </tr>
+  </tbody></table>
+</div>
+
+<div class='content'>
+<div class='midgrad'></div>
+
+<div class="main" style='margin-left:50px;width:730px;margin-top:30px'>
+<div><div> 
+<p>
+This webpage contains instructions to set up our OpenRF
+platform to enable interference nulling and coherent beamforming for
+802.11n cards. The code is built for Intel Wi-Fi Wireless Link 5300
+802.11n MIMO radios, using a custom open source driver. The code
+extends
+the <a href="http://dhalperi.github.io/linux-80211n-csitool/">802.11n
+CSI Tool</a> from the University of Washington.</p>
+
+<p>The alpha release of this tool implements interference nulling and
+coherent beamforming. The OpenRF controller is not included in this
+release. For more information about OpenRF, please refer to
+our <a href="http://www.mit.edu/~swarun/papers/openrf-sigcomm2013.pdf">paper</a>
+in SIGCOMM 2013.</p>
+
+<hr />
+<h4 style="margin-left:0px">INSTALLATION INSTRUCTIONS</h4>
+<p>To perform this installation, you will need a PC or Laptop with the
+Intel 5300 Wi-Fi card. Please be prepared to perform a clean
+installation on this computer. </p>
+<ol>
+<li>
+Download and install Ubuntu 10.04 Server. The ISO is available here: [<a href="http://releases.ubuntu.com/lucid/ubuntu-10.04.4-server-i386.iso">ISO</a>]
+</li>
+<li>
+Check out the OpenRF source code:
+<pre>
+svn co https://svn.csail.mit.edu/openrf
+</pre>
+</li>
+<li>
+Set up the code:
+<pre>
+sudo ./openrf/setup_scripts/setup_csi_tool.sh
+</pre>
+You will notice a sequence of commands leading up to a "visudo" window. In this window, perform the following modifcation to the final line:
+<pre>
+# change
+# %admin ALL=(ALL) ALL
+# to
+# %admin ALL=NOPASSWD: ALL
+</pre>
+This disables the need for password checks for sudo. <br />
+Next, you will observe a blue menuconfig menu. You might want to enable certain modules to turn on system specific hardware. If you want to skip this step, select "Exit"
+</li>
+<li>
+Reboot the machine
+</li>
+<li>
+Make all scripts:
+<pre>
+sudo ./openrf/setup_scripts/setup_csi_tool_2.sh
+</pre>
+</li>
+</ol>
+<br />
+<hr />
+<h4 style="margin-left:0px">TESTING INSTRUCTIONS</h4>
+<p>Testing the code
+requires <a href="http://www.mathworks.com/products/matlab/">MATLAB</a>. We
+recommend a Matlab version >= R2011a We require two machines to be set
+up, one for the AP and one for the client.</p>
+<ol>
+<li>
+Start hostapd on the Access Point:
+<pre>
+sudo ./openrf/load_scripts/start_ap.sh
+</pre>
+</li>
+<li>
+Associate with the AP at the Client:
+<pre>
+sudo ./openrf/load_scripts/start_rx.sh openrfap
+</pre>
+</li>
+<li>
+Run a continuing ping session to exchange packets between the AP and client:
+<pre>
+ping 10.10.10.1    # Keep running in the background
+</pre>
+</li>
+<li>
+Navigate to the MATLAB code folder:
+<pre>
+cd ./openrf/linux-80211n-csitool-supplementary/matlab
+</pre>
+Open MATLAB on both access point and client. 
+</li>
+<li>
+At the client, plot the channel on the three client antennas in MATLAB:
+<pre>
+matlab>> csi_init = plot_next_channel;
+</pre>
+</li>
+<li>
+At the AP, list the MAC address of client(s) on the shell:
+<pre>
+sudo cat `find /sys -name csi_table`
+</pre>
+Note the MAC address of the client you wish to null or beamform at. 
+To then perform nulling at antenna one on the client, run the following in MATLAB:
+<pre>
+matlab>> precod_channel('NULLING', [MAC address]);  
+matlab>>  % e.g. precod_channel('NULLING', '0:16:EA:12:34:56');
+</pre>
+Alternatively, to perform beamforming at antenna one on the client, run the following in MATLAB:
+<pre>
+matlab>> precod_channel('DIVERSITY', [MAC address]); 
+matlab>>  % e.g. precod_channel('DIVERSITY', '0:16:EA:12:34:56');
+</pre>
+</li>
+<li>
+At the client, plot the channel on the three client antennas after nulling/beamforming:
+<pre>
+matlab>> csi_init = plot_next_channel;
+</pre>
+Verify that the channel at antenna 1 on the client has indeed been nulled (or) beamformed. 
+</li>
+</ol>
+
+<br />
+</div>
+<div>
+<hr />
+<h4 style="margin-left:0px">PUBLICATIONS</h4>
+<ul>
+<li>
+<b>Bringing Cross-Layer MIMO to Today's Wireless LANs</b>, Swarun Kumar, Diego Cifuentes, Shyamnath Gollakota, and Dina Katabi, <a href="http://conferences.sigcomm.org/sigcomm/2013/">ACM SIGCOMM 2013</a>, Hong Kong  [<a href="papers/openrf-sigcomm2013.pdf">PAPER</a>][<a href="slides/openrf-sigcomm2013.pptx">SLIDES</a>]<br /><br />
+</li>
+</ul>
+<hr />
+<h4 style="margin-left:0px">AUTHORS</h4>
+<a href="http://www.mit.edu/~swarun/">Swarun Kumar</a>, Diego Cifuentes, <a href="http://homes.cs.washington.edu/~gshyam/">Shyamnath Gollakota</a> and <a href="http://people.csail.mit.edu/dina/">Dina Katabi</a>
+<br /><br />
+</div>
+</div>
+</div>
+
+<div class="clear"></div>
+</div>
+
+<div class="clear"></div>
+<div class="endgrad"></div>
+<div class="footer"><div style="margin-top:7px">(c) 2013, Swarun Suresh Kumar and Diego Cifuentes</div></div>
+</div>
+</center>
+</body>
+</html>
+
