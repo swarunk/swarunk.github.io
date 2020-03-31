@@ -95,51 +95,25 @@
 <div class="main" style='margin-left:70px;width:750px;margin-top:30px'>
 <div><div>
 
-<h4>Project: Pushing the Limits of Low-Power Wide-Area Networks </h4>
-
+<h4>Project OPR: A Cloud-Optimized Link Layer for Low-Power Wide-Area Networks</h4>
 <table>
 <tr>
 <td>
-<div style="padding:0px;border-width:0px;border-style:solid">
-<img src="images/lpwan.png" style="width:320px;height:210px"/>
+<div style="padding:10px;border-width:2px;border-style:solid">
+<img src="images/opr.png" style="width:300px"/>
 </div>
 </td>
 <td style="width:10px">
 </td>
 <td>
-Low-Power Wide-Area Networks (LP-WANs) aim to provide wireless connectivity at extremely low data rates (kbps) over distances of several miles to devices powered by a 10-year battery. Recent years have witnessed several efforts in this space such as LoRa, SIGFOX and NB-IoT. However, today's LP-WANs struggle to cope with the scale of future IoT deployments and the significant signal attenuation posed by urban environments. The WiTech lab group's research has developed new solutions for allowing LP-WANs to scale more efficiently, achieve even longer range in urban settings and save battery life. </td>
+As Low-Power Wide-Area Networking (LPWAN) deployments scale, they will increasingly face challenges with spectrum crowding. This is compounded by sub-GHz devices being used in home and office environments that transmit at higher data rates for shorter distances amplifying the near-far impact on wider area networks leading to client retries. In this paper, we present a technique called OPR that uses hints about potential error bit locations in received packets to recover data that normally would have failed packet integrity checks in LoRaWAN networks. We leverage the fact that LPWAN networks can easily offload packet processing to the cloud with ample compute time per packet (order of seconds) and that packets are often received by multiple gateways. By using a combination of energy sensing across the packet and bit-level consensus across gateways, we can identify candidate regions within a packet that are most likely to be corrupt.
+</td>
 </tr>
-</table>
-
-<h4 style="margin-left:0px">Video Highlight</h4>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/-uwiLV1XOxk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<br /> <br />
-<h4 style="margin-left:0px">Publications</h4>
+</table><h4 style="margin-left:0px">Citation</h4>
 <ul>
-<li><b>A Cloud-Optimized Link Layer for Low-Power Wide-Area Networks</b>, Artur Balanuta, Nuno Pereira, Swarun Kumar and Anthony Rowe, MobiSys  2020 [<a href="opr.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Quick (and Dirty) Aggregate Queries on Low-Power WANs</b>, Akshay Gadre, Fan Yi, Anthony Rowe, Bob Iannucci and Swarun Kumar, IPSN  2020 [<a href="papers/quail-ipsn2020.pdf">PAPER</a>] [<a href="quail.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Frequency Configuration for Low-Power Wide-Area Networks in a Heartbeat</b>,  Akshay Gadre, Revathy Narayanan, Anh Luong, Swarun Kumar, Anthony Rowe and Bob Iannucci, NSDI 2020 [<a href="papers/chime-nsdi2020.pdf">PAPER</a>] [<a href="chime.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Revisiting Software Defined Radios in the IoT Era </b>, Revathy Narayanan, Swarun Kumar, HotNets  2018<br /><br /></li>
-<li><b>Poster: Maintaining UAV Stability using Low-Power WANs </b>, Akshay Gadre, Revathy Narayanan, Swarun Kumar, MobiCom - Posters  2018<br /><br /></li>
-<li><b>Charm: Exploiting Geographical Diversity Through Coherent Combining in Low-Power Wide-Area Networks </b>, Adwait Dongare, Revathy Narayanan, Akshay Gadre, Artur Balanuta, Anh Luong, Swarun Kumar, Bob Iannucci, Anthony Rowe, IPSN  2018 <i>(Best Paper Award)</i> [<a href="papers/charm-ipsn2018.pdf">PAPER</a>] [<a href="charm.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Empowering Low-Power Wide Area Networks in Urban Settings </b>, Rashad Eletreby, Diana Zhang, Swarun Kumar, and Osman Yagan, SIGCOMM  2017 [<a href="papers/choir-sigcomm2017.pdf">PAPER</a>] [<a href="slides/choir-sigcomm2017.pdf">SLIDES</a>] [<a href="choir.html">WEBSITE</a>]<br /><br /></li>
-</ul>
-
-<h4 style="margin-left:0px">Project Participants</h4>
-
-
-<ul> 
-<li> <b> PI: </b> Swarun Kumar </li>
-<li> <b> Students: </b> 
-Akshay Gadre, Atul Bansal, Adwait Dongare and Artur Balanuta</li>
-<li> <b> Collaborators: </b> Prof. Anthony Rowe, Prof. Osman Yagan and Prof. Bob Iannucci</li></ul>
-
-<br /> <br />
-
-</div>
-
-
-</div>
+<li> <b>A Cloud-Optimized Link Layer for Low-Power Wide-Area Networks</b>, Artur Balanuta, Nuno Pereira, Swarun Kumar and Anthony Rowe, MobiSys  2020<br /><br />
+</li>
+</ul></div></div>
 </div>
 
 <div class="clear"></div>
@@ -152,4 +126,5 @@ Akshay Gadre, Atul Bansal, Adwait Dongare and Artur Balanuta</li>
 </center>
 </body>
 </html>
+
 
