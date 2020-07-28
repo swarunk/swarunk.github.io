@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<url>
+  <loc>http://www.swarunkumar.com/</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/index.html</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/publications.html</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/research.html</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/lpwan.html</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/bfree.html</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/wifi.html</loc>
+  <lastmod>2020-06-20T23:05:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/xg.html</loc>
+  <lastmod>2020-06-20T23:05:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/sensing.html</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/security.html</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/teaching.html</loc>
+  <lastmod>2020-06-20T23:05:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/awards.html</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/grants.html</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/outreach.html</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/code.html</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/openrf.html</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/lteyecode.html</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/contact.html</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/osprey.html</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/quail.html</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/opr.html</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/mmfd.html</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/rftattoo.html</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/papers/osprey-mobisys2020.pdf</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/slides/osprey-mobisys2020.pptx</loc>
+  <lastmod>2020-06-20T23:05:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/papers/opr-mobisys2020.pdf</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/papers/quail-ipsn2020.pdf</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/papers/mmfd-mobicom2020.pdf</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/papers/chime-nsdi2020.pdf</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/chime.html</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/papers/rftattoo-ubicomp2020.pdf</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/papers/sozu-uist2019.pdf</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/sozu.html</loc>
+  <lastmod>2020-06-20T23:05:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/papers/sdc-mobicom2019.pdf</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/slides/sdc-mobicom2019.pdf</loc>
+  <lastmod>2020-06-20T23:05:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/sdc.html</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/papers/intuwition-mobicom2019.pdf</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/slides/intuwition-mobicom2019.pdf</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/intuwition.html</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/papers/pushid-nsdi2019.pdf</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/pushid.html</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/papers/wish-mobisys2018.pdf</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/wish.html</loc>
+  <lastmod>2020-06-20T23:05:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/papers/charm-ipsn2018.pdf</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/charm.html</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/papers/dliot-icc2018.pdf</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/dliot.html</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/papers/rfwear-ubicomp2018.pdf</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/slides/rfwear-ubicomp2018.pdf</loc>
+  <lastmod>2020-06-20T23:05:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/rfwear.html</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/papers/choir-sigcomm2017.pdf</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/slides/choir-sigcomm2017.pdf</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/choir.html</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/nofacecontact.html</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/wira.html</loc>
+  <lastmod>2020-06-20T23:05:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/papers/ubicarse-mobicom2014.pdf</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/ubicarse.html</loc>
+  <lastmod>2020-06-20T23:05:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/papers/lteye-sigcomm2014.pdf</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/lteye.html</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/wiseek.html</loc>
+  <lastmod>2020-06-20T23:05:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/papers/openrf-sigcomm2013.pdf</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/slides/openrf-sigcomm2013.pptx</loc>
+  <lastmod>2020-06-20T23:05:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/papers/momimo-mobicom2013.pdf</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/slides/momimo-mobicom2013.pptx</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/momimo.html</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/papers/carspeak-sigcomm2012.pdf</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/slides/carspeak-sigcomm2012.pptx</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/carspeak.html</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/papers/megamimo-sigcomm2012.pdf</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/megamimo.html</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/grant1942902.html</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/grant1718435.html</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/grant1657318.html</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/grant1823235.html</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.swarunkumar.com/openrfcode.html</loc>
+  <lastmod>2020-06-20T23:04:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
