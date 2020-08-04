@@ -1,7 +1,8 @@
 body {
 background-color:#D4D9DD;
 background-image:url(../images/bg04.png);
-font-family:sans-serif;
+font-family:Helvetica, sans-serif;
+line-height:1.42;
 }
 i.title {
 font-size:20px;
