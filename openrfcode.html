@@ -252,6 +252,7 @@ function myFunction() {
 <!--<div class="main" style='margin-left:70px;width:750px;margin-top:30px'> -->
 <div><div>
 
+<div style="width:90%;">
 <p>
 This webpage contains instructions to set up our OpenRF
 platform to enable interference nulling and coherent beamforming for
@@ -278,17 +279,17 @@ Download and install Ubuntu 10.04 Server. The ISO is available here: [<a href="h
 </li>
 <li>
 Check out the OpenRF source code:
-<pre>
+<pre style="white-space:pre-wrap; word-break:break-all;">
 svn co https://svn.csail.mit.edu/openrf
 </pre>
 </li>
 <li>
 Set up the code:
-<pre>
+<pre style="white-space:pre-wrap; word-break:break-all;">
 sudo ./openrf/setup_scripts/setup_csi_tool.sh
 </pre>
 You will notice a sequence of commands leading up to a "visudo" window. In this window, perform the following modifcation to the final line:
-<pre>
+<pre style="white-space:pre-wrap; word-break:break-all;">
 # change
 # %admin ALL=(ALL) ALL
 # to
@@ -302,7 +303,7 @@ Reboot the machine
 </li>
 <li>
 Make all scripts:
-<pre>
+<pre style="white-space:pre-wrap; word-break:break-all;">
 sudo ./openrf/setup_scripts/setup_csi_tool_2.sh
 </pre>
 </li>
@@ -317,55 +318,55 @@ up, one for the AP and one for the client.</p>
 <ol>
 <li>
 Start hostapd on the Access Point:
-<pre>
+<pre style="white-space:pre-wrap; word-break:break-all;">
 sudo ./openrf/load_scripts/start_ap.sh
 </pre>
 </li>
 <li>
 Associate with the AP at the Client:
-<pre>
+<pre style="white-space:pre-wrap; word-break:break-all;">
 sudo ./openrf/load_scripts/start_rx.sh openrfap
 </pre>
 </li>
 <li>
 Run a continuing ping session to exchange packets between the AP and client:
-<pre>
+<pre style="white-space:pre-wrap; word-break:break-all;">
 ping 10.10.10.1    # Keep running in the background
 </pre>
 </li>
 <li>
 Navigate to the MATLAB code folder:
-<pre>
+<pre style="white-space:pre-wrap; word-break:break-all;">
 cd ./openrf/linux-80211n-csitool-supplementary/matlab
 </pre>
 Open MATLAB on both access point and client. 
 </li>
 <li>
 At the client, plot the channel on the three client antennas in MATLAB:
-<pre>
+<pre style="white-space:pre-wrap; word-break:break-all;">
 matlab>> csi_init = plot_next_channel;
 </pre>
 </li>
 <li>
 At the AP, list the MAC address of client(s) on the shell:
-<pre>
+<pre style="white-space:pre-wrap; word-break:break-all;">
 sudo cat `find /sys -name csi_table`
 </pre>
 Note the MAC address of the client you wish to null or beamform at. 
 To then perform nulling at antenna one on the client, run the following in MATLAB:
-<pre>
+<pre style="white-space:pre-wrap; word-break:break-all;">
 matlab>> precod_channel('NULLING', [MAC address]);  
 matlab>>  % e.g. precod_channel('NULLING', '0:16:EA:12:34:56');
 </pre>
 Alternatively, to perform beamforming at antenna one on the client, run the following in MATLAB:
-<pre>
+<pre style="white-space:pre-wrap; word-break:break-all;">
 matlab>> precod_channel('DIVERSITY', [MAC address]); 
 matlab>>  % e.g. precod_channel('DIVERSITY', '0:16:EA:12:34:56');
 </pre>
 </li>
 <li>
 At the client, plot the channel on the three client antennas after nulling/beamforming:
-<pre>
+<pre style="white-space:pre-wrap; word-break:break-all;">
 matlab>> csi_init = plot_next_channel;
 </pre>
 Verify that the channel at antenna 1 on the client has indeed been nulled (or) beamformed. 
@@ -387,7 +388,7 @@ Verify that the channel at antenna 1 on the client has indeed been nulled (or) b
 <a href="http://www.mit.edu/~swarun/">Swarun Kumar</a>, Diego Cifuentes, <a href="http://homes.cs.washington.edu/~gshyam/">Shyamnath Gollakota</a> and <a href="http://people.csail.mit.edu/dina/">Dina Katabi</a>
 <br /><br />
 </div>
-
+</div>
 </div>
 </div>
 
