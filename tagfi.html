@@ -1,12 +1,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>NSF Grant 1718435 | Swarun Kumar, CMU</title>
-<meta name="keywords" content="NSF Grant 1718435, swarun kumar, cmu">
-<meta name="description" content="NSF Grant 1718435 page of Swarun Kumar, Associate Professor at Carnegie Mellon University. ">
+<title>Tagfi project | Swarun Kumar, CMU</title>
+<meta name="keywords" content="tagfi project, swarun kumar, cmu">
+<meta name="description" content="Tagfi project page of Swarun Kumar, Associate Professor at Carnegie Mellon University. ">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="images/favicon.ico" />
 <link type="text/css" rel="stylesheet" href="styles/styles.css" media="screen" />
-<link rel="canonical" href="https://swarunkumar.com/grant1718435.html" />
+<link rel="canonical" href="https://swarunkumar.com/tagfi.html" />
 
 <style>
 body {margin:0;font-family:Arial}
@@ -134,7 +134,7 @@ body {margin:0;font-family:Arial}
 {
 "@context": "http://www.schema.org",
 "@type": "Person",
-"@id": "https://swarunkumar.com/grant1718435.html/#person",
+"@id": "https://swarunkumar.com/tagfi.html/#person",
 "name": "Swarun Kumar",
 "birthPlace": "Chennai, India",
 "award": [
@@ -180,10 +180,10 @@ body {margin:0;font-family:Arial}
 ]
 }
 ],
-"url": "https://swarunkumar.com/grant1718435.html",
-"image": "https://swarunkumar.com/grant1718435.html/images/swarun_cmu_pic.png",
+"url": "https://swarunkumar.com/tagfi.html",
+"image": "https://swarunkumar.com/tagfi.html/images/swarun_cmu_pic.png",
 "sameAs": [
-"https://swarunkumar.com/grant1718435.html/",
+"https://swarunkumar.com/tagfi.html/",
 "https://twitter.com/swarunk",
 "https://www.facebook.com/swarun.s",
 "https://www.linkedin.com/in/swarun/",
@@ -315,64 +315,28 @@ function myFunction() {
 <div class="main" style='margin-left:20px;width:100%;margin-top:10px;margin-right:20px;'> 
 <!--<div class="main" style='margin-left:70px;width:750px;margin-top:30px'> -->
 <div><div>
-
-<h4>
-NSF Award (<a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1718435">1718435</a>):  NeTS: Small: Handheld mm-Accurate Positioning for Wearables
-</h4>
-
-<div>
-This webpage tracks the current progress of our funded project with the NSF.  Our sincere thanks to the National Science Foundation for supporting  our research. <br />
+<h4>Project TagFi:  Locating Ultra-Low Power WiFi Tags Using Unmodified WiFi Infrastructure</h4>
+<div style="width:100%; float:left; text-align:center; ">
+<div class="col50">
+<div style="padding:10px;border-width:2px;border-style:solid;">
+<img src="images/tagfi.png" style="width:100%; height:200px"/>
+</div>
+</div>
+<div class="col50">
+<div style="text-align:left">
+Tag localization is crucial for many context-aware and automation applications in smart homes, retail stores, or warehouses. While custom localization technologies (e.g RFID) have the potential to support low-cost battery-free tag tracking, the cost and complexity of commissioning a space with beacons or readers has stifled adoption. In this paper, we explore how WiFi backscatter localization can be realized using the existing WiFi infrastructure already deployed for data applications. We present a new approach that leverages existing WiFi infrastructure to enable extremely low-power and accurate tag localization relative to a single scanning device. First, we adopt an ultra-low power tag design in which the tag blindly modulates ongoing WiFi packets using On-Off Keying (OOK). Then, we utilize the underlying physical properties of multipath propagation to detect the passive wireless reflection from the tag in the presence of rich multipath propagations. Finally, we localize the tag from a single receiver by forming a triangle between the tag reflection and the LoS path between the two WiFi transceivers. We implement TagFi using a customized backscatter tag and off-the-shelf WiFi chipsets. Our empirical results in a cluttered office building demonstrate that TagFi achieves a median localization accuracy of 0.2m up to 8 meters range.
+</div>
+</div>
 </div>
 
-<h5>Project Goals</h4>
-
-<div>
-This proposal develops a system that can track wearables on a user's body with millimeter (mm) accuracy using a handheld device in the user's pocket. Unlike past work, it does so without the need for external infrastructure (e.g. cameras or antenna arrays) or inaccurate, bulky and battery-powered sensors on the body. The proposed work attaches tiny radio frequency identification (RFID) tags that are cheap (costing a few cents) and completely battery-free on to on-body devices or the user's clothing. It then monitors the locations of these tags from a handheld RFID reader in the user's pocket. Unlike past solutions that use bulky, many-antenna RFID readers to locate RFID tags, our approach needs only a single-antenna reader that is both compact and portable. The proposed work will be fully implemented and evaluated on commodity RFID hardware and tags; the solution opens up a rich set of applications. Consider medical tests such as Electroencephalogram (EEG) that can become truly 'wearable', with electrodes on the head positioned automatically without requiring time-consuming manual measurements by a physician. Or consider smart textiles that can now serve as gesture-based interfaces that track a user's movements relative to handheld devices. 
-
-The proposed research presents three contributions: (1) It proposes a novel approach to disentangle wireless signals traversing different paths from RFID tags to a single-antenna RFID reader - a key challenge in positioning research. It achieves this without relying on bulky, multi-antenna arrays used in past literature. Its core idea is to use signals from teams of RFID tags to separate wireless signal components along different paths. (2) It investigates a solution to locate RFID tags relative to other tags whose positions are known. It seeks to do this using an algorithm that leverages similarity between the wireless signal paths experienced by the tag of interest and neighboring tags whose locations are known. (3) It fully integrates the system to target two applications: i) A wearable EEG system that tracks electrodes on the head using RFID tags attached to them. This eliminates the need for cumbersome manual measurements that doctors perform today before administering the test, allowing EEG to be truly portable. ii) A smart fabric with embedded RFID tags tracked by a mobile device to track the users movements both for continuous fitness monitoring and to create a gesture-based user interface.
-</div>
-
-<h5>Activities and Outcomes</h4>
-
-<i> Intellectual Merit</i>
-The proposed research led to multiple accepted papers at UbiComp, MobiSys and NSDI. The research has been demonstrated on commodity RFID tags. 
-
+<div style="width:100%; float:left; padding-top:30px; ">
+<h4 style="margin-left:0px">Video</h4>
+    <iframe  style="width:90%; max-width:550px" height="315" src="https://www.youtube.com/embed/gnSSzYrRU6o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br /> <br />
+<h4 style="margin-left:0px">Citation</h4>
 <ul>
-<li><b>TagFi: Locating Ultra-Low Power WiFi Tags Using Unmodified WiFi Infrastructure</b>, Elahe Soltanaghaei, Adwait Dongare, Akarsh Prabhakara, Swarun Kumar, Anthony Rowe and Kamin Whitehouse, UbiComp  2021<br /></li>
-<li><b>RFID Tattoo: A Wireless Platform for Speech Recognition </b>, Jingxian Wang, Chengfeng Pan, Haojian Jin, Vaibhav Singh, Yash Jain, Jason Hong, Carmel Majidi and Swarun Kumar, UbiComp  2020 <i>(Best Wearables Long Paper)</i><br /></li>
-<li><b>You foot the bill! Attacking NFC with passive relays</b>, Yuyi Sun, Swarun Kumar, Shibo He, Jiming Chen and Zhiguo Shi, IEEE IoT Journal 2020<br /></li>
-<li><b>Silver-Coated PDMS Beads for Soft, Stretchable, and Thermally Stable Conductive Elastomer Composites </b>,  Chengfeng Pan, Yun Sik Ohm, Jingxian Wang, Michael J. Ford, Kitty Kumar, Swarun Kumar, and Carmel Majidi, ACS applied materials and interfaces  2019<br /></li>
-<li><b>Pushing the Range Limits of Commercial Passive RFIDs </b>, Jingxian Wang, Junbo Zhang, Rajarshi Saha, Haojian Jin, Swarun Kumar, NSDI  2019<br /></li>
-<li><b>WiSh: Towards a Wireless Shape-aware World </b>, Haojian Jin, Jingxian Wang, Zhijian Yang, Swarun Kumar, Jason Hong, MobiSys  2018<br /></li>
-<li><b>Towards Wearable Everyday Body-Frame Tracking </b>, Haojian Jin, Zhijian Yang, Swarun Kumar, and Jason Hong, UbiComp  2018 <i>(Best Demo Honorable Mention)</i><br /></li>
-</ul>
-
-<i> Broader Impacts</i>
-Two graduate students and three undergraduate students have been trained during the course of this research. The PI participated in several events organized by the Gelfand Center at CMU which invites groups of K-12 students and teachers to the CMU campus to learn about state-of-the-art research. The PI presented demos of RFID-enabled smart fabrics to the students.
-
-<h5>Personnel</h4>
-
-<i>Faculty</i>
-<ul>
-<li> Swarun Kumar (PI)
-</ul>
-
-<i>Students</i>
-<ul>
-<li>Haojian Jin
-<li>Jingxian Wang
-<li>Junbo Zhang (undergraduate)
-<li>Rajarshi Saha (undergraduate)
-<li>Zhijian Yang (undergraduate)
-</ul>
-
-<br /><br />
-
-
-</div>
-
-
-</div>
+<li> <b>TagFi: Locating Ultra-Low Power WiFi Tags Using Unmodified WiFi Infrastructure</b>, Elahe Soltanaghaei, Adwait Dongare, Akarsh Prabhakara, Swarun Kumar, Anthony Rowe and Kamin Whitehouse, UbiComp  2021 [<a href="papers/tagfi-ubicomp2021.pdf">PAPER</a>]<br /><br />
+</li></ul></div></div></div>
 </div>
 
 <div class="clear"></div>
@@ -385,4 +349,5 @@ Two graduate students and three undergraduate students have been trained during 
 </center>
 </body>
 </html>
+
 
