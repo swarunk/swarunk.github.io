@@ -1,12 +1,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>NSF Grant 2030154 | Swarun Kumar, CMU</title>
-<meta name="keywords" content="NSF Grant 2030154, swarun kumar, cmu">
-<meta name="description" content="NSF Grant 2030154 page of Swarun Kumar, Associate Professor at Carnegie Mellon University. ">
+<title>Radarhd project | Swarun Kumar, CMU</title>
+<meta name="keywords" content="radarhd project, swarun kumar, cmu">
+<meta name="description" content="Radarhd project page of Swarun Kumar, Associate Professor at Carnegie Mellon University. ">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="images/favicon.ico" />
 <link type="text/css" rel="stylesheet" href="styles/styles.css" media="screen" />
-<link rel="canonical" href="https://swarunkumar.com/grant2030154.html" />
+<link rel="canonical" href="https://swarunkumar.com/radarhd.html" />
 
 <style>
 body {margin:0;font-family:Arial}
@@ -134,7 +134,7 @@ body {margin:0;font-family:Arial}
 {
 "@context": "http://www.schema.org",
 "@type": "Person",
-"@id": "https://swarunkumar.com/grant2030154.html/#person",
+"@id": "https://swarunkumar.com/radarhd.html/#person",
 "name": "Swarun Kumar",
 "birthPlace": "Chennai, India",
 "award": [
@@ -180,10 +180,10 @@ body {margin:0;font-family:Arial}
 ]
 }
 ],
-"url": "https://swarunkumar.com/grant2030154.html",
-"image": "https://swarunkumar.com/grant2030154.html/images/swarun_cmu_pic.png",
+"url": "https://swarunkumar.com/radarhd.html",
+"image": "https://swarunkumar.com/radarhd.html/images/swarun_cmu_pic.png",
 "sameAs": [
-"https://swarunkumar.com/grant2030154.html/",
+"https://swarunkumar.com/radarhd.html/",
 "https://twitter.com/swarunk",
 "https://www.facebook.com/swarun.s",
 "https://www.linkedin.com/in/swarun/",
@@ -315,61 +315,26 @@ function myFunction() {
 <div class="main" style='margin-left:20px;width:100%;margin-top:10px;margin-right:20px;'> 
 <!--<div class="main" style='margin-left:70px;width:750px;margin-top:30px'> -->
 <div><div>
+<h4>Project RadarHD: High Resolution Point Clouds from mmWave Radar</h4>
+<div style="width:100%; float:left; text-align:center; ">
+<div class="col50">
+<div style="padding:10px;border-width:2px;border-style:solid;">
+<img src="images/radarhd.png" style="width:100%; height:200px"/>
+</div>
+</div>
+<div class="col50">
+<div style="text-align:left">
+This paper explores a machine learning approach on data from a single-chip mmWave radar for generating high resolution point clouds -- a key sensing primitive for robotic applications such as mapping, odometry and localization. Unlike lidar and vision-based systems, mmWave radar can operate in harsh environments and see through occlusions like smoke, fog, and dust. Unfortunately, current mmWave processing techniques offer poor spatial resolution compared to lidar point clouds. This paper presents RadarHD, an end-to-end neural network that constructs lidar-like point clouds from low resolution radar input. Enhancing radar images is challenging due to the presence of specular and spurious reflections. Radar data also doesn't map well to traditional image processing techniques due to the signal's sinc-like spreading pattern. We overcome these challenges by training RadarHD on a large volume of raw I/Q radar data paired with lidar point clouds across diverse indoor settings. Our experiments show the ability to generate rich point clouds even in scenes unobserved during training and in the presence of heavy smoke occlusion.
 
-<h4>
-NSF Award (<a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2030154">2030154</a>):  SWIFT: Large: Averting Wireless Spectrum Pollution in the Era of Low-Power IoT
-</h4>
-
-<div>
-This webpage tracks the current progress of our funded project with the NSF.  Our sincere thanks to the National Science Foundation for supporting  our research. <br />
+</div>
+</div>
 </div>
 
-<h5>Project Goals</h4>
-
-<div>
-This project seeks to address the problem of spectrum pollution in the Internet-of-Things (IoT) era. Spectrum pollution is an inevitable challenge that emerges when low-cost and low-power wireless IoT devices deployed at scale cannot detect and respect the presence of other devices on shared spectrum. The core challenge is the low-power and simplicity of most IoT devices, due to which they are narrowband and unable to sense and avoid incumbents on shared spectrum. The project investigates a system that allows teams of geo-distributed low-power devices to quickly and efficiently scan wide bandwidths to avert interference. This proposal presents Swallow, a system design for low-power devices to sense spectrum at minimal energy and cost, allowing these devices to behave as low-cost and distributed spectrum observatories. The testbed developed through the project will serve as a vehicle for undergraduate and graduate-level projects as well as workshops for K-12 students in the City of Pittsburgh. The team has direct experience working with sensor deployments both at Carnegie Mellon, the City of Pittsburgh, United States Geological Survey (USGS), and local industry partners and will leverage these connections to deploy Swallow at scale.
-
-The project will study a low-power analog frontend and associated digital processing that allows IoT devices to summarize large bandwidths using inexpensive components. It investigates an end-to-end system design that collates measurements from distributed individually low-power IoT devices to obtain a shared spectrum map. It further develops an accurate localization framework to geo-locate individual IoT devices to sample spectrum occupancy at fine-spatial resolution. The wide bandwidth of Swallow’s low-power frontend naturally leads to an accurate solution for time-of flight based localization, where bandwidth is a key metric that dictates system accuracy. Swallow proposes a sub-meter accurate ranging solution for low-power wide-area radios that enables detecting proximity to known passive RF devices such as fixed radio telescopes and enables spectrum occupancy maps sampled at fine-spatial resolution. The project will be implemented and evaluated on a large programmable Low-Power Wide-Area Networking testbed in the Carnegie Mellon University campus that serves large parts of the City of Pittsburgh.
-</div>
-
-<h5>Activities and Outcomes</h4>
-
-<i> Intellectual Merit</i>
-The proposed research led to multiple accepted papers at IPSN and MobiSys. The research has been demonstrated on commodity low-power devices. 
-
+<div style="width:100%; float:left; padding-top:30px; ">
+<h4 style="margin-left:0px">Citation</h4>
 <ul>
-<li><b>Battery-free Wideband Spectrum Mapping using Commodity RFID Tags</b>, Mohamed Ibrahim, Atul Bansal, Kuang Yuan, Swarun Kumar and Peter Steenkiste, MobiCom 2023<br /></li>
-<li><b>Platypus: Sub-mm Micro-Displacement Sensing with Passive Millimeter-wave Tags As Phase Carriers</b>, Thomas Horton King, Jizheng He, Chun-Kai (Sean) Yao, Akarsh Prabhakara, Mohamad Alipour, Swarun Kumar, Anthony Rowe and Elahe Soltanaghai, IPSN 2023<br /></li>
-<li><b>High Resolution Point Clouds from mmWave Radar</b>, Akarsh Prabhakara, Tao Jin, Arnav Das, Gantavya Bhatt, Lilly Kumari, Elahe Soltanaghai, Jeff Bilmes, Swarun Kumar and Anthony Rowe, ICRA 2023<br /></li>
-<li><b>OwLL: Accurate LoRa Localization using the TV Whitespaces</b>, Atul Bansal, Akshay Gadre, Vaibhav Singh, Anthony Rowe, Bob Iannucci and Swarun Kumar, IPSN  2021<br /></li>
-<li><b>Cross Technology Distributed MIMO for Low Power IoT</b>, Revathy Narayanan, Swarun Kumar and C. Siva Ram Murthy, IEEE Transactions on Mobile Computing  2020<br /></li>
-</ul>
-
-<i> Broader Impacts</i>
-Two graduate students have been trained during the course of this research. The PI participated in several events organized by the Gelfand Center at CMU which invites groups of K-12 students and teachers to the CMU campus to learn about state-of-the-art research. The PI presented demos of RFID-enabled smart fabrics to the students.
-
-<h5>Personnel</h4>
-
-<i>Faculty</i>
-<ul>
-<li> Swarun Kumar (PI)
-<li> Anthony Rowe
-<li> Bob Iannucci
-</ul>
-
-<i>Students</i>
-<ul>
-<li>Atul Bansal
-<li>Akshay Gadre
-</ul>
-
-<br /><br />
-
-
-</div>
-
-
-</div>
+<li> <b>High Resolution Point Clouds from mmWave Radar</b>, Akarsh Prabhakara, Tao Jin, Arnav Das, Gantavya Bhatt, Lilly Kumari, Elahe Soltanaghai, Jeff Bilmes, Swarun Kumar and Anthony Rowe, ICRA 2023<br /><br />
+</li></ul></div></div></div>
 </div>
 
 <div class="clear"></div>
@@ -382,4 +347,5 @@ Two graduate students have been trained during the course of this research. The 
 </center>
 </body>
 </html>
+
 
