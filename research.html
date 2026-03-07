@@ -10,125 +10,169 @@
 <link rel="canonical" href="https://swarunkumar.com/research.html" />
 
 <style>
-body {margin:0;font-family:Arial}
+/* ---- RESET ---- */
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+}
 
+/* ---- SITE HEADER ---- */
+.site-header {
+  background: #fff;
+  border-bottom: 3px solid #992222;
+  padding: 0 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+  box-sizing: border-box;
+}
+
+.site-header__name {
+  font-size: 22px;
+  font-weight: bold;
+  color: #1a1a1a;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  font-family: 'Georgia', serif;
+}
+
+.site-header__name:hover {
+  color: #992222;
+}
+
+.site-header__logo img {
+  height: 48px;
+  width: auto;
+}
+
+/* ---- HAMBURGER BUTTON ---- */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  position: relative;
+  flex-shrink: 0;
+  padding: 0;
+  z-index: 200;
+}
+.nav-toggle span,
+.nav-toggle span::before,
+.nav-toggle span::after {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #444;
+  position: absolute;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+.nav-toggle span         { left: 7px; top: 17px; }
+.nav-toggle span::before { content: ''; left: 0; top: -7px; }
+.nav-toggle span::after  { content: ''; left: 0; top: 7px; }
+.nav-toggle[aria-expanded="true"] span { background: transparent; }
+.nav-toggle[aria-expanded="true"] span::before { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span::after  { transform: translateY(-7px) rotate(-45deg); }
+
+/* ---- NAV OVERLAY ---- */
+.nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 90;
+}
+.nav-overlay.is-open { display: block; }
+
+/* ---- NAVIGATION ---- */
 .topnav {
-  overflow: hidden;
-  background-color: #333;
+  background: #fafafa;
+  border-bottom: 1px solid #e4e4e4;
+  padding: 0 28px;
+  display: flex;
+  align-items: stretch;
 }
 
 .topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
+  display: inline-flex;
+  align-items: center;
+  color: #444;
+  padding: 0 18px;
+  height: 46px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-bottom: 3px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+  box-sizing: border-box;
+  white-space: nowrap;
 }
 
-.active {
-  background-color: #992222;
-  color: white;
+.topnav a:hover {
+  color: #992222;
+  border-bottom-color: #992222;
+  background: none;
 }
 
-.topnav .icon {
-  display: none;
+.topnav a.active {
+  color: #992222;
+  border-bottom-color: #992222;
+  background: none;
 }
 
-.dropdown {
-  float: left;
-  overflow: hidden;
-}
+@media screen and (max-width: 680px) {
+  .site-header { padding: 0 16px; height: 64px; }
+  .site-header__name { font-size: 17px; }
+  .site-header__logo { display: none; }
+  .nav-toggle { display: flex; align-items: center; justify-content: center; }
 
-.dropdown .dropbtn {
-  font-size: 17px;    
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.topnav a:hover, .dropdown:hover .dropbtn {
-  background-color: #555;
-  color: white;
-}
-
-.dropdown-content a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-@media screen and (max-width: 600px) {
-  .topnav a:not(:first-child), .dropdown .dropbtn {
-    display: none;
-  }
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
+  /* Drawer: off-screen by default, slides in when open */
+  .topnav {
+    position: fixed;
     top: 0;
+    right: 0;
+    width: 220px;
+    height: 100vh;
+    background: #fff;
+    border-bottom: none;
+    border-left: 1px solid #e4e4e4;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 80px 0 24px;
+    transform: translateX(100%);
+    transition: transform 0.28s ease;
+    z-index: 100;
+    box-shadow: -4px 0 20px rgba(0,0,0,0.12);
   }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-  .topnav.responsive .dropdown {float: none;}
-  .topnav.responsive .dropdown-content {position: relative;}
-  .topnav.responsive .dropdown .dropbtn {
-    display: block;
+  .topnav.is-open { transform: translateX(0); }
+
+  .topnav a {
     width: 100%;
-    text-align: left;
+    height: 48px;
+    padding: 0 24px;
+    border-bottom: 1px solid #f0f0f0 !important;
+    border-top: none;
+    font-size: 12px;
+    justify-content: flex-start;
   }
+  .topnav a:last-child { border-bottom: none !important; }
 }
 </style>
 
-
 <script type="text/javascript">
-
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-18185637-1']);
   _gaq.push(['_trackPageview']);
-
   (function() {
     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
-
 </script>
 
 <script type="application/ld+json">
@@ -197,245 +241,228 @@ body {margin:0;font-family:Arial}
 
 </head>
 <body>
-<center>
-<div class='container'>
-<div class="header">
 
+<div class="site-wrapper">
 
-<table style="width:100%">
-  <tbody><tr>
-    <td style="width:70%">
-  <h1 style="margin-top:20px;margin-left:20px" class="restitle">Swarun Kumar</h1><br>
-<!--  <h1 style="margin-top:10px;margin-left:-40px">Swarun Kumar</h1> <h2 style="font-size:12pt;font-weight:normal;margin-top:-10px;margin-left:-40px;">Sathaye Family Foundation Professor, ECE, CMU</h2> --><br>
-    </td>
-    <td style="width:30%; text-align: right;">
-      <img style="height:70px;margin-top:8px; margin-right:20px" src="images/CarnegieMellonUniversity_wordmark.gif"> 
-    </td>
-</tr> 
-  </tbody></table>
-
-</div>
-<div class='midgrad'></div>
-<div class="topnav" id="myTopnav">
-  <a href="index.html">Home</a>
-  <a href="publications.html">Publications</a>
-  <div class="dropdown">
-    <button class="dropbtn" style="height:52px;"><a href="research.html" style="padding:0px">Research&nbsp;</a>
-      <i class="fa fa-caret-down"></i>
+  <div class="site-header">
+    <a class="site-header__name" href="index.html">Swarun Kumar</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
     </button>
-    <div class="dropdown-content">
-      <a href="lpwan.html">Low-Power WANs</a>
-      <a href="bfree.html">Battery-Free IoT</a>
-      <a href="wifi.html">Future Wi-Fi</a>
-      <a href="xg.html">mm-Wave &amp; Beyond 5-G</a>
-      <a href="sensing.html">Wireless Sensing</a>
-      <a href="security.html">Wireless Security</a>
+    <div class="site-header__logo">
+      <img src="images/CarnegieMellonUniversity_wordmark.gif" alt="Carnegie Mellon University" />
     </div>
-  </div> 
-<!--  <a href="teaching.html">Teaching</a> -->
-  <div class="dropdown">
-    <button class="dropbtn"  style="height:52px;"><a href="awards.html" style="padding:0px">Awards&nbsp;</a>
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="awards.html">Awards and Honors</a>
-      <a href="grants.html">Research Grants</a>
-      <a href="code.html">Open Source Efforts</a>
-      <a href="outreach.html">Outreach</a>
+  </div>
+
+  <nav class="topnav" id="myTopnav">
+    <a href="index.html">Home</a>
+    <a href="publications.html">Publications</a>
+    <a href="research.html">Research</a>
+    <a href="awards.html">Awards</a>
+    <a href="outreach.html">Outreach</a>
+  </nav>
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <script>
+  (function() {
+    var toggle = document.getElementById('navToggle');
+    var nav    = document.getElementById('myTopnav');
+    var overlay = document.getElementById('navOverlay');
+
+    function openNav() {
+      nav.classList.add('is-open');
+      overlay.classList.add('is-open');
+      toggle.setAttribute('aria-expanded', 'true');
+    }
+    function closeNav() {
+      nav.classList.remove('is-open');
+      overlay.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+
+    toggle.addEventListener('click', function() {
+      nav.classList.contains('is-open') ? closeNav() : openNav();
+    });
+    overlay.addEventListener('click', closeNav);
+  })();
+  </script>
+
+  <div class="site-content">
+    <div class="site-main">
+      <div><div>
+
+<div style="margin-left:15px; margin-right:15px">
+<h4>RESEARCH</h4>
+<p class="research-intro">
+My research builds next-generation wireless systems that connect, sense, and act on the physical world.
+Over a decade of work spanning 100+ papers across SIGCOMM, MobiCom, SenSys, CHI, Nature and other venues
+falls under four thematic pillars.
+</p>
+
+<!-- Direction 1: Wireless Sensing -->
+<div class="rf-direction">
+  <div class="rf-direction__body">
+    <div class="rf-direction__content">
+      <div class="rf-direction__header">
+        <span class="rf-direction__num">01</span>
+        <div class="rf-direction__meta">
+          <h3>Wireless Sensing</h3>
+          <p class="rf-direction__tagline">Signals that see: health, materials, and environment without cameras or contact.</p>
+        </div>
+      </div>
+      <p class="rf-direction__desc">We repurpose wireless signals &mdash; mmWave radar, WiFi, RFID, and acoustic waves &mdash; as high-fidelity sensors for the physical world. Systems perceive human physiology (muscle fatigue, dental health, swallowing), material properties (surface texture, depth, package integrity), and environment (tire wear, wind noise, indoor positioning) without cameras or body contact. Cross-modal fusion &mdash; pairing mmWave with cameras or acoustic transducers &mdash; pushes spatial and material resolution far beyond what any single modality achieves alone.</p>
+      <div class="rf-direction__papers">
+        <a href="gigaflex.html" class="rf-paper-tag">GigaFlex</a>
+        <a href="mmtextora.html" class="rf-paper-tag">mmTextora</a>
+        <a href="sonicsieve.html" class="rf-paper-tag">SonicSieve</a>
+        <a href="hydra.html" class="rf-paper-tag">Hydra</a>
+        <a href="winddancer.html" class="rf-paper-tag">WindDancer</a>
+        <a href="dewinder.html" class="rf-paper-tag">DeWinder</a>
+        <a href="tomobrush.html" class="rf-paper-tag">ToMoBrush</a>
+        <a href="radarhd.html" class="rf-paper-tag">RadarHD</a>
+        <a href="platypus.html" class="rf-paper-tag">Platypus</a>
+        <a href="milton.html" class="rf-paper-tag">MilTOn</a>
+        <a href="nfcapsule.html" class="rf-paper-tag">NFCapsule</a>
+        <a href="metamoran.html" class="rf-paper-tag">Metamoran</a>
+        <a href="millimetro.html" class="rf-paper-tag">Millimetro</a>
+        <a href="osprey.html" class="rf-paper-tag">Osprey</a>
+        <a href="intuwition.html" class="rf-paper-tag">IntuWition</a>
+        <a href="wish.html" class="rf-paper-tag">WiSh</a>
+        <a href="rfwear.html" class="rf-paper-tag">RFWear</a>
+        <a href="wiseek.html" class="rf-paper-tag">WiSeek</a>
+      </div>
     </div>
-  </div> 
-  <a href="contact.html">Contact</a>
-  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+    <div class="rf-direction__visual">
+      <img src="images/wireless_as_sensors.jpg" alt="Wireless Sensing research" />
+    </div>
+  </div>
 </div>
 
-<script>
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-</script>
-
-<div class='midgrad' style="margin-top:0px"></div>
-<div class='content'>
-
-<!-- <div class="panel">
-<div class='navigation'>
-<table>
-<tr><td><div class='item'><a href="index.html">About Me</a></div></td></tr>
-<tr><td><div class='item'><a href="publications.html">Publications</a></div></td></tr>
-<tr><td>
-<div id="cssmenu">
-      <ul><li class="active has-sub"><a href="research.html">Research</a>
-	  <ul>
-	    <li class="has-sub"><a href="lpwan.html">Low-Power WANs</a>
-	    </li>
-	    <li class="has-sub"> <a href="bfree.html">Battery-Free IoT</a>
-	    </li>
-	    <li class="has-sub"><a href="wifi.html">Future Wi-Fi</a>
-	    </li>
-	    <li class="has-sub"><a href="xg.html">mm-Wave &amp; Beyond 5-G</a>
-	    </li>
-	    <li class="has-sub"> <a href="sensing.html">Wireless Sensing</a>
-	    </li>
-	    <li class="has-sub"><a href="security.html">Wireless Security</a>
-	    </li>
-          </ul>
-      </ul>
-</div>
-</td></tr>
-<tr><td><div class='item'><a href="teaching.html">Teaching</a></div></td></tr>
-<tr><td><div class='item'><a href="awards.html">Awards</a></div></td></tr>
-<tr><td><div class='item'><a href="grants.html">Grants</a></div></td></tr>
-<tr><td><div class='item'><a href="outreach.html">Outreach</a></div></td></tr>
-<tr><td>
-<div id="cssmenu">
-      <ul><li class="active has-sub"><a href="code.html">Code</a>
-	  <ul>
-	    <li class="last"><a href="openrf.html">OpenRF</a>
-	    </li>
-	    <li class="last"> <a href="lteyecode.html">LTEye</a> 
-	    </li>
-          </ul>
-      </ul>
+<!-- Direction 2: Wireless Actuation -->
+<div class="rf-direction">
+  <div class="rf-direction__body">
+    <div class="rf-direction__content">
+      <div class="rf-direction__header">
+        <span class="rf-direction__num">02</span>
+        <div class="rf-direction__meta">
+          <h3>Wireless Actuation</h3>
+          <p class="rf-direction__tagline">Signals that act: robots, reconfigurable antennas, and smart matter controlled by RF.</p>
+        </div>
+      </div>
+      <p class="rf-direction__desc">We engineer systems where wireless signals don&rsquo;t just carry information &mdash; they physically reshape matter. Liquid-metal antennas reconfigure to any operating frequency; metasurfaces convert or redirect RF energy across a 2&ndash;8&nbsp;GHz span; and electronics-free soft robots navigate environments using only wireless heating &mdash; no batteries, no wires, no on-board control. The result is a class of programmable wireless hardware whose morphology, resonance, and motion are all controlled through the air.</p>
+      <div class="rf-direction__papers">
+        <a href="pasta.html" class="rf-paper-tag">PASTA</a>
+        <a href="metapower.html" class="rf-paper-tag">MetaPower</a>
+        <a href="rfbridge.html" class="rf-paper-tag">RFBridge</a>
+        <a href="rfact.html" class="rf-paper-tag">RFact</a>
+        <a href="waser.html" class="rf-paper-tag">WASER</a>
+        <a href="nsr.html" class="rf-paper-tag">NSR</a>
+        <a href="viton.html" class="rf-paper-tag">Viton</a>
+        <a href="microsurf.html" class="rf-paper-tag">MicroSurf</a>
+        <a href="sdc.html" class="rf-paper-tag">SDC</a>
+        <a href="rftattoo.html" class="rf-paper-tag">RFTattoo</a>
+        <a href="recoil.html" class="rf-paper-tag">ReCoil</a>
+      </div>
+    </div>
+    <div class="rf-direction__visual">
+      <img src="images/wireless_as_actuators.png" alt="Wireless Actuation research" />
+    </div>
+  </div>
 </div>
 
-</td></tr>
-<tr><td><div class='item'><a href="contact.html">Contact</a></div></td></tr>
-</table>
- <br /> <br /> <br />
+<!-- Direction 3: Wireless Intelligence -->
+<div class="rf-direction">
+  <div class="rf-direction__body">
+    <div class="rf-direction__content">
+      <div class="rf-direction__header">
+        <span class="rf-direction__num">03</span>
+        <div class="rf-direction__meta">
+          <h3>Wireless Intelligence</h3>
+          <p class="rf-direction__tagline">Signals that think: AI-augmented networks, distributed MIMO, and spectrum-aware systems.</p>
+        </div>
+      </div>
+      <p class="rf-direction__desc">We design network architectures and AI-augmented systems that scale wireless capacity, sharpen spectral efficiency, and coordinate intelligent agents. Foundational contributions (MegaMIMO, OpenRF) demonstrated order-of-magnitude throughput gains in shared spectrum; later work eliminated channel-state feedback overhead in cellular networks. Most recently, LLMs assist FCC spectrum compliance (WiLL) and reinforcement learning guides whale-tagging robot teams (AVATARS) &mdash; reflecting a shift toward AI-native wireless design.</p>
+      <div class="rf-direction__papers">
+        <a href="will.html" class="rf-paper-tag">WiLL</a>
+        <a href="avatars.html" class="rf-paper-tag">AVATARS</a>
+        <a href="wsr.html" class="rf-paper-tag">WSR</a>
+        <a href="ice.html" class="rf-paper-tag">ICE</a>
+        <a href="clusterednets.html" class="rf-paper-tag">ClusteredNets</a>
+        <a href="ppb.html" class="rf-paper-tag">PPB</a>
+        <a href="lpr.html" class="rf-paper-tag">LPR</a>
+        <a href="mmfd.html" class="rf-paper-tag">mmFD</a>
+        <a href="fdstudy.html" class="rf-paper-tag">FDStudy</a>
+        <a href="megamimo.html" class="rf-paper-tag">MegaMIMO</a>
+        <a href="openrf.html" class="rf-paper-tag">OpenRF</a>
+        <a href="momimo.html" class="rf-paper-tag">MoMIMO</a>
+        <a href="ubicarse.html" class="rf-paper-tag">Ubicarse</a>
+        <a href="lteye.html" class="rf-paper-tag">LTEye</a>
+        <a href="carspeak.html" class="rf-paper-tag">CarSpeak</a>
+      </div>
+    </div>
+    <div class="rf-direction__visual">
+      <img src="images/wireless_intelligence.png" alt="Wireless Intelligence research" />
+    </div>
+  </div>
 </div>
 
+<!-- Direction 4: Wireless Networking -->
+<div class="rf-direction">
+  <div class="rf-direction__body">
+    <div class="rf-direction__content">
+      <div class="rf-direction__header">
+        <span class="rf-direction__num">04</span>
+        <div class="rf-direction__meta">
+          <h3>Wireless Networking</h3>
+          <p class="rf-direction__tagline">Signals that connect: from battery-free IoT tags to CubeSats in low Earth orbit.</p>
+        </div>
+      </div>
+      <p class="rf-direction__desc">We design protocols and hardware to bring wireless to the most resource-constrained settings: battery-free backscatter tags, long-range LP-WAN networks, ambient energy harvesting, and CubeSat/LEO satellite links. Research spans the full stack &mdash; from physical-layer waveform design to network-layer aggregation &mdash; enabling ubiquitous sensing at building and city scale. Metamaterial reflectors, ambient RF harvesting, and community-operated ground stations reflect a philosophy: wireless coverage should reach everyone, powered by nothing more than signals already in the air.</p>
+      <div class="rf-direction__papers">
+        <a href="metamorph.html" class="rf-paper-tag">MetaMorph</a>
+        <a href="vista.html" class="rf-paper-tag">Vista</a>
+        <a href="scaled.html" class="rf-paper-tag">SCALED</a>
+        <a href="tranquil.html" class="rf-paper-tag">TranQuiL</a>
+        <a href="openspace.html" class="rf-paper-tag">OpenSpace</a>
+        <a href="rfimap.html" class="rf-paper-tag">RFIMap</a>
+        <a href="platter.html" class="rf-paper-tag">PLatter</a>
+        <a href="fastloc.html" class="rf-paper-tag">FastLoc</a>
+        <a href="selfiestick.html" class="rf-paper-tag">SelfieStick</a>
+        <a href="owll.html" class="rf-paper-tag">OwLL</a>
+        <a href="quasar.html" class="rf-paper-tag">Quasar</a>
+        <a href="tagfi.html" class="rf-paper-tag">TagFi</a>
+        <a href="textilesense.html" class="rf-paper-tag">TextileSense</a>
+        <a href="sozu.html" class="rf-paper-tag">Sozu</a>
+        <a href="pushid.html" class="rf-paper-tag">PushID</a>
+        <a href="chariot.html" class="rf-paper-tag">CharIoT</a>
+        <a href="joltik.html" class="rf-paper-tag">Joltik</a>
+        <a href="opr.html" class="rf-paper-tag">OPR</a>
+        <a href="quail.html" class="rf-paper-tag">QuAiL</a>
+        <a href="chime.html" class="rf-paper-tag">Chime</a>
+        <a href="charm.html" class="rf-paper-tag">Charm</a>
+        <a href="choir.html" class="rf-paper-tag">Choir</a>
+        <a href="dliot.html" class="rf-paper-tag">DLIoT</a>
+      </div>
+    </div>
+    <div class="rf-direction__visual">
+      <img src="images/wireless_everywhere.png" alt="Wireless Networking research" />
+    </div>
+  </div>
 </div>
 
--->
-
-<div class="main" style='margin-left:20px;width:100%;margin-top:10px;margin-right:20px;'> 
-<!--<div class="main" style='margin-left:70px;width:750px;margin-top:30px'> -->
-<div><div>
-
-<h4>RESEARCH PROJECTS</h4>
-<div>
-My research interests are in the area of computer networks with a
-special focus on wireless networks and mobile systems. Recent years
-have witnessed an explosive growth in wireless connectivity, enabling
-a host of new applications and services.  My research designs and
-builds new wireless technologies that provide faster connectivity to
-our existing devices, connect previously unconnected objects to the
-Internet and provide novel services as a result. My research has made
-three broad contributions: <br />
+<div style="height:30px"></div>
+</div><!-- end margin wrapper -->
 </div>
 
-<h4 style="font-size:17px">Connecting the Internet of Things</h4>
-<div> Imagine if every object that surrounds you is wirelessly
-connected. My research explores: what would such a network look like?
-Specifically, we need systems that scale to a large number of
-connected devices, are self-configurable and secure. Most importantly,
-their battery needs to last for years, or perhaps they must operate
-with no battery at all. My research explores both these
-alternatives: </div><br />
+      </div>
+    </div>
+  </div><!-- end site-main -->
 
-<div style="width:100%; float:left; text-align:center; ">
-<center>
-<div class="col50">
-<b><a href="lpwan.html" style="text-decoration:none">Low-Power Wide-Area Networks</a></b> <br />
-<div style="margin-top:10px;padding:10px;border-width:2px;border-style:solid;width:80%;max-width:350px">
-<a href="lpwan.html" style="text-decoration:none"><img src="images/lpwan.png" style="width:100%;height:190px"/></a>
-</div>
-</div>
-<div class="col50">
-<b><a href="bfree.html" style="text-decoration:none">Battery-Free Internet of Things</a></b> <br /> 
-<div style="margin-top:10px;padding:10px;border-width:2px;border-style:solid;width:80%;max-width:350px">
-<a href="bfree.html" style="text-decoration:none"><img src="images/bfree.png" style="width:100%;height:190px"/></a>
-</div>
-</div>
-</center>
-</div>
+  <div class="site-footer">
+    Swarun Kumar &bull; Sathaye Family Foundation Professor &bull; ECE, Carnegie Mellon University
+  </div>
 
+</div><!-- end site-wrapper -->
 
-
-<div style="width:100%; float:left;padding-top:10px">
-<h4 style="font-size:17px">Next-Generation Wireless Connectivity</h4>
-<div> What would be the wireless technologies that connects
-smartphones and wireless devices of the future to Internet to be
-ten-fold faster than possible today? How would such a system scale
-with many wireless devices sharing the same spectrum?  My research
-explores next-generation wireless technologies to mitigate
-interference in wireless LANs and better configure cellular networks
-of today, as well as emerging technologies of the future such as
-mm-wave. My work spans both Wi-Fi and cellular networks beyond 5-G. </div><br />
-</div>
-
-<div style="width:100%; float:left; text-align:center; ">
-<center>
-<div class="col50">
-<b><a href="wifi.html" style="text-decoration:none">Future Wi-Fi</a></b> <br />
-<div style="margin-top:10px;padding:10px;border-width:2px;border-style:solid;width:80%;max-width:350px">
-<a href="wifi.html" style="text-decoration:none"><img src="images/wifi.png" style="width:100%;height:190px"/></a>
-</div>
-</div>
-<div class="col50">
-<b><a href="xg.html" style="text-decoration:none">mm-Wave and Beyond 5-G</a></b> <br /> 
-<div style="margin-top:10px;padding:10px;border-width:2px;border-style:solid;width:80%;max-width:350px">
-<a href="xg.html" style="text-decoration:none"><img src="images/xg.png" style="width:100%;height:190px"/></a>
-</div>
-</div>
-</center>
-</div>
-
-
-<div style="width:100%; float:left;padding-top:10px">
-<h4 style="font-size:17px">Novel Wireless Services</h4>
-<div>My research explores novel services that are enabled by
-next-generation wireless speeds and connectivity to objects around
-us. Specifically, we study if wireless communication radios can be
-re-used as a sensing mechanism. For instance, can wireless radios help
-us track our location, even if we are indoors, where GPS fails? Can
-wireless signals help us track our own body and sense the environment
-around us? My research also studies the security and privacy
-implications of such future wireless networks and services.
- </div><br />
-</div>
-
-
-<div style="width:100%; float:left; text-align:center; ">
-<center>
-<div class="col50">
-<b><a href="sensing.html" style="text-decoration:none">Wireless Sensing and Localization</a></b> <br />
-<div style="margin-top:10px;padding:10px;border-width:2px;border-style:solid;width:80%;max-width:350px">
-<a href="sensing.html" style="text-decoration:none"><img src="images/sensing.png" style="width:100%;height:190px"/></a>
-</div>
-</div>
-<div class="col50">
-<b><a href="security.html" style="text-decoration:none">Wireless Security and Privacy</a></b> <br /> 
-<div style="margin-top:10px;padding:10px;border-width:2px;border-style:solid;width:80%;max-width:350px">
-<a href="security.html" style="text-decoration:none"><img src="images/security.png" style="width:100%;height:190px"/></a>
-</div>
-</div>
-</center>
-</div>
-
-
-<div style="width:100%; float:left; height=30px; text-align:center; ">
-&nbsp; <br /><br />
-</div>
-<br /><br />
-</div>
-
-</div>
-</div>
-
-<div class="clear"></div>
-</div>
-<div class="endgrad"></div>
-<div class="clear"></div>
-<div class='endgrad'></div>
-<div class="footer"><div style="margin-top:7px">Swarun Kumar, Sathaye Family Foundation Professor, CMU ECE</div></div>
-</div>
-</center>
 </body>
 </html>
-

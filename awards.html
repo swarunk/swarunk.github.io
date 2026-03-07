@@ -10,125 +10,169 @@
 <link rel="canonical" href="https://swarunkumar.com/awards.html" />
 
 <style>
-body {margin:0;font-family:Arial}
+/* ---- RESET ---- */
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+}
 
+/* ---- SITE HEADER ---- */
+.site-header {
+  background: #fff;
+  border-bottom: 3px solid #992222;
+  padding: 0 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+  box-sizing: border-box;
+}
+
+.site-header__name {
+  font-size: 22px;
+  font-weight: bold;
+  color: #1a1a1a;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  font-family: 'Georgia', serif;
+}
+
+.site-header__name:hover {
+  color: #992222;
+}
+
+.site-header__logo img {
+  height: 48px;
+  width: auto;
+}
+
+/* ---- HAMBURGER BUTTON ---- */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  position: relative;
+  flex-shrink: 0;
+  padding: 0;
+  z-index: 200;
+}
+.nav-toggle span,
+.nav-toggle span::before,
+.nav-toggle span::after {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #444;
+  position: absolute;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+.nav-toggle span         { left: 7px; top: 17px; }
+.nav-toggle span::before { content: ''; left: 0; top: -7px; }
+.nav-toggle span::after  { content: ''; left: 0; top: 7px; }
+.nav-toggle[aria-expanded="true"] span { background: transparent; }
+.nav-toggle[aria-expanded="true"] span::before { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span::after  { transform: translateY(-7px) rotate(-45deg); }
+
+/* ---- NAV OVERLAY ---- */
+.nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 90;
+}
+.nav-overlay.is-open { display: block; }
+
+/* ---- NAVIGATION ---- */
 .topnav {
-  overflow: hidden;
-  background-color: #333;
+  background: #fafafa;
+  border-bottom: 1px solid #e4e4e4;
+  padding: 0 28px;
+  display: flex;
+  align-items: stretch;
 }
 
 .topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
+  display: inline-flex;
+  align-items: center;
+  color: #444;
+  padding: 0 18px;
+  height: 46px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-bottom: 3px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+  box-sizing: border-box;
+  white-space: nowrap;
 }
 
-.active {
-  background-color: #992222;
-  color: white;
+.topnav a:hover {
+  color: #992222;
+  border-bottom-color: #992222;
+  background: none;
 }
 
-.topnav .icon {
-  display: none;
+.topnav a.active {
+  color: #992222;
+  border-bottom-color: #992222;
+  background: none;
 }
 
-.dropdown {
-  float: left;
-  overflow: hidden;
-}
+@media screen and (max-width: 680px) {
+  .site-header { padding: 0 16px; height: 64px; }
+  .site-header__name { font-size: 17px; }
+  .site-header__logo { display: none; }
+  .nav-toggle { display: flex; align-items: center; justify-content: center; }
 
-.dropdown .dropbtn {
-  font-size: 17px;    
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.topnav a:hover, .dropdown:hover .dropbtn {
-  background-color: #555;
-  color: white;
-}
-
-.dropdown-content a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-@media screen and (max-width: 600px) {
-  .topnav a:not(:first-child), .dropdown .dropbtn {
-    display: none;
-  }
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
+  /* Drawer: off-screen by default, slides in when open */
+  .topnav {
+    position: fixed;
     top: 0;
+    right: 0;
+    width: 220px;
+    height: 100vh;
+    background: #fff;
+    border-bottom: none;
+    border-left: 1px solid #e4e4e4;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 80px 0 24px;
+    transform: translateX(100%);
+    transition: transform 0.28s ease;
+    z-index: 100;
+    box-shadow: -4px 0 20px rgba(0,0,0,0.12);
   }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-  .topnav.responsive .dropdown {float: none;}
-  .topnav.responsive .dropdown-content {position: relative;}
-  .topnav.responsive .dropdown .dropbtn {
-    display: block;
+  .topnav.is-open { transform: translateX(0); }
+
+  .topnav a {
     width: 100%;
-    text-align: left;
+    height: 48px;
+    padding: 0 24px;
+    border-bottom: 1px solid #f0f0f0 !important;
+    border-top: none;
+    font-size: 12px;
+    justify-content: flex-start;
   }
+  .topnav a:last-child { border-bottom: none !important; }
 }
 </style>
 
-
 <script type="text/javascript">
-
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-18185637-1']);
   _gaq.push(['_trackPageview']);
-
   (function() {
     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
-
 </script>
 
 <script type="application/ld+json">
@@ -197,260 +241,312 @@ body {margin:0;font-family:Arial}
 
 </head>
 <body>
-<center>
-<div class='container'>
-<div class="header">
 
+<div class="site-wrapper">
 
-<table style="width:100%">
-  <tbody><tr>
-    <td style="width:70%">
-  <h1 style="margin-top:20px;margin-left:20px" class="restitle">Swarun Kumar</h1><br>
-<!--  <h1 style="margin-top:10px;margin-left:-40px">Swarun Kumar</h1> <h2 style="font-size:12pt;font-weight:normal;margin-top:-10px;margin-left:-40px;">Sathaye Family Foundation Professor, ECE, CMU</h2> --><br>
-    </td>
-    <td style="width:30%; text-align: right;">
-      <img style="height:70px;margin-top:8px; margin-right:20px" src="images/CarnegieMellonUniversity_wordmark.gif"> 
-    </td>
-</tr> 
-  </tbody></table>
-
-</div>
-<div class='midgrad'></div>
-<div class="topnav" id="myTopnav">
-  <a href="index.html">Home</a>
-  <a href="publications.html">Publications</a>
-  <div class="dropdown">
-    <button class="dropbtn" style="height:52px;"><a href="research.html" style="padding:0px">Research&nbsp;</a>
-      <i class="fa fa-caret-down"></i>
+  <div class="site-header">
+    <a class="site-header__name" href="index.html">Swarun Kumar</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
     </button>
-    <div class="dropdown-content">
-      <a href="lpwan.html">Low-Power WANs</a>
-      <a href="bfree.html">Battery-Free IoT</a>
-      <a href="wifi.html">Future Wi-Fi</a>
-      <a href="xg.html">mm-Wave &amp; Beyond 5-G</a>
-      <a href="sensing.html">Wireless Sensing</a>
-      <a href="security.html">Wireless Security</a>
+    <div class="site-header__logo">
+      <img src="images/CarnegieMellonUniversity_wordmark.gif" alt="Carnegie Mellon University" />
     </div>
-  </div> 
-<!--  <a href="teaching.html">Teaching</a> -->
-  <div class="dropdown">
-    <button class="dropbtn"  style="height:52px;"><a href="awards.html" style="padding:0px">Awards&nbsp;</a>
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="awards.html">Awards and Honors</a>
-      <a href="grants.html">Research Grants</a>
-      <a href="code.html">Open Source Efforts</a>
-      <a href="outreach.html">Outreach</a>
+  </div>
+
+  <nav class="topnav" id="myTopnav">
+    <a href="index.html">Home</a>
+    <a href="publications.html">Publications</a>
+    <a href="research.html">Research</a>
+    <a href="awards.html">Awards</a>
+    <a href="outreach.html">Outreach</a>
+  </nav>
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <script>
+  (function() {
+    var toggle = document.getElementById('navToggle');
+    var nav    = document.getElementById('myTopnav');
+    var overlay = document.getElementById('navOverlay');
+
+    function openNav() {
+      nav.classList.add('is-open');
+      overlay.classList.add('is-open');
+      toggle.setAttribute('aria-expanded', 'true');
+    }
+    function closeNav() {
+      nav.classList.remove('is-open');
+      overlay.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+
+    toggle.addEventListener('click', function() {
+      nav.classList.contains('is-open') ? closeNav() : openNav();
+    });
+    overlay.addEventListener('click', closeNav);
+  })();
+  </script>
+
+  <div class="site-content">
+    <div class="site-main">
+      <div><div>
+
+<div style="margin-left:15px; margin-right:15px">
+
+<!-- AWARDS AND HONORS -->
+<div class="awards-section">
+<h4>AWARDS AND HONORS</h4>
+<ul class="award-list">
+  <li><span class="award-year">2025</span> IIT Madras Young Alumni Award</li>
+  <li><span class="award-year">2024</span> ACM SIGMOBILE Rockstar Award</li>
+  <li><span class="award-year">2021</span> ACM SIGBED Early Career Researcher Award</li>
+  <li><span class="award-year">2021</span> CIT Dean&rsquo;s Early Career Fellow, CMU</li>
+  <li><span class="award-year">2021</span> ACM/IEEE IPSN Best Paper Award</li>
+  <li><span class="award-year">2020</span> ACM MobiSys Best Paper Honorable Mention and Best Demo</li>
+  <li><span class="award-year">2020</span> ACM/IEEE IPSN Best Paper Award</li>
+  <li><span class="award-year">2019</span> NSF CAREER Award</li>
+  <li><span class="award-year">2018</span> ACM/IEEE IPSN Best Paper Award</li>
+  <li><span class="award-year">2017</span> Google Faculty Research Award</li>
+  <li><span class="award-year">2017</span> NSF CRII Award</li>
+  <li><span class="award-year">2016</span> SIGCOMM Best Paper Award</li>
+  <li><span class="award-year">2015</span> George M. Sprowls Award for Outstanding Ph.D. Thesis in Computer Science, MIT</li>
+  <li><span class="award-year">2014</span> Communications of the ACM (CACM) Research Highlight for MegaMIMO</li>
+  <li><span class="award-year">2014</span> MobiCom Best Presentation Second Place Award</li>
+  <li><span class="award-year">2014</span> MobiCom S3 Workshop Best Poster Award</li>
+  <li><span class="award-year">2013</span> MobiCom S3 Workshop Best Elevator Pitch Award</li>
+  <li><span class="award-year">2013</span> MIT 100K Entrepreneurship Contest: Finalist (Business Plan)</li>
+  <li><span class="award-year">2012</span> MIT 100K Entrepreneurship Contest: Winning Team (Elevator Pitch)</li>
+  <li><span class="award-year">2010</span> MIT Jacobs Presidential Fellowship</li>
+  <li><span class="award-year">2010</span> Best Paper Award, SECRYPT</li>
+  <li><span class="award-year">2010</span> Valedictorian &amp; President of India Gold Medal for Highest CGPA, IIT Madras</li>
+  <li><span class="award-year">2008</span> Prof. Narasihman Fellowship, IIT Madras</li>
+  <li><span class="award-year">2006</span> Bronze Medal, International Olympiad on Informatics</li>
+  <li><span class="award-year">2006</span> Invited to Republic Day parade from Prime Minister&rsquo;s box for excellence in CBSE exams</li>
+</ul>
+</div>
+
+<!-- RESEARCH GRANTS -->
+<div class="awards-section">
+<h4>RESEARCH GRANTS</h4>
+<p style="font-size:14px; margin-bottom:12px">Our sincere thanks to the National Science Foundation for supporting our research.</p>
+<ul class="grant-list">
+  <li>
+    <a class="grant-id" href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2433903">NSF 2433903</a>
+    <div>Towards Software-Defined Soft Robotic Antennas for Spectrum Era 4 <em>(PI: Swarun Kumar, co-PI: Carmel Majidi)</em> </div>
+  </li>
+  <li>
+    <a class="grant-id" href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2111751">NSF 2111751</a>
+    <div>CPS: Frontier: Software-Defined Nanosatellite Constellations: The Foundation of Future Space-Based Cyber-physical Systems <em>(PI: Brandon Lucia, co-PIs: Swarun Kumar, Vyas Sekar, Zac Manchester, Gauri Joshi)</em></div>
+  </li>
+  <li>
+    <a class="grant-id" href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2030154">NSF 2030154</a>
+    <div>SWIFT: Large: Averting Wireless Spectrum Pollution in the Era of Low-Power IoT <em>(PI: Swarun Kumar)</em> &mdash; <a class="grant-site" href="grant2030154.html">Project Website</a></div>
+  </li>
+  <li>
+    <a class="grant-id" href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2106921">NSF 2106921</a>
+    <div>CNS: Medium: Energy Centric Wireless Sensor Node System for Smart Farms <em>(CMU Site PI: Swarun Kumar)</em> &mdash; <a class="grant-site" href="grant2106921.html">Project Website</a></div>
+  </li>
+  <li>
+    <a class="grant-id" href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2007786">NSF 2007786</a>
+    <div>CNS: Small: Harnessing Wireless Actuation <em>(PI: Swarun Kumar)</em> &mdash; <a class="grant-site" href="grant2007786.html">Project Website</a></div>
+  </li>
+  <li>
+    <a class="grant-id" href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1942902">NSF 1942902</a>
+    <div>CAREER: Pushing the Limits of Low-Power Wide-Area Networks <em>(PI: Swarun Kumar)</em> &mdash; <a class="grant-site" href="grant1942902.html">Project Website</a></div>
+  </li>
+  <li>
+    <a class="grant-id" href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1718435">NSF 1718435</a>
+    <div>NeTS: Small: Handheld mm-Accurate Positioning for Wearables <em>(PI: Swarun Kumar)</em> &mdash; <a class="grant-site" href="grant1718435.html">Project Website</a></div>
+  </li>
+  <li>
+    <a class="grant-id" href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1657318">NSF 1657318</a>
+    <div>CRII: NeTS: A Wireless Sensing Platform for Safe Autonomous Driving <em>(PI: Swarun Kumar)</em> &mdash; <a class="grant-site" href="grant1657318.html">Project Website</a></div>
+  </li>
+  <li>
+    <a class="grant-id" href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1738114">NSF 1738114</a>
+    <div>EAGER: SC2: A Systems Approach to Spectrum Collaboration <em>(PI: Swarun Kumar, co-PIs: Anthony Rowe, Bob Iannucci)</em></div>
+  </li>
+  <li>
+    <a class="grant-id" href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1837607">NSF 1837607</a>
+    <div>CPS: Medium: Secure Computing and Cross-Layer Anomaly Detection in the IoT <em>(PI: Soummya Kar, co-PIs: Jos&eacute; Moura, Swarun Kumar)</em></div>
+  </li>
+  <li>
+    <a class="grant-id" href="https://nsf.gov/awardsearch/showAward?AWD_ID=1823235">NSF 1823235</a>
+    <div>CRI: II-New: Mobile Millimeter-Wave MIMO Network Based on CMU Chipscale Beamformers <em>(Rick Carley, Jeyanandh Paramesh, Swarun Kumar &mdash; co-PI)</em> &mdash; <a class="grant-site" href="grant1823235.html">Project Website</a></div>
+  </li>
+</ul>
+
+<p style="font-size:13px; font-weight:bold; margin-top:24px; margin-bottom:4px">Other Federal Sources</p>
+<div class="logo-strip">
+  <a href="https://darpa.mil"><img src="images/darpa.png" alt="DARPA" /></a>
+  <a href="https://onr.navy.mil/"><img src="images/onr.png" alt="ONR" /></a>
+  <a href="https://arl.devcom.army.mil/"><img src="images/arl.png" alt="ARL" /></a>
+</div>
+
+<p style="font-size:13px; font-weight:bold; margin-top:24px; margin-bottom:4px">Industry Supporters</p>
+<div class="logo-strip">
+  <a href="https://services.google.com/fh/files/blogs/v2_final_list.pdf"><img src="images/google.png" alt="Google" /></a>
+  <a href="https://www.bosch.com/"><img src="images/bosch.png" alt="Bosch" /></a>
+  <a href="https://www.bridgestone.com/"><img src="images/bridgestone.png" alt="Bridgestone" /></a>
+  <a href="https://www.cisco.com/"><img src="images/cisco.png" alt="CISCO" /></a>
+  <a href="https://www.polariswireless.com/"><img src="images/polaris.jpeg" alt="Polaris" /></a>
+  <a href="https://www.janestreet.com/"><img src="images/jane-street.png" alt="Jane Street" /></a>
+  <a href="https://www.qualcomm.com/"><img src="images/qualcomm.png" alt="Qualcomm" /></a>
+</div>
+
+<p style="font-size:13px; font-weight:bold; margin-top:16px; margin-bottom:4px">Research Centers</p>
+<div class="logo-strip">
+  <a href="https://cylab.cmu.edu/index.html"><img src="images/cylab.png" alt="CyLab" /></a>
+  <a href="https://www.cmu.edu/energy/"><img src="images/scott.jpg" alt="Scott Institute" /></a>
+  <a href="https://www.cylab.cmu.edu/research/initiatives/iot/index.html"><img src="images/iot-cylab.png" alt="IoT@CyLab" /></a>
+  <a href="https://engineering.cmu.edu/afretec/index.html"><img src="images/afretec.png" alt="Afretec" /></a>
+  <a href="https://safety21.cmu.edu/"><img src="images/safety21.png" alt="Safety21" /></a>
+  <a href="https://engineering.cmu.edu/mfi/index.html"><img src="images/mfi.png" alt="MFI" /></a>
+</div>
+</div>
+
+<!-- OPEN SOURCE CODE -->
+<div class="awards-section">
+<h4>OPEN SOURCE CODE</h4>
+<ul class="award-list">
+<li><span class="award-year" style="flex:0 0 auto;min-width:60px">RadarHD</span><span><a href="https://github.com/akarsh-prabhakara/RadarHD">High Resolution Point Clouds from mmWave Radar</a></span></li>
+<li><span class="award-year" style="flex:0 0 auto;min-width:60px">Quasar</span><span><a href="https://github.com/vaibhavsingh96/Quasar">A Community-Driven Approach to Democratize Access to Satellite Ground Stations</a></span></li>
+<li><span class="award-year" style="flex:0 0 auto;min-width:60px">IntuWition</span><span><a href="https://github.com/d95zhang/IntuWition">On the Feasibility of Wi-Fi Based Material Sensing </a></span></li>
+<li><span class="award-year" style="flex:0 0 auto;min-width:60px">LTEye</span><span><a href="https://swarunkumar.com/lteyecode.html">LTE Radio Analytics Made Easy and Accessible</a></span></li>
+<li><span class="award-year" style="flex:0 0 auto;min-width:60px">OpenRF</span><span><a href="https://www.swarunkumar.com/openrfcode.html">Bringing Cross-Layer MIMO to Today&#039;s Wireless LANs</a></span></li>
+</ul>
+</div>
+
+<!-- PRESS -->
+<div class="awards-section">
+<h4>PRESS</h4>
+<ul class="press-list">
+  <li>
+    <span class="press-title">Pushing the Boundaries of Wireless Sensing Technologies</span>
+    <span class="press-meta">July 2025 &mdash; <a href="https://www.connectivity.technology/2025/07/pushing-boundaries-of-wireless-sensing.html">Connectivity Technology Blog</a></span>
+  </li>
+  <li>
+    <span class="press-title">No, Oct. 4 National Emergency Alert Test Won&rsquo;t Turn You into a Zombie. Here Are the Facts.</span>
+    <span class="press-meta">Jeff Cercone, October 2023 &mdash; <a href="https://www.politifact.com/article/2023/oct/03/no-oct-4-national-emergency-alert-test-wont-turn-y/">PolitiFact</a></span>
+  </li>
+  <li>
+    <span class="press-title">Phone Calls on Planes: Should They Be Allowed?</span>
+    <span class="press-meta">2023 &mdash; USA Today</span>
+  </li>
+  <li>
+    <span class="press-title">Why 5G Can Be Slower Than 4G Networks</span>
+    <span class="press-meta">WTAE Pittsburgh</span>
+  </li>
+  <li>
+    <span class="press-title">This Fiber Can Turn Your Clothes into Listening Devices</span>
+    <span class="press-meta"><a href="https://www.thedailybeast.com/this-fiber-can-turn-your-clothes-into-listening-devices/">The Daily Beast</a></span>
+  </li>
+  <li>
+    <span class="press-title">Carnegie Mellon University&rsquo;s Swarun Kumar On How 5G Technology May Improve and Impact Our Lives</span>
+    <span class="press-meta">David Liu, 2021 &mdash; <a href="https://medium.com/authority-magazine/carnegie-mellon-universitys-swarun-kumar-on-how-5g-technology-may-improve-and-impact-our-lives-740679788a32">Authority Magazine</a></span>
+  </li>
+  <li>
+    <span class="press-title">Why Affordable 5G Is So Important</span>
+    <span class="press-meta">2021 &mdash; <a href="https://www.lifewire.com/why-affordable-5g-is-so-important-5094491">Lifewire</a></span>
+  </li>
+  <li>
+    <span class="press-title">Carnegie Mellon University&rsquo;s Swarun Kumar: 5G Could Improve Our Lives in Many Ways</span>
+    <span class="press-meta">2021 &mdash; <a href="https://thriveglobal.com/stories/carnegie-mellon-universitys-swarun-kumar-5g-could-improve-our-lives-in-many-ways/">Thrive Global</a></span>
+  </li>
+  <li>
+    <span class="press-title">5G: It&rsquo;s Not Just for Your Smartphone</span>
+    <span class="press-meta">2021 &mdash; <a href="https://www.techrepublic.com/article/5g-its-not-just-for-your-smartphone/">TechRepublic</a></span>
+  </li>
+  <li>
+    <span class="press-title">How True Wireless Headphones Work</span>
+    <span class="press-meta">2020 &mdash; <a href="https://www.consumerreports.org/headphones/how-true-wireless-headphones-work-a1852870247/">Consumer Reports</a></span>
+  </li>
+  <li>
+    <span class="press-title">Empowering Low-Power Wide-Area Networks to Meet the IoT Challenge</span>
+    <span class="press-meta">Alan Weissberger, May 2020 &mdash; <a href="https://techblog.comsoc.org/2020/05/02/empowering-low-power-wide-area-networks-to-meet-the-iot-challenge/">IEEE ComSoc Tech Blog</a></span>
+  </li>
+  <li>
+    <span class="press-title">Bluetooth Contact Tracing Needs Bigger, Better Data</span>
+    <span class="press-meta">Patrick Howell O&rsquo;Neill, April 2020 &mdash; <a href="https://www.technologyreview.com/2020/04/22/1000353/bluetooth-contact-tracing-needs-bigger-better-data/">MIT Technology Review</a></span>
+  </li>
+  <li>
+    <span class="press-title">Pittsburgh Updates Its Infrastructure In Preparation For 5G</span>
+    <span class="press-meta">Maria Scapellato, February 2020 &mdash; <a href="https://www.wesa.fm/post/pittsburgh-updates-its-infrastructure-preparation-5g#stream/0">90.5 FM WESA</a></span>
+  </li>
+  <li>
+    <span class="press-title">The Next Leap in Wireless Charging</span>
+    <span class="press-meta">Bree Fowler, January 2020 &mdash; <a href="https://www.consumerreports.org/emerging-technology/wireless-charging-the-next-leap-wireless-power/">Consumer Reports</a></span>
+  </li>
+  <li>
+    <span class="press-title">The Future of Wireless Is Connecting Everyday Objects</span>
+    <span class="press-meta">July 2019 &mdash; <a href="https://www.ted.com/talks/swarun_kumar_the_future_of_wireless_is_connecting_everyday_objects">TED Talk (TEDxPittsburgh)</a></span>
+  </li>
+  <li>
+    <span class="press-title">Technology Hopes to End the Lost Luggage Blues</span>
+    <span class="press-meta">Stephen Mraz, June 2019 &mdash; <a href="https://www.machinedesign.com/mechanical-motion-systems/article/21837880/technology-hopes-to-end-the-lost-luggage-blues">Machine Design</a></span>
+  </li>
+  <li>
+    <span class="press-title">5G &mdash; A Homegrown Revolution</span>
+    <span class="press-meta">May 2018 &mdash; <a href="https://www.washingtonpost.com/sf/brand-connect/qualcomm/a-homegrown-revolution/">Washington Post</a></span>
+  </li>
+  <li>
+    <span class="press-title">How Your iPhone Could Know When You&rsquo;re in a Moving Car</span>
+    <span class="press-meta">Rob Verger, June 2017 &mdash; Popular Science</span>
+  </li>
+  <li>
+    <span class="press-title">Wireless Networks That Follow You Around a Room, Optimize Themselves and Even Talk to Each Other Out Loud</span>
+    <span class="press-meta">2013 &mdash; <a href="http://www.networkworld.com/article/2170646/wireless/wireless-networks-that-follow-you-around-a-room--optimize-themselves-and-even-talk-to-each-.html">NetworkWorld</a></span>
+  </li>
+  <li>
+    <span class="press-title">Making Driverless Cars Safer</span>
+    <span class="press-meta">2012 &mdash; <a href="http://tech.slashdot.org/story/12/10/12/2117237/making-driverless-cars-safer">Slashdot</a></span>
+  </li>
+  <li>
+    <span class="press-title">Driverless Car Is Wireless Star at MIT</span>
+    <span class="press-meta">2012 &mdash; <a href="http://www.networkworld.com/article/2160689/wireless/driverless-car-is-wireless-star-at-mit.html">NetworkWorld</a></span>
+  </li>
+  <li>
+    <span class="press-title">Talking Cars Help Each Other See Around Blind Corners</span>
+    <span class="press-meta">2012 &mdash; <a href="http://www.newscientist.com/article/mg21528825.400-talking-cars-help-each-other-see-around-blind-corners.html">NewScientist</a></span>
+  </li>
+  <li>
+    <span class="press-title">Be Sensitive Thermometers if Not Thermostats</span>
+    <span class="press-meta">2010 &mdash; <a href="http://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/be-sensitive-thermometers-if-not-thermostats/article543578.ece">The Hindu</a></span>
+  </li>
+  <li>
+    <span class="press-title">Indian Students Are Set for Informatics Olympiad</span>
+    <span class="press-meta">2006 &mdash; <a href="http://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/indian-students-are-set-for-informatics-olympiad/article3089323.ece">The Hindu</a></span>
+  </li>
+  <li>
+    <span class="press-title">Planned Effort the Key for Chennai Students</span>
+    <span class="press-meta">2006 &mdash; <a href="http://www.ndtv.com">NDTV</a></span>
+  </li>
+</ul>
+</div>
+
+<!-- PROFESSIONAL SERVICE -->
+<div class="awards-section">
+<h4>PROFESSIONAL SERVICE</h4>
+<ul class="service-list">
+  <li><b>Chair / Co-chair:</b> MobiSys 2025, COMSNETS 22-23, Workshop on Communication-aware Robotics in RSS 2014; WinTech 2018; MobiCom 2018 Posters</li>
+  <li><b>Reviewer:</b> SIGCOMM 2016; MobiCom 2016&ndash;Present; INFOCOM 2017&ndash;2019; CoNext 2018</li>
+  <li><b>Associate Editor:</b> IEEE Transactions on Sensor Networks (2018&ndash;Present)</li>
+  <li><b>External reviewer:</b> International Journal for Robotics Research; IEEE Transactions on Networking; IEEE Transactions on Wireless; IEEE Transactions on Signal Processing; INFOCOM; NSDI; IEEE Pervasive Computing</li>
+</ul>
+</div>
+
+</div>
+</div>
+
+      </div>
     </div>
-  </div> 
-  <a href="contact.html">Contact</a>
-  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-</div>
+  </div><!-- end site-main -->
 
-<script>
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-</script>
+  <div class="site-footer">
+    Swarun Kumar &bull; Sathaye Family Foundation Professor &bull; ECE, Carnegie Mellon University
+  </div>
 
-<div class='midgrad' style="margin-top:0px"></div>
-<div class='content'>
+</div><!-- end site-wrapper -->
 
-<!-- <div class="panel">
-<div class='navigation'>
-<table>
-<tr><td><div class='item'><a href="index.html">About Me</a></div></td></tr>
-<tr><td><div class='item'><a href="publications.html">Publications</a></div></td></tr>
-<tr><td>
-<div id="cssmenu">
-      <ul><li class="active has-sub"><a href="research.html">Research</a>
-	  <ul>
-	    <li class="has-sub"><a href="lpwan.html">Low-Power WANs</a>
-	    </li>
-	    <li class="has-sub"> <a href="bfree.html">Battery-Free IoT</a>
-	    </li>
-	    <li class="has-sub"><a href="wifi.html">Future Wi-Fi</a>
-	    </li>
-	    <li class="has-sub"><a href="xg.html">mm-Wave &amp; Beyond 5-G</a>
-	    </li>
-	    <li class="has-sub"> <a href="sensing.html">Wireless Sensing</a>
-	    </li>
-	    <li class="has-sub"><a href="security.html">Wireless Security</a>
-	    </li>
-          </ul>
-      </ul>
-</div>
-</td></tr>
-<tr><td><div class='item'><a href="teaching.html">Teaching</a></div></td></tr>
-<tr><td><div class='item'><a href="awards.html">Awards</a></div></td></tr>
-<tr><td><div class='item'><a href="grants.html">Grants</a></div></td></tr>
-<tr><td><div class='item'><a href="outreach.html">Outreach</a></div></td></tr>
-<tr><td>
-<div id="cssmenu">
-      <ul><li class="active has-sub"><a href="code.html">Code</a>
-	  <ul>
-	    <li class="last"><a href="openrf.html">OpenRF</a>
-	    </li>
-	    <li class="last"> <a href="lteyecode.html">LTEye</a> 
-	    </li>
-          </ul>
-      </ul>
-</div>
-
-</td></tr>
-<tr><td><div class='item'><a href="contact.html">Contact</a></div></td></tr>
-</table>
- <br /> <br /> <br />
-</div>
-
-</div>
-
--->
-
-<div class="main" style='margin-left:20px;width:100%;margin-top:10px;margin-right:20px;'> 
-<!--<div class="main" style='margin-left:70px;width:750px;margin-top:30px'> -->
-<div><div>
-
-
-<div style="margin-left:30px">
-<h4 style="margin-left:0px;;">NEWS</h4>
-<ul style="margin-top:-10px">
-<li> Our paper on <a href="rfact.html">wireless soft robots</a> appeared at Nature Communications</li>
-<li> Thank you IIT Madras for the <a href="https://www.iitm.ac.in/young-alumni-achiever-awardees">2025 IIT Madras Young Alumni Award </a> 
-<li> Thank you ACM SIGMOBILE for the <a href="https://www.sigmobile.org/grav/awards/rockstar-award">2024 SIGMOBILE Rockstar Award </a> 
-<li> Jingxian Wang receives the <a href="https://www.ece.cmu.edu/news-and-events/story/2023/07/wireless-beamforming.html">2023 ACM SIGMOBILE Doctoral Dissertation Award</a>!
-<li> Two accepted papers at MobiCom'23 on <a href="waser.html">wireless actuation</a> and <a href="rfimap.html">spectrum sensing</a>! 
-<li> Two accepted papers at ICRA'23 on <a href="nsr.html">soft robots</a> and <a href="radarhd.html">mmWave sensing</a>!
-<li> Paper at IPSN'23 on mmWave structural sensing.
-<li> Our paper on <a href="platter.html">powerline backscatter</a> is accepted at NSDI'22.
-<li> Our paper on <a href="fastloc.html">fast RFID localization</a> is accepted at UbiComp'22. 
-<li> Two papers at IPSN'22: <a href="milton.html">Milton</a> and <a href="selfiestick.html">SelfieStick</a>!
-<li> Two papers at CHI'22: on <a href="ppb.html">Privacy Protective Behavior</a> and <a href="lpr.html">Lean Privacy Review (TOCHI)</a>!
-<li> Swarun Kumar receives the CMU-CIT Dean's Early Career Fellowship (2021)
-<li> Akshay Gadre wins the <a href="https://sigbed.org/awards/">2021 ACM SIGBED/SIGSOFT Frank Anger Memorial Award</a>
-<li> Our work on <a href="textilesense.html">NFC Textiles</a> wins Best Paper at IPSN 2021
-<li> Thank you ACM SIGBED for the <a href="https://www.ece.cmu.edu/_media/news-images/2021/04/kumar-sigbed.html">2021 SIGBED Early Career Researcher Award </a>
-<li> Two papers accepted at IPSN 2021 on <a href="owll.html">LoRa localization</a> and <a href="textilesense.html">NFC Textiles</a>
-<li> Vaibhav Singh wins the James Sprague Presidential Fellowship from CIT!
-<li> Two papers accepted at MobiCom 2021 on <a href="millimetro.html">mm-wave backscatter</a> and <a href="quasar.html">cubesat groundstations</a>
-<li> Read our perspective on <a href="fdstudy.html">full-duplex</a> at HotNets 2020
-<li> <a href="chariot.html">CharIoT</a> accepted at IEEE TMC 2020
-<li> <a href="rftattoo.html">RFTattoo</a> wins Best Wearables Long Paper at UbiComp 2020!
-<li> Haojian Jin wins UbiComp Gaetano Borriello Outstanding Student Award!
-<li> Two papers at MobiCom 2020: <a href="mmfd.html">mm-wave Full Duplex</a> and <a href="joltik.html">Joltik</a>! 
-<li> Check out our RFID Tatoo paper at <a href="rftattoo.html">UbiComp 2020</a> and smart materials work at ACS Applied Materials & Interfaces
-<li> <a href="osprey.html">Osprey</a> wins Best Paper Honorable Mention and Best Demo at MobiSys 2020!
-<li> <a href="quail.html">QuAiL</a> wins Best Paper Award at IPSN 2020 - explores new ways to rapidly track wildfires
-<li> Akshay Gadre receives the Best Presentation Award at IPSN 2020 <a href="https://www.ece.cmu.edu/news-and-events/story/2020/04/gadre-ipsn.html">PhD forum</a>
-<li> Two new papers: <a href="osprey.html">Osprey</a> and <a href="opr.html">OPR</a> accepted at MobiSys 2020
-<li> <a href="quail.html">QuAiL</a>, accepted at IPSN 2020, explores new ways to rapidly track wildfires
-<li> Jingxian Wang receives the <a href="https://www.ece.cmu.edu/news-and-events/story/2020/01/wang-microsoft-fellowship.html">Microsoft Ph.D. Fellowship</a>
-<li> Thank you NSF for the <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1942902">CAREER</a> award!
-<li> Our work on <a href="mmfd.html">mm-Wave</a> Full Duplex is accepted at MobiCom 2020 
-<li> Gave a talk on future wireless at <a href="https://www.youtube.com/watch?v=xhCCFOPDpZs">TEDxPittsburgh</a>!
-<li> <a href="rftattoo.html">RFTattoo</a> is accepted at UBICOMP 2020
-<li> Our work on low-power WANs was accepted at <a href="chime.html">NSDI 2020</a>
-<li> Check out our smart materials paper at ACS Applied Materials & Interfaces
-<li> <a href="sozu.html">Sozu</a> is accepted at UIST 2019
-<li> Our <a href="pushid.html">work</a> on pushing RFID range limits was accepted at NSDI 2019 
-<li> Our work on software radios for IoT was accepted at HotNets 2018
-<li> I am co-organizing the <a href="https://sigmobile.org/mobicom/2018/workshops/wintech/">ACM WiNTECH 2018</a> workshop at MobiCom 2018
-<li> Charm wins best paper award at IPSN 2018
-<li> Our work on wireless shape sensing was accepted at MobiSys 2018
-<li> Our work on Deep Learning for IoT Authentication was accepted at ICC 2018
-<li> Our work on wearable battery-free body-frame tracking was accepted at Ubicomp 2018
-<li> My work on low-power wearable health monitoring was funded by NSF (Small)  
-<li> Our work on Low-Power Wide-Area Networking (Choir) has been accepted at <a href="http://conferences.sigcomm.org/sigcomm/2017/program.html">SIGCOMM 2017</a>. 
-<li> I am a recepient of the Google Faculty Research Award, 2017. 
-<li> I received the NSF CRII Award, 2017.
-<li> Track Team CMU at the <a href="https://spectrumcollaborationchallenge.com/darpa-sc2-welcomes-the-phase-1-competitors/">DARPA Spectrum Grand Challenge</a>.  
-<li> R2-F2 wins best paper award at <a href="http://conferences.sigcomm.org/sigcomm/2016/awards.php">SIGCOMM 2016</a>. 
-</ul>
-
-<h4 style="">AWARDS AND HONORS</h4>
-<ul style="margin-top:-10px">
-<li> 2024 ACM SIGMOBILE Rockstar Award </li>
-<li> 2024 IIT Madras Young Alumni Award </li>
-<li> 2021 ACM SIGBED Early Career Researcher Award</li>
-<li> CIT Dean's Early Career Fellow, CMU, 2021</li>
-<li> ACM/IEEE IPSN 2021 Best Paper Award </li>
-<li> ACM MobiSys 2020 Best Paper Honorable Mention and Best Demo </li>
-<li> ACM/IEEE IPSN 2020 Best Paper Award </li>
-<li> NSF CAREER Award </li>
-<li> ACM/IEEE IPSN 2018 Best Paper Award </li>
-<li> Google Faculty Research Award, 2017 </li>
-<li> NSF CRII Award, 2017 </li>
-<li> SIGCOMM 2016 Best Paper Award </li>
-<li> George M. Sprowls Award for Outstanding Ph.D Thesis in Computer Science, MIT, 2015</li>
-<li> Communications of the ACM (CACM) Research Highlight for MegaMIMO, 2014</li>
-<li> MOBICOM Best Presentation Second Place Award, 2014</li>
-<li> MOBICOM S3 Workshop Best Poster Award, 2014</li>
-<li> MOBICOM S3 Workshop Best Elevator Pitch Award, 2013</li>
-<li> MIT 100K Entrepreneurship Contest: Finalist (Business Plan), 2013</li>
-<li> MIT 100K Entrepreneurship Contest: Winning Team (Elevator Pitch), 2012</li>
-<li> MIT Jacobs Presidential Fellowship, 2010</li>
-<li> Best Paper Award, SECRYPT, 2010</li>
-<li> Valedictorian, President of India Gold Medalist for Highest CGPA at IIT Madras, 2010</li>
-<li> Prof. Narasihman Fellowship at IIT Madras, 2008</li>
-<li> Bronze Medalist, International Olympiad on Informatics, 2006</li>
-<li> Invited to view republic day parade from Prime Minister's box for excellence in CBSE exams, 2006</li>
-</ul>
-
-<h4 style="">PRESS</h4>
-<ul style="margin-top:-10px">
-<li> Presented a talk at <a href="https://tedxpittsburgh.org/attend">TEDxPittsburgh</a> 2019
-<li> Empowering Low-Power Wide-Area Networks to Meet the IoT Challenge, Alan Weissberger, May 2020, <a href="https://techblog.comsoc.org/2020/05/02/empowering-low-power-wide-area-networks-to-meet-the-iot-challenge/">IEEE ComSoc Tech Blog</a>
-<li> Bluetooth contact tracing needs bigger, better data, Patrick Howell O'Neill, April 2020, <a href="https://www.technologyreview.com/2020/04/22/1000353/bluetooth-contact-tracing-needs-bigger-better-data/">MIT Technology Review</a>
-<li> Pittsburgh Updates Its Infrastructure In Preparation For 5G, Maria Scapellato, February 2020, <a href="https://www.wesa.fm/post/pittsburgh-updates-its-infrastructure-preparation-5g#stream/0">90.5 FM WESA</a>
-<li> The Next Leap in Wireless Charging, Bree Fowler, January 2020, <a href="https://www.consumerreports.org/emerging-technology/wireless-charging-the-next-leap-wireless-power/">Consumer Reports</a>
-<li> 5G - A Homegrown Revolution, May 2018, <a href="https://www.washingtonpost.com/sf/brand-connect/qualcomm/a-homegrown-revolution/">Washington Post</a>
-<li> Technology Hopes to End The Lost Luggage Blues, Stephen Mraz, June 2019, <a href="https://www.machinedesign.com/mechanical-motion-systems/article/21837880/technology-hopes-to-end-the-lost-luggage-blues">Machine Design</a>
-<li> How your iPhone could know when you’re in a moving car, Rob Verger, June 2017, <a href="">Popular Science</a>
-<li>Wireless networks that follow you around a room, optimize themselves
-and even talk to each other out loud, <a href="http://www.networkworld.com/article/2170646/wireless/wireless-networks-that-follow-you-around-a-room--optimize-themselves-and-even-talk-to-each-.html">NetworkWorld</a>, 2013</li>
-<li>Making Driverless Cars Safer, <a href="http://tech.slashdot.org/story/12/10/12/2117237/making-driverless-cars-safer">Slashdot</a>, 2012</li>
-<li>Driverless car is wireless star at MIT, <a href="http://www.networkworld.com/article/2160689/wireless/driverless-car-is-wireless-star-at-mit.html">NetworkWorld</a>, 2012</li>
-<li>Talking cars help each other see around blind corners, <a href="www.newscientist.com/article/mg21528825.400-talking-cars-help-each-other-see-around-blind-corners.html">NewScientist</a>, 2012</li>
-<li>Be sensitive thermometers if not thermostats, <a href="http://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/be-sensitive-thermometers-if-not-thermostats/article543578.ece">The Hindu</a>, 2010</li>
-<li>Indian students are set for Informatics Olympiad, <a href="http://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/indian-students-are-set-for-informatics-olympiad/article3089323.ece">The Hindu</a>, 2006</li>
-<li>Planned effort the key for Chennai students, <a href="http://www.ndtv.com">NDTV</a>, 2006</li>
-</ul>
-
-<h4 style="">PROFESSIONAL SERVICE</h4>
-<ul style="margin-top:-10px">
-<li><b>Chair/Co-chair</b>: Workshop on Communication-aware Robotics in RSS
-2014, WinTech 2018, MobiCom 2018 Posters</li>
-<li><b>Reviewer: </b> SIGCOMM 2016, MobiCom 2016-2019, INFOCOM 2017-19, CoNext 2018 </li>
-<li> <b>Associate Editor: </b> IEEE Transactions on Sensor Networks (2018-19)
-<li><b>External reviwer:</b> International Journal for Robotics
-Research, IEEE Transactions on Networking, IEEE Transactions on
-Wireless, IEEE Transactions on Signal Processing, INFOCOM, NSDI, IEEE
-Pervasive Computing</li>
-</ul>
-<br />
-
-</div>
-</div>
-
-
-
-</div>
-</div>
-
-<div class="clear"></div>
-</div>
-<div class="endgrad"></div>
-<div class="clear"></div>
-<div class='endgrad'></div>
-<div class="footer"><div style="margin-top:7px">Swarun Kumar, Sathaye Family Foundation Professor, CMU ECE</div></div>
-</div>
-</center>
 </body>
 </html>
-

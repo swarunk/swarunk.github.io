@@ -10,125 +10,169 @@
 <link rel="canonical" href="https://swarunkumar.com" />
 
 <style>
-body {margin:0;font-family:Arial}
+/* ---- RESET ---- */
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+}
 
+/* ---- SITE HEADER ---- */
+.site-header {
+  background: #fff;
+  border-bottom: 3px solid #992222;
+  padding: 0 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+  box-sizing: border-box;
+}
+
+.site-header__name {
+  font-size: 22px;
+  font-weight: bold;
+  color: #1a1a1a;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  font-family: 'Georgia', serif;
+}
+
+.site-header__name:hover {
+  color: #992222;
+}
+
+.site-header__logo img {
+  height: 48px;
+  width: auto;
+}
+
+/* ---- HAMBURGER BUTTON ---- */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  position: relative;
+  flex-shrink: 0;
+  padding: 0;
+  z-index: 200;
+}
+.nav-toggle span,
+.nav-toggle span::before,
+.nav-toggle span::after {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #444;
+  position: absolute;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+.nav-toggle span         { left: 7px; top: 17px; }
+.nav-toggle span::before { content: ''; left: 0; top: -7px; }
+.nav-toggle span::after  { content: ''; left: 0; top: 7px; }
+.nav-toggle[aria-expanded="true"] span { background: transparent; }
+.nav-toggle[aria-expanded="true"] span::before { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span::after  { transform: translateY(-7px) rotate(-45deg); }
+
+/* ---- NAV OVERLAY ---- */
+.nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 90;
+}
+.nav-overlay.is-open { display: block; }
+
+/* ---- NAVIGATION ---- */
 .topnav {
-  overflow: hidden;
-  background-color: #333;
+  background: #fafafa;
+  border-bottom: 1px solid #e4e4e4;
+  padding: 0 28px;
+  display: flex;
+  align-items: stretch;
 }
 
 .topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
+  display: inline-flex;
+  align-items: center;
+  color: #444;
+  padding: 0 18px;
+  height: 46px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-bottom: 3px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+  box-sizing: border-box;
+  white-space: nowrap;
 }
 
-.active {
-  background-color: #992222;
-  color: white;
+.topnav a:hover {
+  color: #992222;
+  border-bottom-color: #992222;
+  background: none;
 }
 
-.topnav .icon {
-  display: none;
+.topnav a.active {
+  color: #992222;
+  border-bottom-color: #992222;
+  background: none;
 }
 
-.dropdown {
-  float: left;
-  overflow: hidden;
-}
+@media screen and (max-width: 680px) {
+  .site-header { padding: 0 16px; height: 64px; }
+  .site-header__name { font-size: 17px; }
+  .site-header__logo { display: none; }
+  .nav-toggle { display: flex; align-items: center; justify-content: center; }
 
-.dropdown .dropbtn {
-  font-size: 17px;    
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.topnav a:hover, .dropdown:hover .dropbtn {
-  background-color: #555;
-  color: white;
-}
-
-.dropdown-content a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-@media screen and (max-width: 600px) {
-  .topnav a:not(:first-child), .dropdown .dropbtn {
-    display: none;
-  }
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
+  /* Drawer: off-screen by default, slides in when open */
+  .topnav {
+    position: fixed;
     top: 0;
+    right: 0;
+    width: 220px;
+    height: 100vh;
+    background: #fff;
+    border-bottom: none;
+    border-left: 1px solid #e4e4e4;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 80px 0 24px;
+    transform: translateX(100%);
+    transition: transform 0.28s ease;
+    z-index: 100;
+    box-shadow: -4px 0 20px rgba(0,0,0,0.12);
   }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-  .topnav.responsive .dropdown {float: none;}
-  .topnav.responsive .dropdown-content {position: relative;}
-  .topnav.responsive .dropdown .dropbtn {
-    display: block;
+  .topnav.is-open { transform: translateX(0); }
+
+  .topnav a {
     width: 100%;
-    text-align: left;
+    height: 48px;
+    padding: 0 24px;
+    border-bottom: 1px solid #f0f0f0 !important;
+    border-top: none;
+    font-size: 12px;
+    justify-content: flex-start;
   }
+  .topnav a:last-child { border-bottom: none !important; }
 }
 </style>
 
-
 <script type="text/javascript">
-
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-18185637-1']);
   _gaq.push(['_trackPageview']);
-
   (function() {
     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
-
 </script>
 
 <script type="application/ld+json">
@@ -197,350 +241,200 @@ body {margin:0;font-family:Arial}
 
 </head>
 <body>
-<center>
-<div class='container'>
-<div class="header">
 
+<div class="site-wrapper">
 
-<table style="width:100%">
-  <tbody><tr>
-    <td style="width:70%">
-  <h1 style="margin-top:20px;margin-left:20px" class="restitle">Swarun Kumar</h1><br>
-<!--  <h1 style="margin-top:10px;margin-left:-40px">Swarun Kumar</h1> <h2 style="font-size:12pt;font-weight:normal;margin-top:-10px;margin-left:-40px;">Sathaye Family Foundation Professor, ECE, CMU</h2> --><br>
-    </td>
-    <td style="width:30%; text-align: right;">
-      <img style="height:70px;margin-top:8px; margin-right:20px" src="images/CarnegieMellonUniversity_wordmark.gif"> 
-    </td>
-</tr> 
-  </tbody></table>
-
-</div>
-<div class='midgrad'></div>
-<div class="topnav" id="myTopnav">
-  <a href="index.html">Home</a>
-  <a href="publications.html">Publications</a>
-  <div class="dropdown">
-    <button class="dropbtn" style="height:52px;"><a href="research.html" style="padding:0px">Research&nbsp;</a>
-      <i class="fa fa-caret-down"></i>
+  <div class="site-header">
+    <a class="site-header__name" href="index.html">Swarun Kumar</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
     </button>
-    <div class="dropdown-content">
-      <a href="lpwan.html">Low-Power WANs</a>
-      <a href="bfree.html">Battery-Free IoT</a>
-      <a href="wifi.html">Future Wi-Fi</a>
-      <a href="xg.html">mm-Wave &amp; Beyond 5-G</a>
-      <a href="sensing.html">Wireless Sensing</a>
-      <a href="security.html">Wireless Security</a>
+    <div class="site-header__logo">
+      <img src="images/CarnegieMellonUniversity_wordmark.gif" alt="Carnegie Mellon University" />
     </div>
-  </div> 
-<!--  <a href="teaching.html">Teaching</a> -->
-  <div class="dropdown">
-    <button class="dropbtn"  style="height:52px;"><a href="awards.html" style="padding:0px">Awards&nbsp;</a>
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="awards.html">Awards and Honors</a>
-      <a href="grants.html">Research Grants</a>
-      <a href="code.html">Open Source Efforts</a>
-      <a href="outreach.html">Outreach</a>
+  </div>
+
+  <nav class="topnav" id="myTopnav">
+    <a href="index.html">Home</a>
+    <a href="publications.html">Publications</a>
+    <a href="research.html">Research</a>
+    <a href="awards.html">Awards</a>
+    <a href="outreach.html">Outreach</a>
+  </nav>
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <script>
+  (function() {
+    var toggle = document.getElementById('navToggle');
+    var nav    = document.getElementById('myTopnav');
+    var overlay = document.getElementById('navOverlay');
+
+    function openNav() {
+      nav.classList.add('is-open');
+      overlay.classList.add('is-open');
+      toggle.setAttribute('aria-expanded', 'true');
+    }
+    function closeNav() {
+      nav.classList.remove('is-open');
+      overlay.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+
+    toggle.addEventListener('click', function() {
+      nav.classList.contains('is-open') ? closeNav() : openNav();
+    });
+    overlay.addEventListener('click', closeNav);
+  })();
+  </script>
+
+  <div class="site-content">
+    <div class="site-main">
+      <div><div>
+
+<div style="margin-left:15px; margin-right:15px">
+
+<!-- PROFILE CARD -->
+<div class="profile-card">
+  <img class="profile-card__photo" src="images/swarun_cmu_pic.png" alt="Swarun Kumar, Sathaye Family Foundation Professor, CMU" />
+  <div>
+    <h2 class="profile-card__name">Swarun Kumar</h2>
+    <p class="profile-card__title">
+      Sathaye Family Foundation Professor, Electrical and Computer Engineering<br>
+      Carnegie Mellon University<br>
+      <span style="font-size:12px;color:#777">Affiliate: CS Department &bull; HCI Institute &bull; CyLab</span>
+    </p>
+    <div class="profile-card__details">
+      <div><i>Office:</i> CIC Rm. 4113, 4720 Forbes Ave., Pittsburgh, PA 15213</div>
+      <div><i>Email:</i> swarun [at] cmu [dot] edu</div>
+      <div><i>Assistant:</i> Dawn Sienko &mdash; dsienko [at] andrew [dot] cmu [dot] edu &mdash; (412)-268-9192</div>
     </div>
-  </div> 
-  <a href="contact.html">Contact</a>
-  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+    <div class="profile-links">
+      <a href="https://scholar.google.com/citations?user=WfaqxlgAAAAJ&hl=en&oi=ao" class="profile-link">Google Scholar</a>
+      <a href="https://www.linkedin.com/in/swarun/" class="profile-link">LinkedIn</a>
+      <a href="https://twitter.com/swarunk" class="profile-link">Twitter / X</a>
+      <a href="http://www.witechlab.com/" class="profile-link">WiTech Lab</a>
+    </div>
+  </div>
 </div>
 
-<script>
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-</script>
+<!-- BIO -->
+<p class="home-bio">I am the Sathaye Family Foundation Professor at Carnegie Mellon University&rsquo;s ECE department, with affiliate appointments in the CS department, the HCI Institute, and CyLab. My research builds next-generation wireless systems spanning sensing, actuation, connectivity, and intelligence. I lead the Emerging Wireless Technologies (<a href="http://www.witechlab.com/">WiTech</a>) Lab at CMU. I am a recipient of the 2024 ACM SIGMOBILE Rockstar Award, the 2021 SIGBED Early Career Researcher Award, the NSF CAREER Award, and the Google Faculty Research Award. I received the George Sprowls Award for best Ph.D. thesis in Computer Science at MIT and the President of India Gold Medal at IIT Madras.</p>
 
-<div class='midgrad' style="margin-top:0px"></div>
-<div class='content'>
+<!-- NEWS + SELECTED PUBLICATIONS -->
+<div class="home-two-col">
 
-<!-- <div class="panel">
-<div class='navigation'>
-<table>
-<tr><td><div class='item'><a href="index.html">About Me</a></div></td></tr>
-<tr><td><div class='item'><a href="publications.html">Publications</a></div></td></tr>
-<tr><td>
-<div id="cssmenu">
-      <ul><li class="active has-sub"><a href="research.html">Research</a>
-	  <ul>
-	    <li class="has-sub"><a href="lpwan.html">Low-Power WANs</a>
-	    </li>
-	    <li class="has-sub"> <a href="bfree.html">Battery-Free IoT</a>
-	    </li>
-	    <li class="has-sub"><a href="wifi.html">Future Wi-Fi</a>
-	    </li>
-	    <li class="has-sub"><a href="xg.html">mm-Wave &amp; Beyond 5-G</a>
-	    </li>
-	    <li class="has-sub"> <a href="sensing.html">Wireless Sensing</a>
-	    </li>
-	    <li class="has-sub"><a href="security.html">Wireless Security</a>
-	    </li>
-          </ul>
-      </ul>
-</div>
-</td></tr>
-<tr><td><div class='item'><a href="teaching.html">Teaching</a></div></td></tr>
-<tr><td><div class='item'><a href="awards.html">Awards</a></div></td></tr>
-<tr><td><div class='item'><a href="grants.html">Grants</a></div></td></tr>
-<tr><td><div class='item'><a href="outreach.html">Outreach</a></div></td></tr>
-<tr><td>
-<div id="cssmenu">
-      <ul><li class="active has-sub"><a href="code.html">Code</a>
-	  <ul>
-	    <li class="last"><a href="openrf.html">OpenRF</a>
-	    </li>
-	    <li class="last"> <a href="lteyecode.html">LTEye</a> 
-	    </li>
-          </ul>
-      </ul>
-</div>
+  <div class="awards-section">
+    <h4>NEWS</h4>
+    <table class="news-table">
+      <tr><td class="news-date">1/26</td><td>Two papers at ACM SenSys on <a href="mmtextora.html">texture</a> and <a href="gigaflex.html">health</a> sensing with mmWave radar</td></tr>
+      <tr><td class="news-date">11/25</td><td>Papers on acoustic sensing at <a href="sonicsieve.html">CHI</a> and <a href="winddancer.html">UbiComp</a></td></tr>
+      <tr><td class="news-date">9/25</td><td>Thank you IIT Madras for the <a href="https://www.iitm.ac.in/young-alumni-achiever-awardees">Young Alumni Award</a></td></tr>
+      <tr><td class="news-date">6/25</td><td>Our paper on <a href="rfact.html">wireless soft robots</a> appeared at <em>Nature Communications</em></td></tr>
+      <tr><td class="news-date">9/24</td><td>Thank you ACM SIGMOBILE for the <a href="https://www.sigmobile.org/grav/awards/rockstar-award">2024 SIGMOBILE Rockstar Award</a></td></tr>
+      <tr><td class="news-date">8/24</td><td>Two accepted papers at ACM MobiCom 2024</td></tr>
+      <tr><td class="news-date">7/23</td><td>Jingxian Wang receives the <a href="https://www.ece.cmu.edu/news-and-events/story/2023/07/wireless-beamforming.html">2023 ACM SIGMOBILE Doctoral Dissertation Award</a></td></tr>
+      <tr><td class="news-date">4/23</td><td>Two papers at MobiCom&rsquo;23 on <a href="waser.html">wireless actuation</a> and <a href="rfimap.html">spectrum sensing</a></td></tr>
+      <tr><td class="news-date">3/23</td><td>Two papers at ICRA&rsquo;23 on <a href="nsr.html">soft robots</a> and <a href="radarhd.html">mmWave sensing</a></td></tr>
+      <tr><td class="news-date">2/23</td><td>Paper at IPSN&rsquo;23 on mmWave structural sensing</td></tr>
+      <tr><td class="news-date">9/22</td><td>Paper on <a href="fastloc.html">fast RFID localization</a> accepted at UbiComp&rsquo;22</td></tr>
+      <tr><td class="news-date">5/22</td><td>Two papers at IPSN&rsquo;22: <a href="milton.html">Milton</a> and <a href="selfiestick.html">SelfieStick</a></td></tr>
+      <tr><td class="news-date">5/22</td><td>Two papers at CHI&rsquo;22 on <a href="ppb.html">privacy behavior</a> and <a href="lpr.html">lean privacy review</a></td></tr>
+      <tr><td class="news-date">4/22</td><td>Paper on <a href="platter.html">powerline backscatter</a> accepted at NSDI&rsquo;22</td></tr>
+      <tr><td class="news-date">9/21</td><td>Swarun Kumar receives the CMU-CIT Dean&rsquo;s Early Career Fellowship</td></tr>
+      <tr><td class="news-date">5/21</td><td>Our work on <a href="textilesense.html">NFC Textiles</a> wins Best Paper at IPSN 2021</td></tr>
+      <tr><td class="news-date">4/21</td><td>Thank you ACM SIGBED for the <a href="https://www.ece.cmu.edu/_media/news-images/2021/04/kumar-sigbed.html">2021 SIGBED Early Career Researcher Award</a></td></tr>
+    </table>
+    <div style="margin-top:12px;font-size:13px"><a href="awards.html"><b>More &rarr;</b></a></div>
+  </div>
 
-</td></tr>
-<tr><td><div class='item'><a href="contact.html">Contact</a></div></td></tr>
-</table>
- <br /> <br /> <br />
-</div>
+  <div class="awards-section">
+    <h4>SELECTED RECENT PUBLICATIONS</h4>
+    <table class="pub-thumb-table">
+    <tr><td class="pub-thumb-cell"><img class="pub-thumb" src="images/pub-thumbs/pasta-thumb.png" alt="PASTA"></td><td class="pub-text-cell"><strong>Pneumatically-Actuated Liquid Metal-Based Frequency Reconfigurable Antenna</strong>, Yiwen Song, Aditya Bharambe, Dinesh K Patel, Barbara Zhuo, Mason Zadan, Carmel Majidi and Swarun Kumar, Advanced Science 2026 <a class="pub-link" href="papers/pasta-science2026.pdf">PAPER</a><a class="pub-link" href="pasta.html">WEBSITE</a></td></tr>
+<tr><td class="pub-thumb-cell"><img class="pub-thumb" src="images/pub-thumbs/sonicsieve-thumb.png" alt="SonicSieve"></td><td class="pub-text-cell"><strong>SonicSieve: Bringing Directional Speech Extraction to Smartphones Using Acoustic Microstructures</strong>, Kuang Yuan, Yifeng Wang, Xiyuxing Zhang, Chengyi Shen, Swarun Kumar, and Justin Chan, CHI 2026 <a class="pub-link" href="sonicsieve.html">WEBSITE</a></td></tr>
+<tr><td class="pub-thumb-cell"><img class="pub-thumb" src="images/pub-thumbs/gigaflex-thumb.png" alt="GigaFlex"></td><td class="pub-text-cell"><strong>GigaFlex: Contactless Monitoring of Muscle Vibrations During Exercise with a Chaos-Inspired Radar</strong>, Jiangyifei Zhu, Yuzhe Wang, Tao Qiang, Vu Phan, Zhixiong Li, Evy Meinders, Eni Halilaj, Justin Chan and Swarun Kumar, SenSys 2026 <a class="pub-link" href="gigaflex.html">WEBSITE</a></td></tr>
+<tr><td class="pub-thumb-cell"><img class="pub-thumb" src="images/pub-thumbs/mmtextora-thumb.png" alt="mmTextora"></td><td class="pub-text-cell"><strong>Surface Material and Roughness Sensing using mmWave via Surface Scattering and Ambient Vibrations</strong>, Yawen Liu, Bert Shan and Swarun Kumar, SenSys 2026 <a class="pub-link" href="mmtextora.html">WEBSITE</a></td></tr>
+<tr><td class="pub-thumb-cell"><img class="pub-thumb" src="images/pub-thumbs/tranquil-thumb.png" alt="TranQuiL"></td><td class="pub-text-cell"><strong>TranQuiL: Long Range Detection and Localization of RFI in Radio Quiet Zones</strong>, Atul Bansal,  Mohamed Ibrahim, Kuang Yuan,  Yiwen Song, Swarun Kumar and Bob Iannucci, Radio Science 2026 <a class="pub-link" href="papers/tranquil-science2026.pdf">PAPER</a><a class="pub-link" href="tranquil.html">WEBSITE</a></td></tr>
+<tr><td class="pub-thumb-cell"><img class="pub-thumb" src="images/pub-thumbs/winddancer-thumb.png" alt="WindDancer"></td><td class="pub-text-cell"><strong>WindDancer: Understanding Acoustic Sensing under Ambient Airflow</strong>, Kuang Yuan, Dong Li, Hao Zhou, Zhehao Li, Lili Qiu, Swarun Kumar and Jie Xiong, IMWUT 2025 <a class="pub-link" href="papers/winddancer-imwut2025.pdf">PAPER</a><a class="pub-link" href="winddancer.html">WEBSITE</a></td></tr>
+<tr><td class="pub-thumb-cell"><img class="pub-thumb" src="images/pub-thumbs/dewinder-thumb.png" alt="DeWinder"></td><td class="pub-text-cell"><strong>DeWinder: Single-Channel Wind Noise Reduction using Ultrasound Sensing</strong>, Kuang Yuan, Shuo Han, Swarun Kumar and Bhiksha Raj, InterSpeech 2024 <a class="pub-link" href="papers/dewinder-interspeech2024.pdf">PAPER</a><a class="pub-link" href="dewinder.html">WEBSITE</a></td></tr>
+<tr><td class="pub-thumb-cell"><img class="pub-thumb" src="images/pub-thumbs/metamorph-thumb.png" alt="Metamorph"></td><td class="pub-text-cell"><strong>Shape-programming Robotic Reflectors for Wireless Networks</strong>, Yawen Liu, Akarsh Prabhakara, Jiangyifei Zhu, Shenyi Qiao, Swarun Kumar, ICRA 2025 <a class="pub-link" href="papers/metamorph-icra2025.pdf">PAPER</a><a class="pub-link" href="metamorph.html">WEBSITE</a></td></tr>
+<tr><td class="pub-thumb-cell"><img class="pub-thumb" src="images/pub-thumbs/rfact-thumb.png" alt="RFact"></td><td class="pub-text-cell"><strong>Frequency-selective actuation of liquid crystalline elastomer actuators with radio-frequency</strong>, Yiwen Song, Zefang Li, Mason Zadan, Jingxian Wang, Swarun Kumar, Carmel Majidi, Nature Communications 2025 <a class="pub-link" href="papers/rfact-communications2025.pdf">PAPER</a><a class="pub-link" href="rfact.html">WEBSITE</a></td></tr>
+<tr><td class="pub-thumb-cell"><img class="pub-thumb" src="images/pub-thumbs/viton-thumb.png" alt="Viton"></td><td class="pub-text-cell"><strong>Thermo-Mechanically Stable, Liquid Metal Embedded Soft Materials for High-Temperature Applications</strong>, Robert Herbert, Piotr Mocny, Yuqi Zhao, Ting-Chih Lin, Junbo Zhang, Michael Vinciguerra, Sunny Surprenant, Wui Yarn Daphne Chan, Swarun Kumar, Michael R. Bockstaller, Krzysztof Matyjaszewski, Carmel Majidi, Advanced Functional Materials 2024 <a class="pub-link" href="papers/viton-materials2024.pdf">PAPER</a><a class="pub-link" href="viton.html">WEBSITE</a></td></tr>
+<tr><td class="pub-thumb-cell"><img class="pub-thumb" src="images/pub-thumbs/avatars-thumb.png" alt="AVATARS"></td><td class="pub-text-cell"><strong>Reinforcement learning-based framework for whale rendezvous via autonomous sensing robots</strong>, Nishant Mehrotra, Divyanshu Pandey, Ashutosh Sabharwal, Akarsh Prabhakara, Yawen Liu and Swarun Kumar, Science Robotics 2024 <a class="pub-link" href="papers/avatars-robotics2024.pdf">PAPER</a><a class="pub-link" href="avatars.html">WEBSITE</a></td></tr>
+<tr><td class="pub-thumb-cell"><img class="pub-thumb" src="images/pub-thumbs/hydra-thumb.png" alt="Hydra"></td><td class="pub-text-cell"><strong>Hydra: Exploiting Multi-Bounce Scattering for Beyond-Field-of-View mmWave Radar</strong>, Nishant Mehrotra, Divyanshu Pandey, Ashutosh Sabharwal, Akarsh Prabhakara, Yawen Liu and Swarun Kumar, MobiCom 2024 <a class="pub-link" href="papers/hydra-mobicom2024.pdf">PAPER</a><a class="pub-link" href="hydra.html">WEBSITE</a></td></tr>
+<tr><td class="pub-thumb-cell"><img class="pub-thumb" src="images/pub-thumbs/microsurf-thumb.png" alt="MicroSurf"></td><td class="pub-text-cell"><strong>Guiding Energy Distribution inside Microwave Oven</strong>, Yiwen Song, Swarun Kumar, Hao Pan, Longyuan Ge, Yi-Chao Chen, and Lili Qiu, MobiCom 2024 <a class="pub-link" href="papers/microsurf-mobicom2024.pdf">PAPER</a><a class="pub-link" href="microsurf.html">WEBSITE</a></td></tr>
+<tr><td class="pub-thumb-cell"><img class="pub-thumb" src="images/pub-thumbs/tomobrush-thumb.png" alt="ToMoBrush"></td><td class="pub-text-cell"><strong>ToMoBrush: Exploring Dental Health Sensing using a Sonic Toothbrush</strong>, Kuang Yuan, Mohamed Ibrahim, Yiwen Song, Guoxiang Deng, Robert A. Nerone, Suvendra Vijayan, Akshay Gadre, and Swarun Kumar, UbiComp 2024 <a class="pub-link" href="papers/tomobrush-ubicomp2024.pdf">PAPER</a><a class="pub-link" href="tomobrush.html">WEBSITE</a></td></tr>
+<tr><td class="pub-thumb-cell"><img class="pub-thumb" src="images/pub-thumbs/openspace-thumb.png" alt="OpenSpace"></td><td class="pub-text-cell"><strong>A Roadmap for the Democratization of Space-Based Communications</strong>, Veronica Muriga, Swarun Kumar, Akshitha Sriraman and Assane Gueye, HotNets 2024 <a class="pub-link" href="papers/openspace-hotnets2024.pdf">PAPER</a><a class="pub-link" href="openspace.html">WEBSITE</a></td></tr>
+<tr><td class="pub-thumb-cell"><img class="pub-thumb" src="images/pub-thumbs/scaled-thumb.png" alt="SCALED"></td><td class="pub-text-cell"><strong>Towards Ubiquitous IoT through Long Range Wireless Energy Harvesting</strong>, Mohamed Ibrahim, Atul Bansal, Kuang Yuan, Junbo Zhang, and Swarun Kumar, MobiHoc 2024 <a class="pub-link" href="papers/scaled-mobihoc2024.pdf">PAPER</a><a class="pub-link" href="scaled.html">WEBSITE</a></td></tr>
+<tr><td class="pub-thumb-cell"><img class="pub-thumb" src="images/pub-thumbs/tranquil0-thumb.png" alt="TranQuiL0"></td><td class="pub-text-cell"><strong>TranQuiL: Long Range Detection and Localization of RFI in Radio Quiet Zones</strong>, Atul Bansal,  Mohamed Ibrahim, Kuang Yuan,  Yiwen Song, Swarun Kumar and Bob Iannucci, RFI (Oral) 2024 <a class="pub-link" href="tranquil0.html">WEBSITE</a></td></tr>
+<tr><td class="pub-thumb-cell"><img class="pub-thumb" src="images/pub-thumbs/vista-thumb.png" alt="Vista"></td><td class="pub-text-cell"><strong>Adapting LoRa Ground Stations for Low-latency Imaging and Inference from LoRa-enabled CubeSats</strong>, Akshay Gadre, Zachary Machester, and Swarun Kumar, ACM ToSN 2024 <a class="pub-link" href="papers/vista-tosn2024.pdf">PAPER</a><a class="pub-link" href="vista.html">WEBSITE</a></td></tr>
+    </table>
+    <div style="margin-top:12px;font-size:13px"><a href="publications.html"><b>Full publication list &rarr;</b></a></div>
+  </div>
 
-</div>
+</div><!-- end home-two-col -->
 
--->
-
-<div class="main" style='margin-left:20px;width:100%;margin-top:10px;margin-right:20px;'> 
-<!--<div class="main" style='margin-left:70px;width:750px;margin-top:30px'> -->
-<div><div>
-
-<div style="width:100%; float:left; padding-top:20px;">
-<div class="col25">
-<img src="images/swarun_cmu_pic.png" style="width:90%; padding-left:0px;padding-right:50px" class="max190" alt="Swarun Kumar, Sathaye Family Foundation Professor, CMU" />
+<!-- TEACHING -->
+<div class="awards-section">
+  <h4>TEACHING</h4>
+  <ul class="student-list">
+    <li>18-213/613 &mdash; Computer Systems (Fall 2021, Spring 2022&ndash;present)</li>
+    <li>18-441/741 &mdash; Computer Networks (Spring 2018&ndash;21, Fall 2022&ndash;present)</li>
+    <li>18-859G &mdash; Wireless Networks and Mobile Systems, DARPA SC2 Edition (Fall 2017&ndash;19)</li>
+    <li>18-345 &mdash; Introduction to Telecommunication Networks (Spring 2017)</li>
+    <li>18-859F &mdash; Wireless Networks and Mobile Computing (Spring 2016)</li>
+  </ul>
 </div>
 
-<div class="col75">
-<p>
-<div style="margin-bottom:10px">
-<div><b>Swarun Kumar</b><br /></div>
-<div style="margin-top:5px">Sathaye Family Foundation Professor, Electrical and Computer Engineering<br />
-Carnegie Mellon University <br/><br /></div><div>
-<i>Office: </i> CIC Rm. 4113,  </div>
-<div style="margin-left:50px;">4720 Forbes Ave., Pittsburgh, PA 15213</div>
-<i>Email:</i> <a href="contact.html">swarun [at] cmu [dot] edu</a><br />
-</div>
-<hr />
-
-<div style="margin-top:15px"><i>Assistant: </i> Dawn Sienko,  <div style="margin-left:75px">Email: dsienko [at] andrew [dot] cmu [dot] edu </div>
-                   <div style="margin-left:75px"> Phone: (412)-268-9192 </div>
-</div>
-</p>
-</div>
+<!-- CURRENT STUDENTS -->
+<div class="awards-section">
+  <h4>Ph.D. STUDENTS</h4>
+  <ul class="student-list">
+    <li><img class="person-thumb" src="images/people/Yiwen.jpg" alt="Yiwen Song"><a href="https://gavinsyw.github.io/">Yiwen Song</a></li>
+    <li><img class="person-thumb" src="images/people/Kuang.jpg" alt="Kuang Yuan"><a href="https://www.andrew.cmu.edu/user/kuangy/">Kuang Yuan</a></li>
+    <li><img class="person-thumb" src="images/people/Yawen.png" alt="Yawen Liu"><a href="https://yawenliu-ece.github.io/">Yawen Liu</a></li>
+    <li><img class="person-thumb" src="images/people/Veronica.png" alt="Veronica Muriga"><a href="https://www.linkedin.com/in/veronicamuriga/">Veronica Muriga</a> <span class="student-note">(co-advised with Prof. Akshitha Sriraman and Prof. Assane Gueye)</span></li>
+    <li><img class="person-thumb" src="images/people/Jiangyifei.png" alt="Jiangyifei Zhu"><a href="https://zjendex.github.io/">Jiangyifei Zhu</a> <span class="student-note">(co-advised with Prof. Justin Chan)</span></li>
+    <li><img class="person-thumb" src="images/people/Freddy.png" alt="Freddy Liu"><a href="https://freddyliu06.github.io/">Freddy Liu</a> <span class="student-note">(co-advised with Prof. Justin Chan)</span></li>
+  </ul>
 </div>
 
-
-<div style="float:left; width:100%;">
-<p> I am the Sathaye Family Foundation Professor at Carnegie Mellon University's ECE
-department, with an affiliate appointment in the CS department, the HCI Institute and Cylab. My
-research builds next-generation wireless network protocols and
-services. I lead the Emerging Wireless Technologies
-(<a href="http://www.witechlab.com/index.html">WiTech</a>) lab at
-CMU. I am a recipient of the 2024 ACM SIGMOBILE Rockstar award, the 2021 SIGBED Early Career Researcher award, the NSF CAREER award and Google Faculty Research award. I received the George Sprowls Award for best Ph.D thesis in
-Computer Science at MIT and the President of India gold medal at IIT
-Madras.
-</p>
-
-<div style="border: 2px solid gray; box-shadow: 2px 2px 2px #BBBBBB; ">
-<div style="padding-left: 10px">
-<h4 style="margin-left:0px; margin-top:20px;">NEWS</h4>
-<ul>
-<li> Our paper on <a href="rfact.html">wireless soft robots</a> appeared at Nature Communications</li>
-<li> Thank you IIT Madras for the <a href="https://www.iitm.ac.in/young-alumni-achiever-awardees">Young Alumni Award </a> 
-<li> Thank you ACM SIGMOBILE for the <a href="https://www.sigmobile.org/grav/awards/rockstar-award">SIGMOBILE Rockstar Award </a> 
-<!--
-<li> Jingxian Wang receives the <a href="https://www.ece.cmu.edu/news-and-events/story/2023/07/wireless-beamforming.html">2023 ACM SIGMOBILE Doctoral Dissertation Award</a>!
-<li> Two accepted papers at MobiCom'23 on <a href="waser.html">wireless actuation</a> and <a href="rfimap.html">spectrum sensing</a>! 
-<li> Two accepted papers at ICRA'23 on <a href="nsr.html">soft robots</a> and <a href="radarhd.html">mmWave sensing</a>!
-<li> Paper at IPSN'23 on mmWave structural sensing.
-<li> Three Ph.D. students graduate to join as faculty at UW, UCSD and NUS!
-<li> Two papers at IROS'22 on robotic sensing using <a href="metamoran.html">mmWave</a> and <a href="wsr.html">Wi-Fi</a>.
-<li> Our paper on <a href="platter.html">powerline backscatter</a> is accepted at NSDI'22
-<li> Our paper on <a href="fastloc.html">fast RFID localization</a> is accepted at UbiComp'22
-<li> Two papers at IPSN'22: <a href="milton.html">Milton</a> and <a href="selfiestick.html">SelfieStick</a>!
-<li> Two papers at CHI'22: on <a href="ppb.html">Privacy Protective Behavior</a> and <a href="lpr.html">Lean Privacy Review (TOCHI)</a>!
-<li> Swarun Kumar receives the CMU-CIT Dean's Early Career Fellowship (2021)
-<li> Akshay Gadre wins the <a href="https://sigbed.org/awards/">2021 ACM SIGBED/SIGSOFT Frank Anger Memorial Award</a>
-<li> Our work on <a href="textilesense.html">NFC Textiles</a> wins Best Paper at IPSN 2021
-<li> Thank you ACM SIGBED for the <a href="https://www.ece.cmu.edu/_media/news-images/2021/04/kumar-sigbed.html">2021 SIGBED Early Career Researcher Award </a>
-<li> Two papers accepted at IPSN 2021 on <a href="owll.html">LoRa localization</a> and <a href="textilesense.html">NFC Textiles</a>
-<li> Vaibhav Singh wins the James Sprague Presidential Fellowship from CIT!
-<li> Two papers accepted at MobiCom 2021 on <a href="millimetro.html">mm-wave backscatter</a> and <a href="quasar.html">cubesat groundstations</a>
---><!--<li> Read our perspective on <a href="fdstudy.html">full-duplex</a> at HotNets 2020
-<li> <a href="chariot.html">CharIoT</a> accepted at IEEE TMC 2020
-<li> <a href="rftattoo.html">RFTattoo</a> wins Best Wearables Long Paper at UbiComp 2020!
-<li> Haojian Jin wins UbiComp Gaetano Borriello Outstanding Student Award!
-<li> Two papers at MobiCom 2020: <a href="mmfd.html">mm-wave Full Duplex</a> and <a href="joltik.html">Joltik</a>! 
-<li> Check out our RFID Tatoo paper at <a href="rftattoo.html">UbiComp 2020</a> and smart materials work at ACS Applied Materials & Interfaces
-<li> <a href="osprey.html">Osprey</a> wins Best Paper Honorable Mention and Best Demo at MobiSys 2020!
-<li> <a href="quail.html">QuAiL</a> wins Best Paper Award at IPSN 2020 - explores new ways to rapidly track wildfires
-<li> Akshay Gadre receives the Best Presentation Award at IPSN 2020 <a href="https://www.ece.cmu.edu/news-and-events/story/2020/04/gadre-ipsn.html">PhD forum</a> -->
-<!-- <li> Two new papers: <a href="osprey.html">Osprey</a> and <a href="opr.html">OPR</a> accepted at MobiSys 2020 -->
-<!-- <li> Jingxian Wang receives the <a href="https://www.ece.cmu.edu/news-and-events/story/2020/01/wang-microsoft-fellowship.html">Microsoft Ph.D. Fellowship</a>
-<li> Thank you NSF for the <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1942902">CAREER</a> award!
-<li> Gave a talk on future wireless at <a href="https://www.youtube.com/watch?v=xhCCFOPDpZs">TEDxPittsburgh</a>!
-<!-- <li> <a href="rftattoo.html">RFTattoo</a> is accepted at UBICOMP 2020 -->
-<!-- <li> Our work on low-power WANs was accepted at <a href="chime.html">NSDI 2020</a> -->
-<!-- <li> <a href="sozu.html">Sozu</a> is accepted at UIST 2019 -->
-<!-- <li> Our <a href="pushid.html">work</a> on pushing RFID range limits was accepted at NSDI 2019 -->
-<!--<li> Our work on software radios for IoT was accepted at HotNets 2018-->
-<!-- <li> I am co-organizing the <a href="https://sigmobile.org/mobicom/2018/workshops/wintech/">ACM WiNTECH 2018</a> workshop at MobiCom 2018
-<!-- <li> Charm wins best paper award at IPSN 2018
-<!--<li> Our work on wireless shape sensing was accepted at MobiSys 2018 -->
-<!--<li> Our work on Deep Learning for IoT Authentication was accepted at ICC 2018-->
-<!-- <li> Our work on wearable battery-free body-frame tracking was accepted at Ubicomp 2018-->
-<li> <a href="awards.html">[More news...]</a>
-<!-- <li> My work on low-power wearable health monitoring was funded by NSF (Small)  -->
-<!-- <li> Our work on Low-Power Wide-Area Networking (Choir) has been accepted at <a href="http://conferences.sigcomm.org/sigcomm/2017/program.html">SIGCOMM 2017</a>. -->
-<!-- <li> I am a recepient of the Google Faculty Research Award, 2017. -->
-<!-- <li> I received the NSF CRII Award, 2017.-->
-<!-- <li> Track Team CMU at the <a href="https://spectrumcollaborationchallenge.com/darpa-sc2-welcomes-the-phase-1-competitors/">DARPA Spectrum Grand Challenge</a>.  -->
-<!-- <li> R2-F2 wins best paper award at <a href="http://conferences.sigcomm.org/sigcomm/2016/awards.php">SIGCOMM 2016</a>. -->
-</ul>
-</div>
-</div>
-&nbsp;<br /> 
-<h4 style="margin-left:0px; margin-top:20px;">SELECTED PUBLICATIONS</h4>
-<ul>
-
-<li><b>Pneumatically-Actuated Liquid Metal-Based Frequency Reconfigurable Antenna</b>, Yiwen Song, Aditya Bharambe, Dinesh K Patel, Barbara Zhuo, Mason Zadan, Carmel Majidi and Swarun Kumar, Advanced Science 2026 [<a href="papers/pasta-science2026.pdf">PAPER</a>] [<a href="pasta.html">WEBSITE</a>]<br /><br /></li>
-<li><b>SonicSieve: Bringing Directional Speech Extraction to Smartphones Using Acoustic Microstructures</b>, Kuang Yuan, Yifeng Wang, Xiyuxing Zhang, Chengyi Shen, Swarun Kumar, and Justin Chan, CHI 2026 [<a href="sonicsieve.html">WEBSITE</a>]<br /><br /></li>
-<li><b>GigaFlex: Contactless Monitoring of Muscle Vibrations During Exercise with a Chaos-Inspired Radar</b>, Jiangyifei Zhu, Yuzhe Wang, Tao Qiang, Vu Phan, Zhixiong Li, Evy Meinders, Eni Halilaj, Justin Chan and Swarun Kumar, SenSys 2026 [<a href="gigaflex.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Surface Material and Roughness Sensing using mmWave via Surface Scattering and Ambient Vibrations</b>, Yawen Liu, Bert Shan and Swarun Kumar, SenSys 2026 [<a href="mmtextora.html">WEBSITE</a>]<br /><br /></li>
-<li><b>TranQuiL: Long Range Detection and Localization of RFI in Radio Quiet Zones</b>, Atul Bansal,  Mohamed Ibrahim, Kuang Yuan,  Yiwen Song, Swarun Kumar and Bob Iannucci, Radio Science 2026 [<a href="papers/tranquil-science2026.pdf">PAPER</a>] [<a href="tranquil.html">WEBSITE</a>]<br /><br /></li>
-<li><b>WindDancer: Understanding Acoustic Sensing under Ambient Airflow</b>, Kuang Yuan, Dong Li, Hao Zhou, Zhehao Li, Lili Qiu, Swarun Kumar and Jie Xiong, IMWUT 2025 [<a href="papers/winddancer-imwut2025.pdf">PAPER</a>] [<a href="winddancer.html">WEBSITE</a>]<br /><br /></li>
-<li><b>DeWinder: Single-Channel Wind Noise Reduction using Ultrasound Sensing</b>, Kuang Yuan, Shuo Han, Swarun Kumar and Bhiksha Raj, InterSpeech 2024 [<a href="papers/dewinder-interspeech2024.pdf">PAPER</a>] [<a href="dewinder.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Shape-programming Robotic Reflectors for Wireless Networks</b>, Yawen Liu, Akarsh Prabhakara, Jiangyifei Zhu, Shenyi Qiao, Swarun Kumar, ICRA 2025 [<a href="papers/metamorph-icra2025.pdf">PAPER</a>] [<a href="metamorph.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Frequency-selective actuation of liquid crystalline elastomer actuators with radio-frequency</b>, Yiwen Song, Zefang Li, Mason Zadan, Jingxian Wang, Swarun Kumar, Carmel Majidi, Nature Communications 2025 [<a href="papers/rfact-communications2025.pdf">PAPER</a>] [<a href="rfact.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Thermo-Mechanically Stable, Liquid Metal Embedded Soft Materials for High-Temperature Applications</b>, Robert Herbert, Piotr Mocny, Yuqi Zhao, Ting-Chih Lin, Junbo Zhang, Michael Vinciguerra, Sunny Surprenant, Wui Yarn Daphne Chan, Swarun Kumar, Michael R. Bockstaller, Krzysztof Matyjaszewski, Carmel Majidi, Advanced Functional Materials 2024 [<a href="papers/viton-materials2024.pdf">PAPER</a>] [<a href="viton.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Reinforcement learning–based framework for whale rendezvous via autonomous sensing robots</b>, Nishant Mehrotra, Divyanshu Pandey, Ashutosh Sabharwal, Akarsh Prabhakara, Yawen Liu and Swarun Kumar, Science Robotics 2024 [<a href="papers/avatars-robotics2024.pdf">PAPER</a>] [<a href="avatars.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Hydra: Exploiting Multi-Bounce Scattering for Beyond-Field-of-View mmWave Radar</b>, Nishant Mehrotra, Divyanshu Pandey, Ashutosh Sabharwal, Akarsh Prabhakara, Yawen Liu and Swarun Kumar, MobiCom 2024 [<a href="papers/hydra-mobicom2024.pdf">PAPER</a>] [<a href="hydra.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Guiding Energy Distribution inside Microwave Oven</b>, Yiwen Song, Swarun Kumar, Hao Pan, Longyuan Ge, Yi-Chao Chen, and Lili Qiu, MobiCom 2024 [<a href="papers/microsurf-mobicom2024.pdf">PAPER</a>] [<a href="microsurf.html">WEBSITE</a>]<br /><br /></li>
-<li><b>ToMoBrush: Exploring Dental Health Sensing using a Sonic Toothbrush</b>, Kuang Yuan, Mohamed Ibrahim, Yiwen Song, Guoxiang Deng, Robert A. Nerone, Suvendra Vijayan, Akshay Gadre, and Swarun Kumar, UbiComp 2024 [<a href="papers/tomobrush-ubicomp2024.pdf">PAPER</a>] [<a href="tomobrush.html">WEBSITE</a>]<br /><br /></li>
-<li><b>A Roadmap for the Democratization of Space-Based Communications</b>, Veronica Muriga, Swarun Kumar, Akshitha Sriraman and Assane Gueye, HotNets 2024 [<a href="papers/openspace-hotnets2024.pdf">PAPER</a>] [<a href="openspace.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Towards Ubiquitous IoT through Long Range Wireless Energy Harvesting</b>, Mohamed Ibrahim, Atul Bansal, Kuang Yuan, Junbo Zhang, and Swarun Kumar, MobiHoc 2024 [<a href="papers/scaled-mobihoc2024.pdf">PAPER</a>] [<a href="scaled.html">WEBSITE</a>]<br /><br /></li>
-<li><b>TranQuiL: Long Range Detection and Localization of RFI in Radio Quiet Zones</b>, Atul Bansal,  Mohamed Ibrahim, Kuang Yuan,  Yiwen Song, Swarun Kumar and Bob Iannucci, RFI (Oral) 2024 [<a href="tranquil0.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Adapting LoRa Ground Stations for Low-latency Imaging and Inference from LoRa-enabled CubeSats</b>, Akshay Gadre, Zachary Machester, and Swarun Kumar, ACM ToSN 2024 [<a href="papers/vista-tosn2024.pdf">PAPER</a>] [<a href="vista.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Wireless Actuation for Soft Electronics-free Robots</b>, Jingxian Wang, Yiwen Song, Mason Zadan, Yuyi Shen, Vanessa Chen, Carmel Majidi and Swarun Kumar, MobiCom 2023 [<a href="papers/waser-mobicom2023.pdf">PAPER</a>] [<a href="waser.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Battery-free Wideband Spectrum Mapping using Commodity RFID Tags</b>, Mohamed Ibrahim, Atul Bansal, Kuang Yuan, Swarun Kumar and Peter Steenkiste, MobiCom 2023 [<a href="papers/rfimap-mobicom2023.pdf">PAPER</a>] [<a href="rfimap.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Platypus: Sub-mm Micro-Displacement Sensing with Passive Millimeter-wave Tags As Phase Carriers</b>, Thomas Horton King, Jizheng He, Chun-Kai (Sean) Yao, Akarsh Prabhakara, Mohamad Alipour, Swarun Kumar, Anthony Rowe and Elahe Soltanaghai, IPSN 2023 [<a href="papers/platypus-ipsn2023.pdf">PAPER</a>] [<a href="platypus.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Navigating Soft Robots through Wireless Heating</b>, Yiwen Song, Mason Zadan, Kushaan Misra, Zefang Li, Jingxian Wang, Carmel Majidi and Swarun Kumar, ICRA 2023 [<a href="papers/nsr-icra2023.pdf">PAPER</a>] [<a href="nsr.html">WEBSITE</a>]<br /><br /></li>
-<li><b>High Resolution Point Clouds from mmWave Radar</b>, Akarsh Prabhakara, Tao Jin, Arnav Das, Gantavya Bhatt, Lilly Kumari, Elahe Soltanaghai, Jeff Bilmes, Swarun Kumar and Anthony Rowe, ICRA 2023 [<a href="papers/radarhd-icra2023.pdf">PAPER</a>] [<a href="radarhd.html">WEBSITE</a>]<br /><br /></li>
-<li><b>The Interplay of Clustering and Evolution in the Emergence of Epidemics on Networks</b>, Mansi Sood, Rashad Eletreby, Swarun Kumar, Chai Wah Wu, Osman Yagan, ICC 2023 [<a href="papers/ice-icc2023.pdf">PAPER</a>] [<a href="ice.html">WEBSITE</a>]<br /><br /></li>
-<li><b>NFCapsule: An Ingestible Sensor Pill for Eosinophilic Esophagitis Detection Based on Near-field Coupling</b>, Junbo Zhang, Gaurav Balakrishnan, Sruti Srinidhi, Arnav Bhat, Swarun Kumar and Christopher Bettinger, SenSys 2022 [<a href="papers/nfcapsule-sensys2022.pdf">PAPER</a>] [<a href="nfcapsule.html">WEBSITE</a>]<br /><br /></li>
-<li><b>PLatter: On the Feasibility of Building-scale Power Line Backscatter</b>, Junbo Zhang, Elahe Soltanaghaei, Artur Balanuta, Reese Grimsley, Swarun Kumar and Anthony Rowe, NSDI 2022 [<a href="papers/platter-nsdi2022.pdf">PAPER</a>] [<a href="platter.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Exploring mmWave Radar and Camera Fusion for High-Resolution and Long-Range Depth Imaging</b>, Akarsh Prabhakara (Co-Primary), Diana Zhang (Co-Primary), Chao Li, Sirajum Munir, Aswin Sankaranarayanan, Anthony Rowe and Swarun Kumar, IROS 2022 [<a href="papers/metamoran-iros2022.pdf">PAPER</a>] [<a href="slides/metamoran-iros2022.pdf">SLIDES</a>] [<a href="metamoran.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Toolbox Release: A WiFi-Based Relative Bearing Sensor for Robotics</b>, Ninad Jadhav, Weiying Wang, Diana Zhang, Swarun Kumar and Stephanie Gil, IROS 2022 [<a href="papers/wsr-iros2022.pdf">PAPER</a>] [<a href="wsr.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Ultra Low-Latency Backscatter for Fast-moving Location Tracking</b>, Jingxian Wang, Vaishnavi Ranganathan, Jonathan Lester and Swarun Kumar, UbiComp 2022 [<a href="papers/fastloc-ubicomp2022.pdf">PAPER</a>] [<a href="fastloc.html">WEBSITE</a>]<br /><br /></li>
-<li><b>SelfieStick: Towards Earth Imaging from a Low-Cost Ground Module Using LEO Satellites</b>, Vaibhav Singh, Osman Yagan and Swarun Kumar, IPSN  2022 [<a href="papers/selfiestick-ipsn2022.pdf">PAPER</a>] [<a href="selfiestick.html">WEBSITE</a>]<br /><br /></li>
-<li><b>MiLTOn: Sensing Product Integrity without Opening the Box using Non-Invasive Acoustic Vibrometry</b>, Akshay Gadre, Deepak Vasisht, Nikunj Raghuvanshi, Bodhi Priyantha, Manikanta Kotaru, Swarun Kumar and Ranveer Chandra
-, IPSN  2022 [<a href="papers/milton-ipsn2022.pdf">PAPER</a>] [<a href="milton.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Exploring the Needs of Users for Supporting Privacy-protective Behavior in Smart Homes</b>, Haojian Jin, Boyuan Guo, Rituparna Roychoudhury, Yaxing Yao, Swarun Kumar, Yuvraj Agarwal and Jason Hong, CHI  2022 [<a href="papers/ppb-chi2022.pdf">PAPER</a>] [<a href="ppb.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Lean Privacy Review: Collecting Users' Privacy Concerns of Data Practices at a Low Cost</b>, Haojian Jin, Hong Shen, Mayank Jain, Swarun Kumar, and Jason Hong, TOCHI  2021 [<a href="papers/lpr-tochi2021.pdf">PAPER</a>] [<a href="lpr.html">WEBSITE</a>]<br /><br /></li>
-<li><b>TagFi: Locating Ultra-Low Power WiFi Tags Using Unmodified WiFi Infrastructure</b>, Elahe Soltanaghaei, Adwait Dongare, Akarsh Prabhakara, Swarun Kumar, Anthony Rowe and Kamin Whitehouse, UbiComp  2021 [<a href="papers/tagfi-ubicomp2021.pdf">PAPER</a>] [<a href="tagfi.html">WEBSITE</a>]<br /><br /></li>
-<li><b>OwLL: Accurate LoRa Localization using the TV Whitespaces</b>, Atul Bansal, Akshay Gadre, Vaibhav Singh, Anthony Rowe, Bob Iannucci and Swarun Kumar, IPSN  2021 [<a href="papers/owll-ipsn2021.pdf">PAPER</a>] [<a href="owll.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Locating Everyday Objects using NFC Textiles</b>, Jingxian Wang (Co-Primary), Junbo Zhang (Co-Primary), Ke Li, Chengfeng Pan, Carmel Majidi and Swarun Kumar, IPSN  2021 <i>(Best Paper Award)</i> [<a href="papers/textilesense-ipsn2021.pdf">PAPER</a>] [<a href="textilesense.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Millimetro: mmWave Retro-Reflective Tags for Accurate, Long Range Localization</b>, Elahe Soltanaghaei (Co-Primary), Akarsh Prabhakara (Co-Primary), Artur Balanuta (Co-Primary), Matthew Anderson, Jan M. Rabaey, Swarun Kumar and Anthony Rowe, MobiCom  2021 [<a href="papers/millimetro-mobicom2021.pdf">PAPER</a>] [<a href="millimetro.html">WEBSITE</a>]<br /><br /></li>
-<li><b>A Community-Driven Approach to Democratize Access to Satellite Ground Stations</b>, Vaibhav Singh, Akarsh Prabhakara, Diana Zhang, Osman Yagan and Swarun Kumar, MobiCom  2021 [<a href="papers/quasar-mobicom2021.pdf">PAPER</a>] [<a href="quasar.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Quick (and Dirty) Aggregate Queries on Low-Power WANs</b>, Akshay Gadre, Fan Yi, Anthony Rowe, Bob Iannucci and Swarun Kumar, IPSN  2020 <i>(Best Paper Award)</i> [<a href="papers/quail-ipsn2020.pdf">PAPER</a>] [<a href="quail.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Full Duplex Radios: Are we there yet?</b>, Vaibhav Singh (Co-Primary), Akshay Gadre (Co-Primary) and Swarun Kumar, HotNets  2020 [<a href="papers/fdstudy-hotnets2020.pdf">PAPER</a>] [<a href="fdstudy.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Cross Technology Distributed MIMO for Low Power IoT</b>, Revathy Narayanan, Swarun Kumar and C. Siva Ram Murthy, IEEE Transactions on Mobile Computing  2020 [<a href="papers/chariot-computing2020.pdf">PAPER</a>] [<a href="chariot.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Joltik: Enabling Energy-Efficient "Future-Proof" Analytics on Low-Power Wide-Area Networks</b>, Mingran Yang, Junbo Zhang, Akshay Gadre, Zaoxing Liu, Swarun Kumar and Vyas Sekar, MobiCom  2020 [<a href="papers/joltik-mobicom2020.pdf">PAPER</a>] [<a href="joltik.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Osprey: A mmWave Approach to Tire Wear Sensing</b>, Akarsh Prabhakara, Vaibhav Singh, Swarun Kumar and Anthony Rowe, MobiSys  2020 <i>(Best Paper Honorable Mention)</i> [<a href="papers/osprey-mobisys2020.pdf">PAPER</a>] [<a href="slides/osprey-mobisys2020.pptx">SLIDES</a>] [<a href="osprey.html">WEBSITE</a>]<br /><br /></li>
-<li><b>A Cloud-Optimized Link Layer for Low-Power Wide-Area Networks</b>, Artur Balanuta, Nuno Pereira, Swarun Kumar and Anthony Rowe, MobiSys  2020 [<a href="papers/opr-mobisys2020.pdf">PAPER</a>] [<a href="opr.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Evolutionary Adaptations on Clustered Contact Networks</b>, Rashad Eletreby, Yong Zhuang, Swarun Kumar and Osman Yagan, NetSci  2020 [<a href="papers/clusterednets-netsci2020.pdf">PAPER</a>] [<a href="clusterednets.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Quick (and Dirty) Aggregate Queries on Low-Power WANs</b>, Akshay Gadre, Fan Yi, Anthony Rowe, Bob Iannucci and Swarun Kumar, IPSN  2020 <i>(Best Paper Award)</i> [<a href="papers/quail-ipsn2020.pdf">PAPER</a>] [<a href="quail.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Millimeter-Wave Full Duplex Radios</b>, Vaibhav Singh, Susnata Mondal, Akshay Gadre, Milind Srivastava, Jeyanandh Paramesh and Swarun Kumar, MobiCom  2020 [<a href="papers/mmfd-mobicom2020.pdf">PAPER</a>] [<a href="slides/mmfd-mobicom2020.pptx">SLIDES</a>] [<a href="mmfd.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Frequency Configuration for Low-Power Wide-Area Networks in a Heartbeat</b>,  Akshay Gadre, Revathy Narayanan, Anh Luong, Swarun Kumar, Anthony Rowe and Bob Iannucci, NSDI 2020 [<a href="papers/chime-nsdi2020.pdf">PAPER</a>] [<a href="chime.html">WEBSITE</a>]<br /><br /></li>
-<li><b>RFID Tattoo: A Wireless Platform for Speech Recognition </b>, Jingxian Wang, Chengfeng Pan, Haojian Jin, Vaibhav Singh, Yash Jain, Jason Hong, Carmel Majidi and Swarun Kumar, UbiComp  2020 <i>(Best Wearables Long Paper)</i> [<a href="papers/rftattoo-ubicomp2020.pdf">PAPER</a>] [<a href="rftattoo.html">WEBSITE</a>]<br /><br /></li>
-<li><b>You foot the bill! Attacking NFC with passive relays</b>, Yuyi Sun, Swarun Kumar, Shibo He, Jiming Chen and Zhiguo Shi, IEEE IoT Journal 2020 [<a href="papers/recoil-journal2020.pdf">PAPER</a>] [<a href="recoil.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Silver-Coated PDMS Beads for Soft, Stretchable, and Thermally Stable Conductive Elastomer Composites </b>,  Chengfeng Pan, Yun Sik Ohm, Jingxian Wang, Michael J. Ford, Kitty Kumar, Swarun Kumar, and Carmel Majidi, ACS applied materials and interfaces  2019 [<a href="papers/pdms-beads-interfaces2019.pdf">PAPER</a>]<br /><br /></li>
-<li><b>Sozu: Self-Powered Radio Tags for Building-Scale Activity Sensing </b>, Yang Zhang, Yasha Iravantchi, Haojian Jin, Swarun Kumar, and Chris Harrison, UIST  2019 [<a href="papers/sozu-uist2019.pdf">PAPER</a>] [<a href="sozu.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Perspective: eliminating channel feedback in next generation cellular networks </b>, Deepak Vasisht, Swarun Kumar, Hariharan Rahul and Dina Katabi, ACM SIGCOMM CCR  2019 [<a href="papers/r2f2-ccr-ccr2019.pdf">PAPER</a>]<br /><br /></li>
-<li><b>Software Defined Cooking using a Microwave Oven </b>, Haojian Jin, Jingxian Wang, Swarun Kumar and Jason Hong, MobiCom  2019 <i>(ACM GetMobile Research Hightlight)</i> [<a href="papers/sdc-mobicom2019.pdf">PAPER</a>] [<a href="slides/sdc-mobicom2019.pdf">SLIDES</a>] [<a href="sdc.html">WEBSITE</a>]<br /><br /></li>
-<li><b>On the Feasibility of Wi-Fi Based Material Sensing </b>, Diana Zhang, Jingxian Wang, Junsu Jang, Junbo Zhang, Swarun Kumar, MobiCom  2019 [<a href="papers/intuwition-mobicom2019.pdf">PAPER</a>] [<a href="slides/intuwition-mobicom2019.pdf">SLIDES</a>] [<a href="intuwition.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Pushing the Range Limits of Commercial Passive RFIDs </b>, Jingxian Wang, Junbo Zhang, Rajarshi Saha, Haojian Jin, Swarun Kumar, NSDI  2019 [<a href="papers/pushid-nsdi2019.pdf">PAPER</a>] [<a href="pushid.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Revisiting Software Defined Radios in the IoT Era </b>, Revathy Narayanan, Swarun Kumar, HotNets  2018 [<a href="papers/galiot-hotnets2018.pdf">PAPER</a>]<br /><br /></li>
-<li><b>WiSh: Towards a Wireless Shape-aware World </b>, Haojian Jin, Jingxian Wang, Zhijian Yang, Swarun Kumar, Jason Hong, MobiSys  2018 [<a href="papers/wish-mobisys2018.pdf">PAPER</a>] [<a href="wish.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Charm: Exploiting Geographical Diversity Through Coherent Combining in Low-Power Wide-Area Networks </b>, Adwait Dongare, Revathy Narayanan, Akshay Gadre, Artur Balanuta, Anh Luong, Swarun Kumar, Bob Iannucci, Anthony Rowe, IPSN  2018 <i>(Best Paper Award)</i> [<a href="papers/charm-ipsn2018.pdf">PAPER</a>] [<a href="charm.html">WEBSITE</a>]<br /><br /></li>
-<li><b>A Deep Learning Approach to IoT Authentication </b>, Rajshekhar Das, Akshay Gadre, Shanghang Zhang, Swarun Kumar and Jose Moura, ICC  2018 [<a href="papers/dliot-icc2018.pdf">PAPER</a>] [<a href="dliot.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Towards Wearable Everyday Body-Frame Tracking </b>, Haojian Jin, Zhijian Yang, Swarun Kumar, and Jason Hong, UbiComp  2018 <i>(Best Demo Honorable Mention)</i> [<a href="papers/rfwear-ubicomp2018.pdf">PAPER</a>] [<a href="slides/rfwear-ubicomp2018.pdf">SLIDES</a>] [<a href="rfwear.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Empowering Low-Power Wide Area Networks in Urban Settings </b>, Rashad Eletreby, Diana Zhang, Swarun Kumar, and Osman Yagan, SIGCOMM  2017 [<a href="papers/choir-sigcomm2017.pdf">PAPER</a>] [<a href="slides/choir-sigcomm2017.pdf">SLIDES</a>] [<a href="choir.html">WEBSITE</a>]<br /><br /></li>
-<li><b>Eliminating Channel Feedback in Next-Generation Cellular Networks </b>, Deepak Vasisht, Swarun Kumar, Hariharan Rahul and Dina Katabi, SIGCOMM  2016 <i>(Best Paper Award, GetMobile Research Highlight)</i> [<a href="papers/r2-f2-sigcomm2016.pdf">PAPER</a>]<br /><br /></li>
-<li><b>Decimeter-Level Localization with a Single WiFi </b>, Access Point, Deepak Vasisht, Swarun Kumar and Dina Katabi, NSDI  2016 [<a href="papers/chronos-nsdi2016.pdf">PAPER</a>]<br /><br /></li>
-</ul>
-
-<div style="margin-top:-20px; margin-left:30px">
-<a  href="publications.html"><b>[FULL LIST]</b></a><br /></div>
-</div>
-&nbsp;<br /> 
-
-<h4 style="margin-left:0px; margin-top:20px;">TEACHING</h4>
-<ul>
-<li> 18-213/613 (Computer Systems), Fall 2021, Spring 22-Present
-<li> 18-441/741 (Computer Networks), Spring 2018-21, Fall 22-Present
-<li> 18-859G (Wireless Networks and Mobile Systems -- DARPA SC2 Edition), Fall 2017-19
-<li> 18-345 (Intro to Telecommunication Networks), Spring 2017
-<li> 18-859F (Wireless Networks and Mobile Computing), Spring 2016
-</ul>
-<div style="margin-top:0px; margin-left:30px">
-<a href="teaching.html"><b>[FULL LIST]</b></a><br /><br /></div>
+<!-- PhD ALUMNI -->
+<div class="awards-section">
+  <h4>Ph.D. ALUMNI</h4>
+  <ul class="alumni-list">
+    <li><span class="award-year">2025</span><img class="person-thumb" src="images/people/Akarsh.jpg" alt="Akarsh Prabhakara"><div><a href="http://www.andrew.cmu.edu/user/aprabhak/">Akarsh Prabhakara</a> <span class="student-note">(co-advised with Prof. Anthony Rowe)</span> &rarr; Assistant Professor, UW-Madison</div></li>
+    <li><span class="award-year">2024</span><img class="person-thumb" src="images/people/Junbo.jpg" alt="Junbo Zhang"><div><a href="http://www.andrew.cmu.edu/user/junboz2/">Junbo Zhang</a> &rarr; Apple</div></li>
+    <li><span class="award-year">2024</span><img class="person-thumb" src="images/people/Atul.jpg" alt="Atul Bansal"><div><a href="https://atul-bansal.github.io/">Atul Bansal</a> <span class="student-note">(co-advised with Prof. Bob Iannucci)</span> &rarr; Apple</div></li>
+    <li><span class="award-year">2023</span><img class="person-thumb" src="images/people/Vaibhav.jpg" alt="Vaibhav Singh"><div><a href="https://vaibhavsingh96.github.io/">Vaibhav Singh</a> <span class="student-note">(co-advised with Prof. Osman Ya&gbreve;an)</span> &rarr; Apple</div></li>
+    <li><span class="award-year">2022</span><img class="person-thumb" src="images/people/Jingxian.jpg" alt="Jingxian Wang"><div><a href="https://jingxianwang.github.io/">Jingxian Wang</a> &rarr; Microsoft Research, then Assistant Professor, NUS</div></li>
+    <li><span class="award-year">2022</span><img class="person-thumb" src="images/people/Haojian.jpg" alt="Haojian Jin"><div><a href="http://shift-3.com/">Haojian Jin</a> <span class="student-note">(co-advised with Prof. Jason Hong)</span> &rarr; Assistant Professor, UC San Diego</div></li>
+    <li><span class="award-year">2022</span><img class="person-thumb" src="images/people/Akshay.jpg" alt="Akshay Gadre"><div><a href="https://akshaygadre.github.io/">Akshay Gadre</a> &rarr; Assistant Professor, University of Washington</div></li>
+    <li><span class="award-year">2021</span><img class="person-thumb" src="images/people/Diana.png" alt="Diana Zhang"><div><a href="http://www.dianazhang.net/">Diana Zhang</a> &rarr; Johns Hopkins University Applied Physics Lab</div></li>
+  </ul>
 </div>
 
-<h4 style="margin-left:0px; margin-top:20px;">Ph.D STUDENTS</h4>
-<ul>
-<li> <a href="https://gavinsyw.github.io/">Yiwen Song</a>
-<li> <a href="https://www.andrew.cmu.edu/user/kuangy/">Kuang Yuan</a>
-<li> <a href="https://yawenliu-ece.github.io/">Yawen Liu</a>
-<li> <a href="https://www.linkedin.com/in/veronicamuriga/">Veronica Muriga</a> (co-advised with Prof. Akshitha Sriraman and Prof. Assane Gueye)
-<li> <a href="https://zjendex.github.io/">Jiangyifei Zhu</a> (co-advised with Prof. Justin Chan)
-<li> <a href="https://freddyliu06.github.io/">Freddy Liu</a>  (co-advised with Prof. Justin Chan)
-</ul>
-&nbsp;<br /> 
-
-<h4 style="margin-left:0px; margin-top:20px;">Ph.D. ALUMNI</h4>
-<ul>
-<li><a href="http://www.dianazhang.net/"> Diana Zhang</a> (Graduated in 2021 to join John Hopkins University - Applied Physics Lab)
-<li> <a href="https://akshaygadre.github.io/">Akshay Gadre</a> (Graduated in 2022 to join as Assistant Professor at University of Washington)
-<li><a href="http://shift-3.com/"> Haojian Jin</a> (co-advised with Prof. Jason Hong; Graduated in 2022 to join as Assistant Professor at UC San Diego)
-<li> <a href="https://jingxianwang.github.io/">Jingxian Wang</a> (Graduated in 2022 to join Microsoft Research and later as Assistant Professor at NUS)
-<li> <a href="https://vaibhavsingh96.github.io/">Vaibhav</a> (co-advised with Prof. Osman Ya&gbreve; Graduated in 2023 to join Apple)
-<li> <a href="http://www.andrew.cmu.edu/user/aprabhak/">Akarsh Prabhakara</a> (co-advised with Prof. Anthony Rowe; Graduated in 2025 to join as Assistant Professor at UW-Madison)
-<li> <a href="http://www.andrew.cmu.edu/user/junboz2/">Junbo Zhang</a> (Graduated in 2024 to join Apple)
-<li> <a href="https://atul-bansal.github.io/">Atul Bansal</a> (co-advised with Prof. Bob Iannucci; Graduated in 2024 to join Apple)
-</ul>
-&nbsp;<br /> 
-
-<h4 style="margin-left:0px; margin-top:20px;">POST-DOCTORAL ALUMNI</h4>
-<ul>
-<li><a href="https://www.andrew.cmu.edu/user/miahmed/">  Mohamed Ibrahim Ahmed</a> (now at HP Labs)
-</ul>
+<!-- POSTDOC ALUMNI -->
+<div class="awards-section">
+  <h4>POSTDOCTORAL ALUMNI</h4>
+  <ul class="student-list">
+    <li><img class="person-thumb" src="images/people/mohamed.png" alt="Mohamed Ibrahim Ahmed"><a href="https://www.andrew.cmu.edu/user/miahmed/">Mohamed Ibrahim Ahmed</a> &rarr; HP Labs</li>
+  </ul>
 </div>
 
-
+&nbsp;<br />
 </div>
 </div>
 
-<div class="clear"></div>
-</div>
-<div class="endgrad"></div>
-<div class="clear"></div>
-<div class='endgrad'></div>
-<div class="footer"><div style="margin-top:7px">Swarun Kumar, Sathaye Family Foundation Professor, CMU ECE</div></div>
-</div>
-</center>
+      </div>
+    </div>
+  </div><!-- end site-main -->
+
+  <div class="site-footer">
+    Swarun Kumar &bull; Sathaye Family Foundation Professor &bull; ECE, Carnegie Mellon University
+  </div>
+
+</div><!-- end site-wrapper -->
+
 </body>
 </html>
-
