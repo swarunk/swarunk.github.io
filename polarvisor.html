@@ -1,0 +1,326 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Polarvisor project | Swarun Kumar, CMU</title>
+<meta name="keywords" content="polarvisor project, swarun kumar, cmu">
+<meta content="http://swarunkumar.com/images/swarun_meta.jpg" property="og:image"/>
+<meta name="description" content="Polarvisor project page of Swarun Kumar, Professor at Carnegie Mellon University. ">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="images/favicon.ico" />
+<link type="text/css" rel="stylesheet" href="styles/styles.css" media="screen" />
+<link rel="canonical" href="https://swarunkumar.com/polarvisor.html" />
+
+<style>
+/* ---- RESET ---- */
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+}
+
+/* ---- SITE HEADER ---- */
+.site-header {
+  background: #fff;
+  border-bottom: 3px solid #992222;
+  padding: 0 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+  box-sizing: border-box;
+}
+
+.site-header__name {
+  font-size: 22px;
+  font-weight: bold;
+  color: #1a1a1a;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  font-family: 'Georgia', serif;
+}
+
+.site-header__name:hover {
+  color: #992222;
+}
+
+.site-header__logo img {
+  height: 48px;
+  width: auto;
+}
+
+/* ---- HAMBURGER BUTTON ---- */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  position: relative;
+  flex-shrink: 0;
+  padding: 0;
+  z-index: 200;
+}
+.nav-toggle span,
+.nav-toggle span::before,
+.nav-toggle span::after {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #444;
+  position: absolute;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+.nav-toggle span         { left: 7px; top: 17px; }
+.nav-toggle span::before { content: ''; left: 0; top: -7px; }
+.nav-toggle span::after  { content: ''; left: 0; top: 7px; }
+.nav-toggle[aria-expanded="true"] span { background: transparent; }
+.nav-toggle[aria-expanded="true"] span::before { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span::after  { transform: translateY(-7px) rotate(-45deg); }
+
+/* ---- NAV OVERLAY ---- */
+.nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 90;
+}
+.nav-overlay.is-open { display: block; }
+
+/* ---- NAVIGATION ---- */
+.topnav {
+  background: #fafafa;
+  border-bottom: 1px solid #e4e4e4;
+  padding: 0 28px;
+  display: flex;
+  align-items: stretch;
+}
+
+.topnav a {
+  display: inline-flex;
+  align-items: center;
+  color: #444;
+  padding: 0 18px;
+  height: 46px;
+  text-decoration: none;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-bottom: 3px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.topnav a:hover {
+  color: #992222;
+  border-bottom-color: #992222;
+  background: none;
+}
+
+.topnav a.active {
+  color: #992222;
+  border-bottom-color: #992222;
+  background: none;
+}
+
+@media screen and (max-width: 680px) {
+  .site-header { padding: 0 16px; height: 64px; }
+  .site-header__name { font-size: 17px; }
+  .site-header__logo { display: none; }
+  .nav-toggle { display: flex; align-items: center; justify-content: center; }
+
+  /* Drawer: off-screen by default, slides in when open */
+  .topnav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 220px;
+    height: 100vh;
+    background: #fff;
+    border-bottom: none;
+    border-left: 1px solid #e4e4e4;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 80px 0 24px;
+    transform: translateX(100%);
+    transition: transform 0.28s ease;
+    z-index: 100;
+    box-shadow: -4px 0 20px rgba(0,0,0,0.12);
+  }
+  .topnav.is-open { transform: translateX(0); }
+
+  .topnav a {
+    width: 100%;
+    height: 48px;
+    padding: 0 24px;
+    border-bottom: 1px solid #f0f0f0 !important;
+    border-top: none;
+    font-size: 12px;
+    justify-content: flex-start;
+  }
+  .topnav a:last-child { border-bottom: none !important; }
+}
+</style>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18185637-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<script type="application/ld+json">
+{
+"@context": "http://www.schema.org",
+"@type": "Person",
+"@id": "https://swarunkumar.com/polarvisor.html/#person",
+"name": "Swarun Kumar",
+"birthPlace": "Chennai, India",
+"award": [
+"NSF CAREER Award",
+"NSF CRII Award",
+"Google Faculty Research Award"
+],
+"address": {
+"@type": "PostalAddress",
+"addressLocality": "Pittsburgh",
+"addressRegion": "PA",
+"postalCode": "15213",
+"streetAddress": "4720 Forbes Ave, Rm 4102"
+},
+"affiliation": [
+{
+"@type": "CollegeOrUniversity",
+"name": "Carnegie Mellon University",
+"sameAs": [
+"https://www.cmu.edu",
+"https://en.wikipedia.org/wiki/Carnegie_Mellon_University"
+]
+}
+],
+"alumniOf": [
+{
+"@type": "CollegeOrUniversity",
+"name": "Massachusetts Institute of Technology",
+"sameAs": "https://www.mit.edu"
+}
+],
+"gender": "Male",
+"Description": "Wireless Systems Researcher",
+"disambiguatingDescription": "Head, WiTech Lab at CMU",
+"jobTitle": "Sathaye Family Foundation Professor",
+"worksFor": [
+{
+"@type": "CollegeOrUniversity",
+"name": "Carnegie Mellon University",
+"sameAs": [
+"https://www.cmu.edu",
+"https://en.wikipedia.org/wiki/Carnegie_Mellon_University"
+]
+}
+],
+"url": "https://swarunkumar.com/polarvisor.html",
+"image": "https://swarunkumar.com/polarvisor.html/images/swarun_cmu_pic.png",
+"sameAs": [
+"https://swarunkumar.com/polarvisor.html/",
+"https://twitter.com/swarunk",
+"https://www.facebook.com/swarun.s",
+"https://www.linkedin.com/in/swarun/",
+"https://scholar.google.com/citations?user=WfaqxlgAAAAJ",
+"https://everipedia.org/wiki/lang_en/swarun-kumar",
+"https://www.wikidata.org/wiki/Q97960946"
+]
+}
+</script>
+
+</head>
+<body>
+
+<div class="site-wrapper">
+
+  <div class="site-header">
+    <a class="site-header__name" href="index.html">Swarun Kumar</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+    </button>
+    <div class="site-header__logo">
+      <img src="images/CarnegieMellonUniversity_wordmark.gif" alt="Carnegie Mellon University" />
+    </div>
+  </div>
+
+  <nav class="topnav" id="myTopnav">
+    <a href="index.html">Home</a>
+    <a href="publications.html">Publications</a>
+    <a href="research.html">Research</a>
+    <a href="awards.html">Awards</a>
+    <a href="outreach.html">Outreach</a>
+  </nav>
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <script>
+  (function() {
+    var toggle = document.getElementById('navToggle');
+    var nav    = document.getElementById('myTopnav');
+    var overlay = document.getElementById('navOverlay');
+
+    function openNav() {
+      nav.classList.add('is-open');
+      overlay.classList.add('is-open');
+      toggle.setAttribute('aria-expanded', 'true');
+    }
+    function closeNav() {
+      nav.classList.remove('is-open');
+      overlay.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+
+    toggle.addEventListener('click', function() {
+      nav.classList.contains('is-open') ? closeNav() : openNav();
+    });
+    overlay.addEventListener('click', closeNav);
+  })();
+  </script>
+
+  <div class="site-content">
+    <div class="site-main">
+      <div><div>
+<div class="paper-page">
+
+  <div class="awards-section">
+    <h4>Project PolarVisor:  Clutter-free, Electronics-free Fiducial Markers for mmWave Radars Printed on Paper</h4>
+
+    <div class="paper-page__overview">
+      <div class="paper-page__image">
+        <img src="images/polarvisor.png" alt="PolarVisor project image" />
+      </div>
+      <div class="paper-page__abstract">
+        We introduce PolarVisor, where we imprint mmWave fiducial markers with paper and foils. Its key insight is manipulating signal polarization to enable clutter-free detection on its markers. Meanwhile, it builds on recent advances in passive metasurfaces where metallic patterns are readily hot-stamped on paper with foils. PolarVisor adopts an innovative design where the radar wears a visor (also paper-based) to eliminate clutter, leaving the markers readily visible. We include an in-depth analysis of its design and fabrication and we show that: (1) PolarVisor can support clutter-free detection at up to 25 m. (2) PolarVisor reports a self-localization accuracy of 0.0297 m (mean) and 0.0232 m (median) across multiple real-world, multipath-rich indoor environments.
+      </div>
+    </div>
+  </div>
+  <div class="awards-section">
+    <h4>CITATION</h4>
+    <ul class="pub-list">
+<li><strong>PolarVisor: Clutter-free, Electronics-free Fiducial Markers for mmWave Radars Printed on Paper</strong>, Junbo Zhang, Yiwen Song and Swarun Kumar, MobiCom 2025  <a class="pub-link" href="papers/polarvisor-mobicom2025.pdf">PAPER</a></li>
+    </ul>
+  </div>
+
+</div><!-- end paper-page -->      </div>
+    </div>
+  </div><!-- end site-main -->
+
+  <div class="site-footer">
+    Swarun Kumar &bull; Sathaye Family Foundation Professor &bull; ECE, Carnegie Mellon University
+  </div>
+
+</div><!-- end site-wrapper -->
+
+</body>
+</html>
+
