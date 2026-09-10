@@ -291,28 +291,155 @@ body {
     <div class="site-main">
       <div><div>
 
-<h4>
-NSF Award (<a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2030154">2030154</a>):  SWIFT: Large: Averting Wireless Spectrum Pollution in the Era of Low-Power IoT
-</h4>
+<style>
+.grant-page {
+  margin: 30px 30px;
+  font-family: 'Georgia', serif;
+  font-size: 15px;
+  color: #2c2c2c;
+  line-height: 1.7;
+}
+.grant-header {
+  background: linear-gradient(135deg, #6b1717 0%, #992222 100%);
+  color: white;
+  border-radius: 8px;
+  padding: 28px 32px;
+  margin-bottom: 28px;
+}
+.grant-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+.grant-header .award-link {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  color: #ffd0d0;
+  text-decoration: none;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: monospace;
+  letter-spacing: 0.5px;
+  margin-right: 8px;
+}
+.grant-header .award-link:hover { background: rgba(255,255,255,0.35); }
+.grant-header .tagline {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #f5d0d0;
+  font-style: italic;
+}
+.grant-section {
+  background: #fdf9f9;
+  border-left: 4px solid #992222;
+  border-radius: 0 6px 6px 0;
+  padding: 20px 24px;
+  margin-bottom: 22px;
+}
+.grant-section h4 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  color: #6b1717;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-family: Arial, sans-serif;
+}
+.grant-section p, .grant-section div {
+  margin: 0;
+}
+.outcomes-block {
+  margin-bottom: 16px;
+}
+.outcomes-label {
+  font-style: italic;
+  font-weight: bold;
+  color: #6b1717;
+  display: block;
+  margin-bottom: 4px;
+}
+.grant-section ul {
+  margin: 8px 0 0 0;
+  padding-left: 20px;
+}
+.grant-section ul li {
+  margin-bottom: 6px;
+}
+.personnel-grid {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.personnel-col h5 {
+  margin: 0 0 8px 0;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: #555;
+  font-family: Arial, sans-serif;
+}
+.personnel-col ul {
+  margin: 0;
+  padding-left: 18px;
+}
+.personnel-col ul li {
+  margin-bottom: 4px;
+}
+.paper-figure {
+  float: right;
+  margin: 4px 0 12px 24px;
+  width: 340px;
+  max-width: 45%;
+}
+.paper-figure img {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #e8d8d8;
+  display: block;
+}
+.paper-figure figcaption {
+  font-size: 12px;
+  color: #777;
+  margin-top: 6px;
+  font-style: italic;
+  text-align: center;
+}
+.outcomes-clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+</style>
 
-<div>
-This webpage tracks the current progress of our funded project with the NSF.  Our sincere thanks to the National Science Foundation for supporting  our research. <br />
-</div>
+<div class="grant-page">
 
-<h5>Project Goals</h4>
+  <div class="grant-header">
+    <div>
+      <a class="award-link" href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2030154">NSF #2030154</a>
+    </div>
+    <h2>SWIFT: Large: Averting Wireless Spectrum Pollution in the Era of Low-Power IoT</h2>
+    <div class="tagline">This webpage tracks the current progress of our NSF-funded project. Our sincere thanks to the National Science Foundation for supporting our research.</div>
+  </div>
 
-<div>
-This project seeks to address the problem of spectrum pollution in the Internet-of-Things (IoT) era. Spectrum pollution is an inevitable challenge that emerges when low-cost and low-power wireless IoT devices deployed at scale cannot detect and respect the presence of other devices on shared spectrum. The core challenge is the low-power and simplicity of most IoT devices, due to which they are narrowband and unable to sense and avoid incumbents on shared spectrum. The project investigates a system that allows teams of geo-distributed low-power devices to quickly and efficiently scan wide bandwidths to avert interference. This proposal presents Swallow, a system design for low-power devices to sense spectrum at minimal energy and cost, allowing these devices to behave as low-cost and distributed spectrum observatories. The testbed developed through the project will serve as a vehicle for undergraduate and graduate-level projects as well as workshops for K-12 students in the City of Pittsburgh. The team has direct experience working with sensor deployments both at Carnegie Mellon, the City of Pittsburgh, United States Geological Survey (USGS), and local industry partners and will leverage these connections to deploy Swallow at scale.
+  <div class="grant-section">
+    <h4>Project Goals</h4>
+    <div>
+      This project seeks to address the problem of spectrum pollution in the Internet-of-Things (IoT) era. Spectrum pollution is an inevitable challenge that emerges when low-cost and low-power wireless IoT devices deployed at scale cannot detect and respect the presence of other devices on shared spectrum. The core challenge is the low-power and simplicity of most IoT devices, due to which they are narrowband and unable to sense and avoid incumbents on shared spectrum. The project investigates a system that allows teams of geo-distributed low-power devices to quickly and efficiently scan wide bandwidths to avert interference. This proposal presents Swallow, a system design for low-power devices to sense spectrum at minimal energy and cost, allowing these devices to behave as low-cost and distributed spectrum observatories. The testbed developed through the project will serve as a vehicle for undergraduate and graduate-level projects as well as workshops for K-12 students in the City of Pittsburgh. The team has direct experience working with sensor deployments both at Carnegie Mellon, the City of Pittsburgh, United States Geological Survey (USGS), and local industry partners and will leverage these connections to deploy Swallow at scale.<br /><br />The project will study a low-power analog frontend and associated digital processing that allows IoT devices to summarize large bandwidths using inexpensive components. It investigates an end-to-end system design that collates measurements from distributed individually low-power IoT devices to obtain a shared spectrum map. It further develops an accurate localization framework to geo-locate individual IoT devices to sample spectrum occupancy at fine-spatial resolution. The wide bandwidth of Swallow's low-power frontend naturally leads to an accurate solution for time-of flight based localization, where bandwidth is a key metric that dictates system accuracy. Swallow proposes a sub-meter accurate ranging solution for low-power wide-area radios that enables detecting proximity to known passive RF devices such as fixed radio telescopes and enables spectrum occupancy maps sampled at fine-spatial resolution. The project will be implemented and evaluated on a large programmable Low-Power Wide-Area Networking testbed in the Carnegie Mellon University campus that serves large parts of the City of Pittsburgh.
+    </div>
+  </div>
 
-The project will study a low-power analog frontend and associated digital processing that allows IoT devices to summarize large bandwidths using inexpensive components. It investigates an end-to-end system design that collates measurements from distributed individually low-power IoT devices to obtain a shared spectrum map. It further develops an accurate localization framework to geo-locate individual IoT devices to sample spectrum occupancy at fine-spatial resolution. The wide bandwidth of Swallow’s low-power frontend naturally leads to an accurate solution for time-of flight based localization, where bandwidth is a key metric that dictates system accuracy. Swallow proposes a sub-meter accurate ranging solution for low-power wide-area radios that enables detecting proximity to known passive RF devices such as fixed radio telescopes and enables spectrum occupancy maps sampled at fine-spatial resolution. The project will be implemented and evaluated on a large programmable Low-Power Wide-Area Networking testbed in the Carnegie Mellon University campus that serves large parts of the City of Pittsburgh.
-</div>
+  <div class="grant-section">
+    <h4>Activities &amp; Outcomes</h4>
 
-<h5>Activities and Outcomes</h4>
-
-<i> Intellectual Merit</i>
-The proposed research led to multiple accepted papers at IPSN and MobiSys. The research has been demonstrated on commodity low-power devices. 
-
-<ul>
+    <div class="outcomes-block outcomes-clearfix">
+      <span class="outcomes-label">Intellectual Merit</span>
+      <figure class="paper-figure">
+        <img src="images/rfimap.png" alt="RFIMap: RF interference mapping system" />
+        <figcaption>RFIMap: city-scale RF interference mapping for IoT spectrum management (MobiCom 2023).</figcaption>
+      </figure>
+      The proposed research led to multiple accepted papers at IPSN and MobiSys. The research has been demonstrated on commodity low-power devices.
+      <ul>
 <li><b>TranQuiL: Long Range Detection and Localization of RFI in Radio Quiet Zones</b>, Atul Bansal,  Mohamed Ibrahim, Kuang Yuan,  Yiwen Song, Swarun Kumar and Bob Iannucci, Radio Science 2026<br /></li>
 <li><b>Towards Ubiquitous IoT through Long Range Wireless Energy Harvesting</b>, Mohamed Ibrahim, Atul Bansal, Kuang Yuan, Junbo Zhang, and Swarun Kumar, MobiHoc 2024<br /></li>
 <li><b>TranQuiL: Long Range Detection and Localization of RFI in Radio Quiet Zones</b>, Atul Bansal,  Mohamed Ibrahim, Kuang Yuan,  Yiwen Song, Swarun Kumar and Bob Iannucci, RFI (Oral) 2024<br /></li>
@@ -321,31 +448,37 @@ The proposed research led to multiple accepted papers at IPSN and MobiSys. The r
 <li><b>High Resolution Point Clouds from mmWave Radar</b>, Akarsh Prabhakara, Tao Jin, Arnav Das, Gantavya Bhatt, Lilly Kumari, Elahe Soltanaghai, Jeff Bilmes, Swarun Kumar and Anthony Rowe, ICRA 2023<br /></li>
 <li><b>OwLL: Accurate LoRa Localization using the TV Whitespaces</b>, Atul Bansal, Akshay Gadre, Vaibhav Singh, Anthony Rowe, Bob Iannucci and Swarun Kumar, IPSN  2021<br /></li>
 <li><b>Cross Technology Distributed MIMO for Low Power IoT</b>, Revathy Narayanan, Swarun Kumar and C. Siva Ram Murthy, IEEE Transactions on Mobile Computing  2020<br /></li>
-</ul>
+      </ul>
+    </div>
 
-<i> Broader Impacts</i>
-Two graduate students have been trained during the course of this research. The PI participated in several events organized by the Gelfand Center at CMU which invites groups of K-12 students and teachers to the CMU campus to learn about state-of-the-art research. The PI presented demos of RFID-enabled smart fabrics to the students.
+    <div class="outcomes-block">
+      <span class="outcomes-label">Broader Impacts</span>
+      Two graduate students have been trained during the course of this research. The PI participated in several events organized by the Gelfand Center at CMU which invites groups of K-12 students and teachers to the CMU campus to learn about state-of-the-art research. The PI presented demos of RFID-enabled smart fabrics to the students.
+    </div>
+  </div>
 
-<h5>Personnel</h4>
-
-<i>Faculty</i>
-<ul>
-<li> Swarun Kumar (PI)
-<li> Anthony Rowe
-<li> Bob Iannucci
-</ul>
-
-<i>Students</i>
-<ul>
-<li>Atul Bansal
-<li>Akshay Gadre
-</ul>
-
-<br /><br />
-
+  <div class="grant-section">
+    <h4>Personnel</h4>
+    <div class="personnel-grid">
+      <div class="personnel-col">
+        <h5>Faculty</h5>
+        <ul>
+          <li>Swarun Kumar (PI)</li>
+          <li>Anthony Rowe</li>
+          <li>Bob Iannucci</li>
+        </ul>
+      </div>
+      <div class="personnel-col">
+        <h5>Students</h5>
+        <ul>
+          <li>Atul Bansal</li>
+          <li>Akshay Gadre</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
 </div>
-
 
       </div>
     </div>

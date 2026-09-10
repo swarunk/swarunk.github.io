@@ -291,30 +291,155 @@ body {
     <div class="site-main">
       <div><div>
 
-<h4>
-NSF Award (<a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1942902">1942902</a>):   CAREER: Pushing the Limits of Low-Power Wide-Area Networks
-</h4>
+<style>
+.grant-page {
+  margin: 30px 30px;
+  font-family: 'Georgia', serif;
+  font-size: 15px;
+  color: #2c2c2c;
+  line-height: 1.7;
+}
+.grant-header {
+  background: linear-gradient(135deg, #6b1717 0%, #992222 100%);
+  color: white;
+  border-radius: 8px;
+  padding: 28px 32px;
+  margin-bottom: 28px;
+}
+.grant-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+.grant-header .award-link {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  color: #ffd0d0;
+  text-decoration: none;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: monospace;
+  letter-spacing: 0.5px;
+  margin-right: 8px;
+}
+.grant-header .award-link:hover { background: rgba(255,255,255,0.35); }
+.grant-header .tagline {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #f5d0d0;
+  font-style: italic;
+}
+.grant-section {
+  background: #fdf9f9;
+  border-left: 4px solid #992222;
+  border-radius: 0 6px 6px 0;
+  padding: 20px 24px;
+  margin-bottom: 22px;
+}
+.grant-section h4 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  color: #6b1717;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-family: Arial, sans-serif;
+}
+.grant-section p, .grant-section div {
+  margin: 0;
+}
+.outcomes-block {
+  margin-bottom: 16px;
+}
+.outcomes-label {
+  font-style: italic;
+  font-weight: bold;
+  color: #6b1717;
+  display: block;
+  margin-bottom: 4px;
+}
+.grant-section ul {
+  margin: 8px 0 0 0;
+  padding-left: 20px;
+}
+.grant-section ul li {
+  margin-bottom: 6px;
+}
+.personnel-grid {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.personnel-col h5 {
+  margin: 0 0 8px 0;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: #555;
+  font-family: Arial, sans-serif;
+}
+.personnel-col ul {
+  margin: 0;
+  padding-left: 18px;
+}
+.personnel-col ul li {
+  margin-bottom: 4px;
+}
+.paper-figure {
+  float: right;
+  margin: 4px 0 12px 24px;
+  width: 340px;
+  max-width: 45%;
+}
+.paper-figure img {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #e8d8d8;
+  display: block;
+}
+.paper-figure figcaption {
+  font-size: 12px;
+  color: #777;
+  margin-top: 6px;
+  font-style: italic;
+  text-align: center;
+}
+.outcomes-clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+</style>
 
-<div>
-This webpage tracks the current progress of our funded project with the NSF.  Our sincere thanks to the National Science Foundation for supporting  our research. <br />
-</div>
+<div class="grant-page">
 
-<h5>Project Goals</h4>
+  <div class="grant-header">
+    <div>
+      <a class="award-link" href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1942902">NSF #1942902</a>
+    </div>
+    <h2>CAREER: Pushing the Limits of Low-Power Wide-Area Networks</h2>
+    <div class="tagline">This webpage tracks the current progress of our NSF-funded project. Our sincere thanks to the National Science Foundation for supporting our research.</div>
+  </div>
 
-<div>
-Future smart cities will have to provide Internet connectivity to millions of energy-starved Internet-of-Things devices - even those several miles away from the nearest wireless base station. To this end, recent years have seen novel Low-Power Wide Area Networks (LP-WANs) deployed, such as LoRa and NB-IoT. Unfortunately, today?s LP-WAN technologies require a battery to power these devices, which impacts their maintenance cost and reliability. This proposal aims to develop a city-scale LP-WAN architecture that offloads connectivity, sensing and even the source of energy to the more capable base stations and cloud infrastructure. We develop an architecture where base stations actively collaborate to enable faster and more reliable connectivity to low-power devices, sense their location and surroundings and provide energy they require to operate in the first place. The proposed work has a detailed integrated education and outreach program including course projects that leverage a live testbed and summer labs for K-12 students in Greater Pittsburgh. The proposed work will be deployed initially to network existing smart sensors at CMU and later scale to surrounding city infrastructure, through extensive collaborations with the City of Pittsburgh, forming a first-of-its-kind university-led programmable LP-WAN deployment.
+  <div class="grant-section">
+    <h4>Project Goals</h4>
+    <div>
+      Future smart cities will have to provide Internet connectivity to millions of energy-starved Internet-of-Things devices - even those several miles away from the nearest wireless base station. To this end, recent years have seen novel Low-Power Wide Area Networks (LP-WANs) deployed, such as LoRa and NB-IoT. Unfortunately, today's LP-WAN technologies require a battery to power these devices, which impacts their maintenance cost and reliability. This proposal aims to develop a city-scale LP-WAN architecture that offloads connectivity, sensing and even the source of energy to the more capable base stations and cloud infrastructure. We develop an architecture where base stations actively collaborate to enable faster and more reliable connectivity to low-power devices, sense their location and surroundings and provide energy they require to operate in the first place. The proposed work has a detailed integrated education and outreach program including course projects that leverage a live testbed and summer labs for K-12 students in Greater Pittsburgh. The proposed work will be deployed initially to network existing smart sensors at CMU and later scale to surrounding city infrastructure, through extensive collaborations with the City of Pittsburgh, forming a first-of-its-kind university-led programmable LP-WAN deployment.<br /><br />The proposed work enables Low-Power Wide-Area Networking in dense smart-city deployments along three axes: (1) Long-Range Wireless Charging: First, the proposal investigates a system at the base stations that beams power to battery-free clients at unknown locations. We explore base station and client designs to perform wireless charging over large distances, orders-of-magnitude higher than prior work. (2) Pushing LP-WAN Speed and Scaling Limits: Next, the proposed work explores a solution to decode collisions from even the weakest of LP-WAN signals that cannot be detected at any single base station. The proposal argues why power starved LP-WAN clients motivate the need for even mundane PHY-layer functions at the client: radio configuration, decoding and rate adaptation - to be offloaded to the more capable infrastructure. The proposal then explores intelligent ways for base stations to collaborate at the cloud, despite limited backhaul bandwidth. (3) City-Scale Wireless Sensing: Finally, the proposed work investigates novel sensing solutions that use RF signal measurements received both from city-wide low-power radios as well as CubeSats in Low-Earth Orbit, collated at the edge and cloud. We evaluate how such a system can sense properties such as structural health and atmospheric moisture at city-scale, without requiring dedicated sensors on low-power devices.
+    </div>
+  </div>
 
-The proposed work enables Low-Power Wide-Area Networking in dense smart-city deployments along three axes: (1) Long-Range Wireless Charging: First, the proposal investigates a system at the base stations that beams power to battery-free clients at unknown locations. We explore base station and client designs to perform wireless charging over large distances, orders-of-magnitude higher than prior work. (2) Pushing LP-WAN Speed and Scaling Limits: Next, the proposed work explores a solution to decode collisions from even the weakest of LP-WAN signals that cannot be detected at any single base station. The proposal argues why power starved LP-WAN clients motivate the need for even mundane PHY-layer functions at the client: radio configuration, decoding and rate adaptation - to be offloaded to the more capable infrastructure. The proposal then explores intelligent ways for base stations to collaborate at the cloud, despite limited backhaul bandwidth. (3) City-Scale Wireless Sensing: Finally, the proposed work investigates novel sensing solutions that use RF signal measurements received both from city-wide low-power radios as well as CubeSats in Low-Earth Orbit, collated at the edge and cloud. We evaluate how such a system can sense properties such as structural health and atmospheric moisture at city-scale, without requiring dedicated sensors on low-power devices.
+  <div class="grant-section">
+    <h4>Activities &amp; Outcomes</h4>
 
-</div>
-
-<h5>Activities and Outcomes</h4>
-
-<i> Intellectual Merit</i>
-The proposed research will be fully implemented and evaluated on Low-Power WANs. 
-
-<ul>
-<li><b>Pneumatically-Actuated Liquid Metal-Based Frequency Reconfigurable Antenna</b>, Yiwen Song, Aditya Bharambe, Dinesh K Patel, Barbara Zhuo, Mason Zadan, Carmel Majidi and Swarun Kumar, Advanced Science 2026<br /></li>
+    <div class="outcomes-block outcomes-clearfix">
+      <span class="outcomes-label">Intellectual Merit</span>
+      <figure class="paper-figure">
+        <img src="images/gigaflex.png" alt="GigaFlex: flexible high-throughput LP-WAN system" />
+        <figcaption>GigaFlex: pushing throughput limits of low-power wide-area networks (SenSys 2026).</figcaption>
+      </figure>
+      The proposed research will be fully implemented and evaluated on Low-Power WANs.
+      <ul>
 <li><b>SonicSieve: Bringing Directional Speech Extraction to Smartphones Using Acoustic Microstructures</b>, Kuang Yuan, Yifeng Wang, Xiyuxing Zhang, Chengyi Shen, Swarun Kumar, and Justin Chan, CHI 2026<br /></li>
 <li><b>GigaFlex: Contactless Monitoring of Muscle Vibrations During Exercise with a Chaos-Inspired Radar</b>, Jiangyifei Zhu, Yuzhe Wang, Tao Qiang, Vu Phan, Zhixiong Li, Evy Meinders, Eni Halilaj, Justin Chan and Swarun Kumar, SenSys 2026<br /></li>
 <li><b>Surface Material and Roughness Sensing using mmWave via Surface Scattering and Ambient Vibrations</b>, Yawen Liu, Bert Shan and Swarun Kumar, SenSys 2026<br /></li>
@@ -333,30 +458,36 @@ The proposed research will be fully implemented and evaluated on Low-Power WANs.
 <li><b>Joltik: Enabling Energy-Efficient "Future-Proof" Analytics on Low-Power Wide-Area Networks</b>, Mingran Yang, Junbo Zhang, Akshay Gadre, Zaoxing Liu, Swarun Kumar and Vyas Sekar, MobiCom  2020<br /></li>
 <li><b>A Cloud-Optimized Link Layer for Low-Power Wide-Area Networks</b>, Artur Balanuta, Nuno Pereira, Swarun Kumar and Anthony Rowe, MobiSys  2020<br /></li>
 <li><b>Poster: Does Ambient RF Energy Suffice to Power Battery-free IoT?</b>, Atul Bansal, Swarun Kumar and Bob Iannucci, MobiSys  2020<br /></li>
-</ul>
+      </ul>
+    </div>
 
-<i> Broader Impacts</i>
-Three graduate students are being trained during the course of this research. The PI participated in several events organized by the Gelfand Center at CMU which invites groups of K-12 students and teachers to the CMU campus to learn about state-of-the-art research.
+    <div class="outcomes-block">
+      <span class="outcomes-label">Broader Impacts</span>
+      Three graduate students are being trained during the course of this research. The PI participated in several events organized by the Gelfand Center at CMU which invites groups of K-12 students and teachers to the CMU campus to learn about state-of-the-art research.
+    </div>
+  </div>
 
-<h5>Personnel</h4>
-
-<i>Faculty</i>
-<ul>
-<li> Swarun Kumar (PI)
-</ul>
-
-<i>Students</i>
-<ul>
-<li>Akshay Gadre
-<li>Atul Bansal
-<li>Junbo Zhang
-</ul>
-
-<br /><br />
-
+  <div class="grant-section">
+    <h4>Personnel</h4>
+    <div class="personnel-grid">
+      <div class="personnel-col">
+        <h5>Faculty</h5>
+        <ul>
+          <li>Swarun Kumar (PI)</li>
+        </ul>
+      </div>
+      <div class="personnel-col">
+        <h5>Students</h5>
+        <ul>
+          <li>Akshay Gadre</li>
+          <li>Atul Bansal</li>
+          <li>Junbo Zhang</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
 </div>
-
 
       </div>
     </div>

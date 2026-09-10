@@ -291,67 +291,195 @@ body {
     <div class="site-main">
       <div><div>
 
-<h4>
-NSF Award (<a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1823235">1823235</a>):  NeTS: CRI: II-New: Mobile Millimeter-Wave MIMO Network Based on CMU Chipscale Beamformers
-</h4>
+<style>
+.grant-page {
+  margin: 30px 30px;
+  font-family: 'Georgia', serif;
+  font-size: 15px;
+  color: #2c2c2c;
+  line-height: 1.7;
+}
+.grant-header {
+  background: linear-gradient(135deg, #6b1717 0%, #992222 100%);
+  color: white;
+  border-radius: 8px;
+  padding: 28px 32px;
+  margin-bottom: 28px;
+}
+.grant-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+.grant-header .award-link {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  color: #ffd0d0;
+  text-decoration: none;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: monospace;
+  letter-spacing: 0.5px;
+  margin-right: 8px;
+}
+.grant-header .award-link:hover { background: rgba(255,255,255,0.35); }
+.grant-header .tagline {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #f5d0d0;
+  font-style: italic;
+}
+.grant-section {
+  background: #fdf9f9;
+  border-left: 4px solid #992222;
+  border-radius: 0 6px 6px 0;
+  padding: 20px 24px;
+  margin-bottom: 22px;
+}
+.grant-section h4 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  color: #6b1717;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-family: Arial, sans-serif;
+}
+.grant-section p, .grant-section div {
+  margin: 0;
+}
+.outcomes-block {
+  margin-bottom: 16px;
+}
+.outcomes-label {
+  font-style: italic;
+  font-weight: bold;
+  color: #6b1717;
+  display: block;
+  margin-bottom: 4px;
+}
+.grant-section ul {
+  margin: 8px 0 0 0;
+  padding-left: 20px;
+}
+.grant-section ul li {
+  margin-bottom: 6px;
+}
+.personnel-grid {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.personnel-col h5 {
+  margin: 0 0 8px 0;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: #555;
+  font-family: Arial, sans-serif;
+}
+.personnel-col ul {
+  margin: 0;
+  padding-left: 18px;
+}
+.personnel-col ul li {
+  margin-bottom: 4px;
+}
+.paper-figure {
+  float: right;
+  margin: 4px 0 12px 24px;
+  width: 340px;
+  max-width: 45%;
+}
+.paper-figure img {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #e8d8d8;
+  display: block;
+}
+.paper-figure figcaption {
+  font-size: 12px;
+  color: #777;
+  margin-top: 6px;
+  font-style: italic;
+  text-align: center;
+}
+.outcomes-clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+</style>
 
-<div>
-This webpage tracks the current progress of our funded project with the NSF.  Our sincere thanks to the National Science Foundation for supporting  our research. <br />
-</div>
+<div class="grant-page">
 
-<h5>Project Goals</h4>
+  <div class="grant-header">
+    <div>
+      <a class="award-link" href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1823235">NSF #1823235</a>
+    </div>
+    <h2>NeTS: CRI: II-New: Mobile Millimeter-Wave MIMO Network Based on CMU Chipscale Beamformers</h2>
+    <div class="tagline">This webpage tracks the current progress of our NSF-funded project. Our sincere thanks to the National Science Foundation for supporting our research.</div>
+  </div>
 
-<div>
-Current "4G" wireless networks will not be able to support the projected mobile internet traffic, which is projected to grow to 66,000 petabytes (PB) per month in 2022, up from 94 PB/month in 2010 - a growth rate of 72% per year. The key to meeting such demand lies in: (1) the exploitation of new millimeter-wave (mmWave) spectrum above 30 Gigahertz (GHz), and (2) the development of new hardware and algorithms that enable mmWave communication. However, mmWave communication networks are in their infancy, with emerging 5G networks expected to support first generation concepts. Researchers are already looking beyond 5G, and accordingly, there is intense ongoing research in developing fundamental technologies and algorithms for future mmWave networks. Unfortunately, experimental validation and experiment-driven discovery has been largely lacking due to the unavailability of hardware technologies, compounded by high costs that can be supported only by large companies. The proposed project seeks to build new institutional infrastructure that can enable advanced wireless networking experimentation in the mmWave frequency bands. The resulting testbed will provide experimentation tools and seed research for the hardware, physical and network communication communities, and for systems researchers who focus on localization, autonomous driving, indoor navigation, assistive devices for the visually impaired etc. This project will offer opportunities for undergraduate and graduate education, both during the development of the infrastructure, and during its actual use. In addition, students will develop skills in chip implementation, printed circuit board design and fabrication, laboratory characterization skills, using software-defined radios, field-programmable gate array programming skills, all of which are extremely valuable for a career in the technology industry.
+  <div class="grant-section">
+    <h4>Project Goals</h4>
+    <div>
+      Current "4G" wireless networks will not be able to support the projected mobile internet traffic, which is projected to grow to 66,000 petabytes (PB) per month in 2022, up from 94 PB/month in 2010 - a growth rate of 72% per year. The key to meeting such demand lies in: (1) the exploitation of new millimeter-wave (mmWave) spectrum above 30 Gigahertz (GHz), and (2) the development of new hardware and algorithms that enable mmWave communication. However, mmWave communication networks are in their infancy, with emerging 5G networks expected to support first generation concepts. Researchers are already looking beyond 5G, and accordingly, there is intense ongoing research in developing fundamental technologies and algorithms for future mmWave networks. Unfortunately, experimental validation and experiment-driven discovery has been largely lacking due to the unavailability of hardware technologies, compounded by high costs that can be supported only by large companies. The proposed project seeks to build new institutional infrastructure that can enable advanced wireless networking experimentation in the mmWave frequency bands. The resulting testbed will provide experimentation tools and seed research for the hardware, physical and network communication communities, and for systems researchers who focus on localization, autonomous driving, indoor navigation, assistive devices for the visually impaired etc. This project will offer opportunities for undergraduate and graduate education, both during the development of the infrastructure, and during its actual use. In addition, students will develop skills in chip implementation, printed circuit board design and fabrication, laboratory characterization skills, using software-defined radios, field-programmable gate array programming skills, all of which are extremely valuable for a career in the technology industry.<br /><br />This project aims to develop a first-of-its-kind mmWave multiple-input-multiple-output (MIMO) capable network testbed comprising base stations and mobile user modules spanning indoor and outdoor spaces. Testbed development will be led by a two-investigator team combining expertise in mmWave chip/system design with expertise in cross-layer design and implementation of wireless networks. Since commercial mmWave hardware (especially with advanced features) will not be widely available for the foreseeable future, the proposed infrastructure will leverage the principal investigator's previous NSF-funded research that has resulted in the design and prototype demonstration of advanced mmWave radio chips which feature unprecedented levels of integration, energy-efficiency, reconfigurability and programmability. The proposed project is structured to operationalize a small-scale link/network in the early part of the second year, and scaling up in complexity and network density in the second and third years.
+    </div>
+  </div>
 
-This project aims to develop a first-of-its-kind mmWave multiple-input-multiple-output (MIMO) capable network testbed comprising base stations and mobile user modules spanning indoor and outdoor spaces. Testbed development will be led by a two-investigator team combining expertise in mmWave chip/system design with expertise in cross-layer design and implementation of wireless networks. Since commercial mmWave hardware (especially with advanced features) will not be widely available for the foreseeable future, the proposed infrastructure will leverage the principal investigator's previous NSF-funded research that has resulted in the design and prototype demonstration of advanced mmWave radio chips which feature unprecedented levels of integration, energy-efficiency, reconfigurability and programmability. The proposed project is structured to operationalize a small-scale link/network in the early part of the second year, and scaling up in complexity and network density in the second and third years.
-</div>
+  <div class="grant-section">
+    <h4>Activities &amp; Outcomes</h4>
 
-<h5>Activities and Outcomes</h4>
-
-<i> Intellectual Merit:</i>
-The proposed work led to the development of a first-of-its-kind mm-wave full-duplex radio platform. The system has been experimentally evaluated, demonstrating bi-directional communication. The proposed work led to the following publications:
-
-
-
-
-<ul>
-<li> <b>A 28/37GHz Scalable, Reconfigurable, Multi-Layer Hybrid/Digital MIMO Transceiver for TDD/FDD and Full-Duplex Communication</b>, S. Mondal, L. R. Carley and J. Paramesh, IEEE International Solid-State Circuits Conference, Feb 2020  <br /></li>
-<li> <b>Millimeter-Wave Reconfigurable Adaptive Hybrid Beamformers for MIMO Communication</b>, Susnata Mondal, Ph.D. Thesis, Carnegie Mellon University, Aug 2020 <br /></li>
+    <div class="outcomes-block outcomes-clearfix">
+      <span class="outcomes-label">Intellectual Merit</span>
+      <figure class="paper-figure">
+        <img src="images/millimetro.png" alt="Millimetro: mmWave localization system" />
+        <figcaption>Millimetro: millimeter-wave localization for autonomous driving at MobiCom 2021.</figcaption>
+      </figure>
+      The proposed work led to the development of a first-of-its-kind mm-wave full-duplex radio platform. The system has been experimentally evaluated, demonstrating bi-directional communication. The proposed work led to the following publications:
+      <ul>
+<li><b>A 28/37GHz Scalable, Reconfigurable, Multi-Layer Hybrid/Digital MIMO Transceiver for TDD/FDD and Full-Duplex Communication</b>, S. Mondal, L. R. Carley and J. Paramesh, IEEE International Solid-State Circuits Conference, Feb 2020<br /></li>
+<li><b>Millimeter-Wave Reconfigurable Adaptive Hybrid Beamformers for MIMO Communication</b>, Susnata Mondal, Ph.D. Thesis, Carnegie Mellon University, Aug 2020<br /></li>
 <li><b>Exploring mmWave Radar and Camera Fusion for High-Resolution and Long-Range Depth Imaging</b>, Akarsh Prabhakara (Co-Primary), Diana Zhang (Co-Primary), Chao Li, Sirajum Munir, Aswin Sankaranarayanan, Anthony Rowe and Swarun Kumar, IROS 2022<br /></li>
 <li><b>Millimetro: mmWave Retro-Reflective Tags for Accurate, Long Range Localization</b>, Elahe Soltanaghaei (Co-Primary), Akarsh Prabhakara (Co-Primary), Artur Balanuta (Co-Primary), Matthew Anderson, Jan M. Rabaey, Swarun Kumar and Anthony Rowe, MobiCom  2021<br /></li>
 <li><b>Osprey: A mmWave Approach to Tire Wear Sensing</b>, Akarsh Prabhakara, Vaibhav Singh, Swarun Kumar and Anthony Rowe, MobiSys  2020 <i>(Best Paper Honorable Mention)</i><br /></li>
 <li><b>Osprey Demo: A mmWave Approach to Tire Wear Sensing</b>, Akarsh Prabhakara, Vaibhav Singh, Swarun Kumar and Anthony Rowe, MobiSys  2020<br /></li>
 <li><b>Millimeter-Wave Full Duplex Radios</b>, Vaibhav Singh, Susnata Mondal, Akshay Gadre, Milind Srivastava, Jeyanandh Paramesh and Swarun Kumar, MobiCom  2020<br /></li>
-</ul>
+      </ul>
+    </div>
 
+    <div class="outcomes-block">
+      <span class="outcomes-label">Broader Impacts</span>
+      Four graduate students have been trained during the course of this research. The primary outcome of this project is to develop experimentation infrastructure not only for network and hardware researchers but also for researchers in computer vision, embedded systems and robotics. The testbed can enable advanced experimentation at the hardware-signal processing interface. Examples include investigations of advanced beamforming algorithms incorporating closed-loop beam acquisition/tracking, codebook beamforming algorithms tailored for hybrid beamforming topologies exploiting channel sparsity, network-level beam management algorithms, interference cancellation techniques and fine grained studies of mm-wave channel propagation in specific environments, positioning/ranging/localization in realistic environments etc.
+    </div>
+  </div>
 
-<i> Broader Impacts:</i>
-Four graduate students have been trained during the course of this research. The primary outcome of this project is to develop experimentation infrastructure not only for network and hardware researchers but also for researchers in computer vision, embedded systems and robotics. The testbed can enable advanced experimentation at the hardware-signal processing interface. Examples include investigations of advanced beamforming algorithms incorporating closed-loop beam acquisition/tracking, codebook beamforming algorithms tailored for hybrid beamforming topologies exploiting channel sparsity, network-level beam management algorithms,  interference cancellation techniques and fine grained studies of mm-wave channel propagation in specific environments, positioning/ranging/localization in realistic environments etc.
-
-
-<h5>Personnel</h4>
-
-<i>Faculty</i>
-<ul>
-<li> Rick Carley
-<li> Jeyanandh Paramesh
-<li> Swarun Kumar 
-</ul>
-
-<i>Students</i>
-<ul>
-<li> Susnata Mondal (graduated with Ph.D., 2020)
-<li> Vaibhav Singh
-<li> Akshay Gadre
-<li> Chao Rong
-</ul>
-
-<br /><br />
-
+  <div class="grant-section">
+    <h4>Personnel</h4>
+    <div class="personnel-grid">
+      <div class="personnel-col">
+        <h5>Faculty</h5>
+        <ul>
+          <li>Rick Carley</li>
+          <li>Jeyanandh Paramesh</li>
+          <li>Swarun Kumar</li>
+        </ul>
+      </div>
+      <div class="personnel-col">
+        <h5>Students</h5>
+        <ul>
+          <li>Susnata Mondal (graduated with Ph.D., 2020)</li>
+          <li>Vaibhav Singh</li>
+          <li>Akshay Gadre</li>
+          <li>Chao Rong</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
 </div>
-
 
       </div>
     </div>

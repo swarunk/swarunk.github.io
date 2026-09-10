@@ -291,28 +291,155 @@ body {
     <div class="site-main">
       <div><div>
 
-<h4>
-NSF Award (<a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1718435">1718435</a>):  NeTS: Small: Handheld mm-Accurate Positioning for Wearables
-</h4>
+<style>
+.grant-page {
+  margin: 30px 30px;
+  font-family: 'Georgia', serif;
+  font-size: 15px;
+  color: #2c2c2c;
+  line-height: 1.7;
+}
+.grant-header {
+  background: linear-gradient(135deg, #6b1717 0%, #992222 100%);
+  color: white;
+  border-radius: 8px;
+  padding: 28px 32px;
+  margin-bottom: 28px;
+}
+.grant-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+.grant-header .award-link {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  color: #ffd0d0;
+  text-decoration: none;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: monospace;
+  letter-spacing: 0.5px;
+  margin-right: 8px;
+}
+.grant-header .award-link:hover { background: rgba(255,255,255,0.35); }
+.grant-header .tagline {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #f5d0d0;
+  font-style: italic;
+}
+.grant-section {
+  background: #fdf9f9;
+  border-left: 4px solid #992222;
+  border-radius: 0 6px 6px 0;
+  padding: 20px 24px;
+  margin-bottom: 22px;
+}
+.grant-section h4 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  color: #6b1717;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-family: Arial, sans-serif;
+}
+.grant-section p, .grant-section div {
+  margin: 0;
+}
+.outcomes-block {
+  margin-bottom: 16px;
+}
+.outcomes-label {
+  font-style: italic;
+  font-weight: bold;
+  color: #6b1717;
+  display: block;
+  margin-bottom: 4px;
+}
+.grant-section ul {
+  margin: 8px 0 0 0;
+  padding-left: 20px;
+}
+.grant-section ul li {
+  margin-bottom: 6px;
+}
+.personnel-grid {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.personnel-col h5 {
+  margin: 0 0 8px 0;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: #555;
+  font-family: Arial, sans-serif;
+}
+.personnel-col ul {
+  margin: 0;
+  padding-left: 18px;
+}
+.personnel-col ul li {
+  margin-bottom: 4px;
+}
+.paper-figure {
+  float: right;
+  margin: 4px 0 12px 24px;
+  width: 340px;
+  max-width: 45%;
+}
+.paper-figure img {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #e8d8d8;
+  display: block;
+}
+.paper-figure figcaption {
+  font-size: 12px;
+  color: #777;
+  margin-top: 6px;
+  font-style: italic;
+  text-align: center;
+}
+.outcomes-clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+</style>
 
-<div>
-This webpage tracks the current progress of our funded project with the NSF.  Our sincere thanks to the National Science Foundation for supporting  our research. <br />
-</div>
+<div class="grant-page">
 
-<h5>Project Goals</h4>
+  <div class="grant-header">
+    <div>
+      <a class="award-link" href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1718435">NSF #1718435</a>
+    </div>
+    <h2>NeTS: Small: Handheld mm-Accurate Positioning for Wearables</h2>
+    <div class="tagline">This webpage tracks the current progress of our NSF-funded project. Our sincere thanks to the National Science Foundation for supporting our research.</div>
+  </div>
 
-<div>
-This proposal develops a system that can track wearables on a user's body with millimeter (mm) accuracy using a handheld device in the user's pocket. Unlike past work, it does so without the need for external infrastructure (e.g. cameras or antenna arrays) or inaccurate, bulky and battery-powered sensors on the body. The proposed work attaches tiny radio frequency identification (RFID) tags that are cheap (costing a few cents) and completely battery-free on to on-body devices or the user's clothing. It then monitors the locations of these tags from a handheld RFID reader in the user's pocket. Unlike past solutions that use bulky, many-antenna RFID readers to locate RFID tags, our approach needs only a single-antenna reader that is both compact and portable. The proposed work will be fully implemented and evaluated on commodity RFID hardware and tags; the solution opens up a rich set of applications. Consider medical tests such as Electroencephalogram (EEG) that can become truly 'wearable', with electrodes on the head positioned automatically without requiring time-consuming manual measurements by a physician. Or consider smart textiles that can now serve as gesture-based interfaces that track a user's movements relative to handheld devices. 
+  <div class="grant-section">
+    <h4>Project Goals</h4>
+    <div>
+      This proposal develops a system that can track wearables on a user's body with millimeter (mm) accuracy using a handheld device in the user's pocket. Unlike past work, it does so without the need for external infrastructure (e.g. cameras or antenna arrays) or inaccurate, bulky and battery-powered sensors on the body. The proposed work attaches tiny radio frequency identification (RFID) tags that are cheap (costing a few cents) and completely battery-free on to on-body devices or the user's clothing. It then monitors the locations of these tags from a handheld RFID reader in the user's pocket. Unlike past solutions that use bulky, many-antenna RFID readers to locate RFID tags, our approach needs only a single-antenna reader that is both compact and portable. The proposed work will be fully implemented and evaluated on commodity RFID hardware and tags; the solution opens up a rich set of applications. Consider medical tests such as Electroencephalogram (EEG) that can become truly 'wearable', with electrodes on the head positioned automatically without requiring time-consuming manual measurements by a physician. Or consider smart textiles that can now serve as gesture-based interfaces that track a user's movements relative to handheld devices.<br /><br />The proposed research presents three contributions: (1) It proposes a novel approach to disentangle wireless signals traversing different paths from RFID tags to a single-antenna RFID reader - a key challenge in positioning research. It achieves this without relying on bulky, multi-antenna arrays used in past literature. Its core idea is to use signals from teams of RFID tags to separate wireless signal components along different paths. (2) It investigates a solution to locate RFID tags relative to other tags whose positions are known. It seeks to do this using an algorithm that leverages similarity between the wireless signal paths experienced by the tag of interest and neighboring tags whose locations are known. (3) It fully integrates the system to target two applications: i) A wearable EEG system that tracks electrodes on the head using RFID tags attached to them. This eliminates the need for cumbersome manual measurements that doctors perform today before administering the test, allowing EEG to be truly portable. ii) A smart fabric with embedded RFID tags tracked by a mobile device to track the users movements both for continuous fitness monitoring and to create a gesture-based user interface.
+    </div>
+  </div>
 
-The proposed research presents three contributions: (1) It proposes a novel approach to disentangle wireless signals traversing different paths from RFID tags to a single-antenna RFID reader - a key challenge in positioning research. It achieves this without relying on bulky, multi-antenna arrays used in past literature. Its core idea is to use signals from teams of RFID tags to separate wireless signal components along different paths. (2) It investigates a solution to locate RFID tags relative to other tags whose positions are known. It seeks to do this using an algorithm that leverages similarity between the wireless signal paths experienced by the tag of interest and neighboring tags whose locations are known. (3) It fully integrates the system to target two applications: i) A wearable EEG system that tracks electrodes on the head using RFID tags attached to them. This eliminates the need for cumbersome manual measurements that doctors perform today before administering the test, allowing EEG to be truly portable. ii) A smart fabric with embedded RFID tags tracked by a mobile device to track the users movements both for continuous fitness monitoring and to create a gesture-based user interface.
-</div>
+  <div class="grant-section">
+    <h4>Activities &amp; Outcomes</h4>
 
-<h5>Activities and Outcomes</h4>
-
-<i> Intellectual Merit</i>
-The proposed research led to multiple accepted papers at UbiComp, MobiSys and NSDI. The research has been demonstrated on commodity RFID tags. 
-
-<ul>
+    <div class="outcomes-block outcomes-clearfix">
+      <span class="outcomes-label">Intellectual Merit</span>
+      <figure class="paper-figure">
+        <img src="images/tagfi.png" alt="TagFi: RFID tag-based smart fabric sensing system" />
+        <figcaption>TagFi: fine-grained RFID-based localization for smart textiles and wearables (UbiComp 2021).</figcaption>
+      </figure>
+      The proposed research led to multiple accepted papers at UbiComp, MobiSys and NSDI. The research has been demonstrated on commodity RFID tags.
+      <ul>
 <li><b>TagFi: Locating Ultra-Low Power WiFi Tags Using Unmodified WiFi Infrastructure</b>, Elahe Soltanaghaei, Adwait Dongare, Akarsh Prabhakara, Swarun Kumar, Anthony Rowe and Kamin Whitehouse, UbiComp  2021<br /></li>
 <li><b>RFID Tattoo: A Wireless Platform for Speech Recognition </b>, Jingxian Wang, Chengfeng Pan, Haojian Jin, Vaibhav Singh, Yash Jain, Jason Hong, Carmel Majidi and Swarun Kumar, UbiComp  2020 <i>(Best Wearables Long Paper)</i><br /></li>
 <li><b>You foot the bill! Attacking NFC with passive relays</b>, Yuyi Sun, Swarun Kumar, Shibo He, Jiming Chen and Zhiguo Shi, IEEE IoT Journal 2020<br /></li>
@@ -321,32 +448,38 @@ The proposed research led to multiple accepted papers at UbiComp, MobiSys and NS
 <li><b>Pushing the Range Limits of Commercial Passive RFIDs </b>, Jingxian Wang, Junbo Zhang, Rajarshi Saha, Haojian Jin, Swarun Kumar, NSDI  2019<br /></li>
 <li><b>WiSh: Towards a Wireless Shape-aware World </b>, Haojian Jin, Jingxian Wang, Zhijian Yang, Swarun Kumar, Jason Hong, MobiSys  2018<br /></li>
 <li><b>Towards Wearable Everyday Body-Frame Tracking </b>, Haojian Jin, Zhijian Yang, Swarun Kumar, and Jason Hong, UbiComp  2018 <i>(Best Demo Honorable Mention)</i><br /></li>
-</ul>
+      </ul>
+    </div>
 
-<i> Broader Impacts</i>
-Two graduate students and three undergraduate students have been trained during the course of this research. The PI participated in several events organized by the Gelfand Center at CMU which invites groups of K-12 students and teachers to the CMU campus to learn about state-of-the-art research. The PI presented demos of RFID-enabled smart fabrics to the students.
+    <div class="outcomes-block">
+      <span class="outcomes-label">Broader Impacts</span>
+      Two graduate students and three undergraduate students have been trained during the course of this research. The PI participated in several events organized by the Gelfand Center at CMU which invites groups of K-12 students and teachers to the CMU campus to learn about state-of-the-art research. The PI presented demos of RFID-enabled smart fabrics to the students.
+    </div>
+  </div>
 
-<h5>Personnel</h4>
-
-<i>Faculty</i>
-<ul>
-<li> Swarun Kumar (PI)
-</ul>
-
-<i>Students</i>
-<ul>
-<li>Haojian Jin
-<li>Jingxian Wang
-<li>Junbo Zhang (undergraduate)
-<li>Rajarshi Saha (undergraduate)
-<li>Zhijian Yang (undergraduate)
-</ul>
-
-<br /><br />
-
+  <div class="grant-section">
+    <h4>Personnel</h4>
+    <div class="personnel-grid">
+      <div class="personnel-col">
+        <h5>Faculty</h5>
+        <ul>
+          <li>Swarun Kumar (PI)</li>
+        </ul>
+      </div>
+      <div class="personnel-col">
+        <h5>Students</h5>
+        <ul>
+          <li>Haojian Jin</li>
+          <li>Jingxian Wang</li>
+          <li>Junbo Zhang (undergraduate)</li>
+          <li>Rajarshi Saha (undergraduate)</li>
+          <li>Zhijian Yang (undergraduate)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
 </div>
-
 
       </div>
     </div>

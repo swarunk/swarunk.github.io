@@ -291,56 +291,188 @@ body {
     <div class="site-main">
       <div><div>
 
-<h4>
-NSF Award (<a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1657318">1657318</a>):  CRII: NeTS: A Wireless Sensing Platform for Safe Autonomous Driving
-</h4>
+<style>
+.grant-page {
+  margin: 30px 30px;
+  font-family: 'Georgia', serif;
+  font-size: 15px;
+  color: #2c2c2c;
+  line-height: 1.7;
+}
+.grant-header {
+  background: linear-gradient(135deg, #6b1717 0%, #992222 100%);
+  color: white;
+  border-radius: 8px;
+  padding: 28px 32px;
+  margin-bottom: 28px;
+}
+.grant-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+.grant-header .award-link {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  color: #ffd0d0;
+  text-decoration: none;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: monospace;
+  letter-spacing: 0.5px;
+  margin-right: 8px;
+}
+.grant-header .award-link:hover { background: rgba(255,255,255,0.35); }
+.grant-header .tagline {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #f5d0d0;
+  font-style: italic;
+}
+.grant-section {
+  background: #fdf9f9;
+  border-left: 4px solid #992222;
+  border-radius: 0 6px 6px 0;
+  padding: 20px 24px;
+  margin-bottom: 22px;
+}
+.grant-section h4 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  color: #6b1717;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-family: Arial, sans-serif;
+}
+.grant-section p, .grant-section div {
+  margin: 0;
+}
+.outcomes-block {
+  margin-bottom: 16px;
+}
+.outcomes-label {
+  font-style: italic;
+  font-weight: bold;
+  color: #6b1717;
+  display: block;
+  margin-bottom: 4px;
+}
+.grant-section ul {
+  margin: 8px 0 0 0;
+  padding-left: 20px;
+}
+.grant-section ul li {
+  margin-bottom: 6px;
+}
+.personnel-grid {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.personnel-col h5 {
+  margin: 0 0 8px 0;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: #555;
+  font-family: Arial, sans-serif;
+}
+.personnel-col ul {
+  margin: 0;
+  padding-left: 18px;
+}
+.personnel-col ul li {
+  margin-bottom: 4px;
+}
+.paper-figure {
+  float: right;
+  margin: 4px 0 12px 24px;
+  width: 340px;
+  max-width: 45%;
+}
+.paper-figure img {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #e8d8d8;
+  display: block;
+}
+.paper-figure figcaption {
+  font-size: 12px;
+  color: #777;
+  margin-top: 6px;
+  font-style: italic;
+  text-align: center;
+}
+.outcomes-clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+</style>
 
-<div>
-This webpage tracks the current progress of our funded project with the NSF.  Our sincere thanks to the National Science Foundation for supporting  our research. <br />
-</div>
+<div class="grant-page">
 
-<h5>Project Goals</h4>
+  <div class="grant-header">
+    <div>
+      <a class="award-link" href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1657318">NSF #1657318</a>
+    </div>
+    <h2>CRII: NeTS: A Wireless Sensing Platform for Safe Autonomous Driving</h2>
+    <div class="tagline">This webpage tracks the current progress of our NSF-funded project. Our sincere thanks to the National Science Foundation for supporting our research.</div>
+  </div>
 
-<div>
-Recent years have witnessed an aggressive push towards building driverless cars. Yet, safely detecting hidden objects remains a major challenge facing fully autonomous driving. Sensors on an autonomous car today, such as cameras and laser range finders, can only detect objects in their direct field-of-view. As a result, they are blind to objects that are hidden due to occlusions or inclement weather. This proposal aims to use wireless communication to overcome this challenge and complement sensors on autonomous vehicles. It relies on the fact that wireless signals, unlike visible light, can penetrate through walls and obstacles. The proposal presents novel system for commodity wireless radios that detects and locates objects around an autonomous vehicle. It does so by developing algorithms that analyze the components of wireless signals that reflect off different objects in the environment. It studies the observed signal values across frequency to discover the material that the obstacles are made of. This allows the system to distinguish between, say, a hidden pedestrian and a hidden car, which should elicit different responses from the driverless car.
+  <div class="grant-section">
+    <h4>Project Goals</h4>
+    <div>
+      Recent years have witnessed an aggressive push towards building driverless cars. Yet, safely detecting hidden objects remains a major challenge facing fully autonomous driving. Sensors on an autonomous car today, such as cameras and laser range finders, can only detect objects in their direct field-of-view. As a result, they are blind to objects that are hidden due to occlusions or inclement weather. This proposal aims to use wireless communication to overcome this challenge and complement sensors on autonomous vehicles. It relies on the fact that wireless signals, unlike visible light, can penetrate through walls and obstacles. The proposal presents novel system for commodity wireless radios that detects and locates objects around an autonomous vehicle. It does so by developing algorithms that analyze the components of wireless signals that reflect off different objects in the environment. It studies the observed signal values across frequency to discover the material that the obstacles are made of. This allows the system to distinguish between, say, a hidden pedestrian and a hidden car, which should elicit different responses from the driverless car.<br /><br />The proposed research investigates a novel framework to sense the location and material of obstacles in the vicinity of autonomous vehicles in both indoor and outdoor settings. It will develop an end-to-end system to process wireless signals on commodity wireless radios on autonomous vehicles that can readily be integrated with autonomous path planning systems. Its key intellectual contributions include: (1) A novel method to synchronize commodity Wi-Fi/DSRC radios on vehicular platforms to emulate large antenna arrays with wide bandwidth; (2) A mechanism to use this information to locate the spatial direction and range of surrounding objects; (3) An algorithm to discover the material of objects of interest by studying signals reflected off them across frequencies. The system will be fully validated indoors and outdoors on robotic and vehicular platforms.
+    </div>
+  </div>
 
-The proposed research investigates a novel framework to sense the location and material of obstacles in the vicinity of autonomous vehicles in both indoor and outdoor settings. It will develop an end-to-end system to process wireless signals on commodity wireless radios on autonomous vehicles that can readily be integrated with autonomous path planning systems. Its key intellectual contributions include: (1) A novel method to synchronize commodity Wi-Fi/DSRC radios on vehicular platforms to emulate large antenna arrays with wide bandwidth; (2) A mechanism to use this information to locate the spatial direction and range of surrounding objects; (3) An algorithm to discover the material of objects of interest by studying signals reflected off them across frequencies. The system will be fully validated indoors and outdoors on robotic and vehicular platforms. The proposed research tackles a fundamental limitation of autonomous vehicles: they cannot view objects occluded from view. Its impact on the safety of driving is potentially transformative given the annual 800,000+ blind-spot related accidents in the U.S. alone. Curriculum for a new graduate course on wireless networks at Carnegie Mellon will incorporate the findings of this research. Hands-on wireless labs will be developed as a part of the Spark Saturday outreach program for high school students in the Pittsburgh area. The proposed research will be disseminated via peer-reviewed conferences, workshops and journals.
-</div>
+  <div class="grant-section">
+    <h4>Activities &amp; Outcomes</h4>
 
-<h5>Activities and Outcomes</h4>
-
-<i> Intellectual Merit</i>
-The proposed research led to an accepted poster in MobiCom 2018. Our system has been demonstrated on UAVs and mobile robotic platforms in indoor and outdoor settings.
-
-<ul>
+    <div class="outcomes-block outcomes-clearfix">
+      <span class="outcomes-label">Intellectual Merit</span>
+      <figure class="paper-figure">
+        <img src="images/intuwition.png" alt="IntuWition: wireless localization system for autonomous vehicles" />
+        <figcaption>IntuWition: localizing hidden objects around autonomous vehicles using wireless signals (MobiCom 2019).</figcaption>
+      </figure>
+      The proposed research led to an accepted poster in MobiCom 2018. Our system has been demonstrated on UAVs and mobile robotic platforms in indoor and outdoor settings.
+      <ul>
 <li><b>On the Feasibility of Wi-Fi Based Material Sensing </b>, Diana Zhang, Jingxian Wang, Junsu Jang, Junbo Zhang, Swarun Kumar, MobiCom  2019<br /></li>
 <li><b>Poster: Maintaining UAV Stability using Low-Power WANs </b>, Akshay Gadre, Revathy Narayanan, Swarun Kumar, MobiCom - Posters  2018<br /></li>
-</ul>
+      </ul>
+    </div>
 
-<i> Broader Impacts</i>
+    <div class="outcomes-block">
+      <span class="outcomes-label">Broader Impacts</span>
+      The project has trained three graduate students and three undergraduate students. Findings and material from the research will be incorporated in the graduate course on wireless networking (18-859G) taught by the PI in Fall 2019. The PI has also participated in several outreach events by the CMU Gelfand center: the Science and Engineering Sampler which invites cohorts of K-12 students to campus to learn about state-of-the-art research and the HCV summer camp that invites high school students from under-represented communities. The PI presented findings of this research project to the students.
+    </div>
+  </div>
 
-The project has trained three graduate students and three undergraduate students. Findings and material from the research will be incorporated in the graduate course on wireless networking (18-859G) taught by the PI in Fall 2019. The PI has also participated in several outreach events by the CMU Gelfand center: the Science and Engineering Sampler which invites cohorts of K-12 students to campus to learn about state-of-the-art research and the HCV summer camp that invites high school students from under-represented communities. The PI presented findings of this research project to the students. 
-
-<h5>Personnel</h4>
-
-<i>Faculty</i>
-<ul>
-<li> Swarun Kumar (PI)
-</ul>
-
-<i>Students</i>
-<ul>
-<li>Diana Zhang
-<li>Jingxian Wang
-<li>Junsu Jang (undergraduate)
-<li>Junbo Zhang (undergraduate)
-</ul>
-
-<br /><br />
-
+  <div class="grant-section">
+    <h4>Personnel</h4>
+    <div class="personnel-grid">
+      <div class="personnel-col">
+        <h5>Faculty</h5>
+        <ul>
+          <li>Swarun Kumar (PI)</li>
+        </ul>
+      </div>
+      <div class="personnel-col">
+        <h5>Students</h5>
+        <ul>
+          <li>Diana Zhang</li>
+          <li>Jingxian Wang</li>
+          <li>Junsu Jang (undergraduate)</li>
+          <li>Junbo Zhang (undergraduate)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
 </div>
-
 
       </div>
     </div>
